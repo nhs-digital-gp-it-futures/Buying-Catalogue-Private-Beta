@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\NHSD.GPITF.BuyingCatalog.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <OutputPath></OutputPath>
+    <NoWarn>1701;1702;1705;8002;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <OutputPath></OutputPath>
+    <NoWarn>1701;1702;1705;8002;</NoWarn>
+  </PropertyGroup>
+    
+  <PropertyGroup>
+    <UserSecretsId>NHSD.GPITF.BuyingCatalog.SystemTests-a2e0e466-96ed-494f-b12a-42ca13b2c726</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="FluentAssertions" Version="5.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.2.0" />
+    <PackageReference Include="Moq" Version="4.8.3" />
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+      <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\NHSD.GPITF.BuyingCatalog.snk" Link="NHSD.GPITF.BuyingCatalog.snk" />
+  </ItemGroup>
+
+</Project>

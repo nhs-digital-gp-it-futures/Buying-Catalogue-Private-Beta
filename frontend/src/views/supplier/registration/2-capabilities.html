@@ -1,0 +1,246 @@
+{{> errors}}
+
+<header class="page-main-heading">
+  <h1>{{t 'Onboarding.Capabilities.Title' }}</h1>
+  <h2>{{t 'Onboarding.Capabilities.Subtitle'}}</h2>
+</header>
+
+<section class="preamble">
+  {{#each (tt 'Onboarding.Capabilities.Preamble')}}
+  <p>{{{.}}}</p>
+  {{/each}}
+</section>
+
+{{#> help-reveal
+  title='Onboarding.Capabilities.Help.Title'}}
+  {{#each (tt 'Onboarding.Capabilities.Help.Text')}}
+    <p>{{{.}}}</p>
+  {{/each}}
+{{/help-reveal}}
+
+{{#> form form_id=activeForm.id}}
+  <div id="capability-selector">
+    <fieldset id="capabilities-core" class="capability-group">
+      <legend tabindex="0">{{t 'Onboarding.Capabilities.Fieldsets.Core.Legend'}}</legend>
+      <ul class="capabilities">
+        {{#capabilitiesByGroup.core}}
+          {{> selectable-capability isFirst=@first firstId="capabilities"}}
+        {{/capabilitiesByGroup.core}}
+      </ul>
+    </fieldset>
+    <fieldset id="capabilities-non-core" class="capability-group">
+      <legend tabindex="0">{{t 'Onboarding.Capabilities.Fieldsets.NonCore.Legend'}}</legend>
+      <ul class="capabilities">
+        {{#capabilitiesByGroup.noncore}}
+          {{> selectable-capability}}
+        {{/capabilitiesByGroup.noncore}}
+      </ul>
+    </fieldset>
+  </div>
+
+  <div id="capability-summary">
+    <section class="capabilities">
+      <h2>
+        <span class="capability-count plural">
+          <span class="counter">0</span>
+          <span class="singular">{{t 'Onboarding.Capabilities.Summary.Counter.Capability.Singular'}}</span>
+          <span class="plural">{{t 'Onboarding.Capabilities.Summary.Counter.Capability.Plural'}}</span>
+        </span>
+      </h2>
+      <ul class="capabilities">
+        {{#capabilities}}
+        <li data-id="{{id}}"><a href="{{url}}" target="_blank">{{name}}</a></li>
+        {{/capabilities}}
+      </ul>
+    </section>
+    <section class="standards" data-base-std-count="{{standardsByGroup.overarching.length}}">
+      <h2>
+        <span class="standard-count plural">
+          <span class="counter">{{standardsByGroup.overarching.length}}</span>
+          <span class="singular">{{t 'Onboarding.Capabilities.Summary.Counter.Standard.Singular'}}</span>
+          <span class="plural">{{t 'Onboarding.Capabilities.Summary.Counter.Standard.Plural'}}</span>
+        </span>
+      </h2>
+      <section class="associated">
+        <h3>{{t 'Onboarding.Capabilities.Summary.Standards.Associated.Heading'}}</h3>
+        <ul>
+          {{#standardsByGroup.associated}}
+            {{#unless isOptional}}
+              <li data-id="{{id}}" class="selected mandatory"><a href="{{url}}" target="_blank">{{name}}</a></li>
+            {{/unless}}
+          {{/standardsByGroup.associated}}
+        </ul>
+      </section>
+      <section class="optionals">
+        <ul>
+            {{#each (tt 'Optional Standards.Notice Text')}}
+              <p>{{.}}</p>
+            {{/each}}
+            {{#standardsByGroup.associated}}
+              {{#if isOptional}}
+                <li data-id="{{id}}" class="selected optional"><a href="{{url}}" target="_blank">{{name}}</a></li>
+              {{/if}}
+            {{/standardsByGroup.associated}}
+          </ul>
+      </section>
+      <section class="overarching">
+        <h3>{{t 'Onboarding.Capabilities.Summary.Standards.Overarching.Heading'}}</h3>
+        <ul>
+          {{#standardsByGroup.overarching}}
+          <li data-id="{{id}}" class="selected "><a href="{{url}}" target="_blank">{{name}}</a></li>
+          {{/standardsByGroup.overarching}}
+        </ul>
+      </section>
+    </section>
+  </div>
+
+  <div>
+    {{#each (tt 'Onboarding.Capabilities.Submission.Notice')}}
+      <p>{{.}}</p>
+    {{/each}}
+  </div>
+
+  <div id="submit-controls">
+    <input type="submit"
+      class="button primary"
+      name="action[continue]"
+      value="{{t 'Buttons.Save and complete'}}">
+  </div>
+{{/form}}
+<a class="back-link" href="../register">{{t 'Onboarding.Capabilities.Backlink.Title'}}</a>
+
+<script type="text/javascript">
+/* global $, $$ */
+'use strict'
+
+document.addEventListener('DOMContentLoaded', function () {
+  // utility functions in place of inline arrow lambdas
+  function nonEmptyItems (item) { return !!item }
+  function idFromDataset (el) { return el.dataset.id }
+  function standardsIdsFromDataset (el) { return el.dataset.stdIds }
+  function toggleSelected (el, force) { el.classList.toggle('selected', force) }
+  function splitOnCommas (str) { return str.split(',') }
+  function concatAll (acc, val) { return acc.concat(val) }
+
+  function updateCounter (elCounterSection, count) {
+    count = +count
+    $('.counter', elCounterSection).innerText = count
+    elCounterSection.classList.toggle('singular', count === 1)
+    elCounterSection.classList.toggle('plural', count !== 1)
+  }
+
+  function hideAllReveals () {
+    $$('#capability-selector .capability').forEach(function (el) {
+      el.classList.remove('revealed')
+      el.style.marginBottom = ''
+    })
+  }
+
+  function updateForCapabilityStateChange () {
+    const selectedCapabilities = $$('#capability-selector [type=checkbox][name^=capabilities][data-id]:checked')
+
+    // synchronise capability selected state with checkbox state
+    $$('#capability-selector .capability').forEach(function (el) {
+      toggleSelected(el, false)
+    })
+    selectedCapabilities.forEach(function (el) {
+      toggleSelected(el.closest('.capability'), true)
+    })
+
+    // update the capability count and plurality
+    updateCounter($('#capability-summary .capability-count'), selectedCapabilities.length)
+
+    // set selected class on all selected capabilities in summary
+    const elSummaryCapabilityList = $('#capability-summary .capabilities')
+    const selectedCapabilityIds = selectedCapabilities.map(idFromDataset)
+    $$('[data-id]', elSummaryCapabilityList).forEach(function (el) {
+      const isSelected = selectedCapabilityIds.includes(idFromDataset(el))
+      toggleSelected(el, isSelected)
+    })
+
+    // generate the list of associated standards for all selected capabilities
+    const assocStdIds = selectedCapabilities.map(standardsIdsFromDataset)
+      .filter(nonEmptyItems)
+      .map(splitOnCommas)
+      .reduce(concatAll, [])
+
+    // hide all the associated standards and their section
+    const elStandardsSection = $('#capability-summary .standards')
+    const baseStdCount = +elStandardsSection.dataset.baseStdCount
+    let assocStdCount = 0
+    let optionalCount = 0
+    let assocStds = []
+    const stdIdToAssocStdEl = {}
+
+    $$('.associated, .associated [data-id], .optionals, .optionals [data-id]', elStandardsSection).forEach(function (el) {
+      el.classList.remove('selected')
+      if (el.dataset.id) {
+        stdIdToAssocStdEl[el.dataset.id] = el
+      }
+    })
+
+    // show only the standards associated with the selected capabilities
+    assocStdIds.forEach(function (stdId) {
+      stdIdToAssocStdEl[stdId].classList.add('selected')
+      if(!assocStds.filter(function (std) { return std === stdId }).length) {
+        assocStdCount++
+        assocStds.push(stdId)
+      }
+      if(stdIdToAssocStdEl[stdId].classList.contains('optional')) {
+        optionalCount++
+      }
+    })
+
+    // update the standards required count, taking the overarching standards into account
+    if (assocStdCount) {
+      $('.associated', elStandardsSection).classList.add('selected')
+    }
+    if (optionalCount) {
+      $('.optionals', elStandardsSection).classList.add('selected')
+    }
+    updateCounter($('#capability-summary .standard-count'), baseStdCount + assocStdCount)
+    hideAllReveals()
+  }
+
+  $('#content form').addEventListener('change', updateForCapabilityStateChange)
+  updateForCapabilityStateChange()
+
+  $$('#capability-selector .capability').forEach(function (el) {
+    el.addEventListener('click', function (ev) {
+      // only one reveal should be active at any time and clicking the reveal on
+      // the currently revealed capability should collapse it
+
+      // IE11 sends multiple click events if the user clicks on the labels associated
+      // with the checkbox, which causes the reveal to be left open. In this case, the
+      // "change" event fires anyway which closes the reveal
+      if (ev.target.tagName === 'LABEL' || ev.target.tagName === 'INPUT') {
+        return
+      }
+
+      const elCapability = ev.currentTarget
+      const isRevealed = elCapability.classList.contains('revealed')
+
+      hideAllReveals()
+
+      if (!isRevealed) {
+        elCapability.classList.add('revealed')
+
+        // when the reveal is active, the bottom margin of the .capability element is
+        // increased to move the row underneath down to make space for the reveal. The
+        // margin is of a fixed height - set it here to the computed height of the reveal
+        const elReveal = $('.reveal', elCapability)
+        elCapability.style.marginBottom = '' + elReveal.offsetHeight + 'px'
+
+        // IE doesn't support "smooth" so will be a bit janky
+        elCapability.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, true)
+  })
+
+  $$('#content fieldset.capability-group > legend').forEach(function (elGroup) {
+    elGroup.addEventListener('click', function () {
+      elGroup.parentElement.classList.toggle('collapsed')
+    })
+  })
+})
+</script>

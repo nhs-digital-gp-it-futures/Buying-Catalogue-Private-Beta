@@ -1,0 +1,12 @@
+{
+  "name": "catalogue-authn-authz",
+  "version": "0.1.0",
+  "description": "Authentication and authorisation module for the Buying Catalogue",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "catalogue-data": "../catalogue-data",
+    "openid-client": "^2.0.3",
+    "passport": "^0.4.0"
+  }
+}

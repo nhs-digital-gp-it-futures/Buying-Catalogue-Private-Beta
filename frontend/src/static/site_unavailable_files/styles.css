@@ -1,0 +1,1783 @@
+@charset "UTF-8";
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none; }
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none; }
+
+/*
+  Originally https://assets.nhs.uk/fonts/nhsuk-fonts-1.3.0.css
+  Amended by Paul Mitchell <paul.mitchell@bjss.com> to bring font weights
+    into line with CSS conventions (300->100, 500->400, 600->700, 700->900)
+    so that font-weight:lighter|bolder work as expected. This drops support
+    for the heaviest font variant which we did not intend to use.
+*/
+@font-face {
+  font-family: 'NHS-icons';
+  src: url("https://assets.nhs.uk/fonts/NHS-icons.a24aa6735c33.eot?1uyihd");
+  src: url("https://assets.nhs.uk/fonts/NHS-icons.a24aa6735c33.eot?1uyihd#iefix") format("embedded-opentype"), url("https://assets.nhs.uk/fonts/NHS-icons.ba408e1faca5.ttf?1uyihd") format("truetype"), url("https://assets.nhs.uk/fonts/NHS-icons.de00139c45ca.woff?1uyihd") format("woff"), url("https://assets.nhs.uk/fonts/NHS-icons.dbd8d376760c.svg?1uyihd#NHS-icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Frutiger W01";
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-45Light.eot?#iefix");
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-45Light.eot?#iefix") format("eot"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-45Light.woff2") format("woff2"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-45Light.woff") format("woff"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-45Light.ttf") format("truetype"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-45Light.svg#29f3ff8a-1719-4e25-a757-53ee1a1114a5") format("svg");
+  font-style: normal;
+  font-weight: 100; }
+
+@font-face {
+  font-family: "Frutiger W01";
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-46LightItalic.eot?#iefix");
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-46LightItalic.eot?#iefix") format("eot"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-46LightItalic.woff2") format("woff2"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-46LightItalic.woff") format("woff"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-46LightItalic.ttf") format("truetype"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-46LightItalic.svg#cd75c3e3-c5b7-4a25-9498-cabe4e8a9076") format("svg");
+  font-style: italic;
+  font-weight: 100; }
+
+@font-face {
+  font-family: "Frutiger W01";
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.eot?#iefix");
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.eot?#iefix") format("eot"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff2") format("woff2"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff") format("woff"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.ttf") format("truetype"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.svg#7def0e34-f28d-434f-b2ec-472bde847115") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "Frutiger W01";
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-56Italic.eot?#iefix");
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-56Italic.eot?#iefix") format("eot"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-56Italic.woff2") format("woff2"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-56Italic.woff") format("woff"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-56Italic.ttf") format("truetype"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-56Italic.svg#141c0322-57c4-48ca-abb4-31688d659f7d") format("svg");
+  font-style: italic;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "Frutiger W01";
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.eot?#iefix");
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.eot?#iefix") format("eot"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff2") format("woff2"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff") format("woff"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.ttf") format("truetype"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.svg#eae74276-dd78-47e4-9b27-dac81c3411ca") format("svg");
+  font-style: normal;
+  font-weight: bold; }
+
+@font-face {
+  font-family: "Frutiger W01";
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-66BoldItalic.eot?#iefix");
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-66BoldItalic.eot?#iefix") format("eot"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-66BoldItalic.woff2") format("woff2"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-66BoldItalic.woff") format("woff"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-66BoldItalic.ttf") format("truetype"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-66BoldItalic.svg#8ad009ab-a7e5-4acb-8ca5-326d2a759924") format("svg");
+  font-style: italic;
+  font-weight: bold; }
+
+@font-face {
+  font-family: "Frutiger W01";
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-75Black.eot?#iefix");
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-75Black.eot?#iefix") format("eot"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-75Black.woff2") format("woff2"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-75Black.woff") format("woff"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-75Black.ttf") format("truetype"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-75Black.svg#1c437efb-925e-4bc5-96d0-c706bb400696") format("svg");
+  font-style: normal;
+  font-weight: 900; }
+
+@font-face {
+  font-family: "Frutiger W01";
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-76BlackItalic.eot?#iefix");
+  src: url("https://assets.nhs.uk/fonts/FrutigerLTW01-76BlackItalic.eot?#iefix") format("eot"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-76BlackItalic.woff2") format("woff2"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-76BlackItalic.woff") format("woff"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-76BlackItalic.ttf") format("truetype"), url("https://assets.nhs.uk/fonts/FrutigerLTW01-76BlackItalic.svg#24df08f2-b418-49de-8eca-745947092d72") format("svg");
+  font-style: italic;
+  font-weight: 900; }
+
+body *:focus {
+  outline: 3px solid #FFB81C; }
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+  border: 2px solid #005EB8;
+  border-radius: 0;
+  display: block;
+  padding: .5em;
+  width: 60%; }
+  input[type='text'].narrow,
+  input[type='email'].narrow,
+  input[type='tel'].narrow,
+  textarea.narrow {
+    width: 20%; }
+  .control.invalid input[type='text'], .control.invalid
+  input[type='email'], .control.invalid
+  input[type='tel'], .control.invalid
+  textarea {
+    border-color: #DA291C; }
+
+.control .character-count {
+  color: #768692;
+  font-size: smaller;
+  margin-top: .25em; }
+  .control .character-count.invalid {
+    color: #DA291C; }
+
+fieldset.collapsible {
+  background-color: #F0F4F5;
+  border: 1px solid #005EB8;
+  border-radius: 3px;
+  color: #425563;
+  margin-bottom: .5em;
+  padding: 2rem 0 0;
+  position: relative; }
+  fieldset.collapsible > legend {
+    background-color: #005EB8;
+    color: #FFF;
+    cursor: pointer;
+    height: 2rem;
+    left: 0;
+    padding: .4rem 1rem;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    fieldset.collapsible > legend::before {
+      content: "▲";
+      font-size: smaller;
+      padding-right: 1rem; }
+  fieldset.collapsible.invalid {
+    border: 1px solid #DA291C; }
+    fieldset.collapsible.invalid > legend {
+      background-color: #DA291C;
+      color: #FFF; }
+  fieldset.collapsible.collapsed {
+    height: 2.5rem; }
+    fieldset.collapsible.collapsed > legend {
+      background-color: #FFF;
+      color: #005EB8; }
+      fieldset.collapsible.collapsed > legend::before {
+        content: "▼"; }
+    fieldset.collapsible.collapsed > *:not(legend) {
+      display: none; }
+    fieldset.collapsible.collapsed.invalid > legend {
+      background-color: #FFF;
+      color: #DA291C; }
+  fieldset.collapsible .preamble {
+    background-color: #FFF;
+    color: #425563;
+    margin: 0; }
+    fieldset.collapsible .preamble p {
+      margin: 0;
+      padding: 1rem 3rem 1rem; }
+  fieldset.collapsible .control {
+    margin: 1rem 3rem; }
+    fieldset.collapsible .control label {
+      font-size: larger;
+      font-weight: bold; }
+    fieldset.collapsible .control .info {
+      color: #768692;
+      font-size: smaller;
+      margin: .5em 0; }
+    fieldset.collapsible .control .action {
+      display: none; }
+    fieldset.collapsible .control.invalid {
+      border-left: 4px solid #DA291C;
+      padding-left: .5rem; }
+      fieldset.collapsible .control.invalid .action {
+        color: #DA291C;
+        display: block;
+        font-size: smaller;
+        margin: .5em 0; }
+
+a.submit-button {
+  text-decoration: none;
+  color: white; }
+  a.submit-button:hover {
+    background-color: #005326;
+    color: #FFF; }
+
+a.submit-button,
+button,
+[type='button'],
+[type='submit'],
+.button {
+  background-color: #007F3B;
+  border: 0;
+  border-bottom: 1px solid #212b32;
+  color: #FFF;
+  cursor: pointer;
+  font-size: .9rem;
+  min-width: 5em;
+  padding: .4em 1em .3em;
+  transition: background-color .25s; }
+  a.submit-button:hover,
+  button:hover,
+  [type='button']:hover,
+  [type='submit']:hover,
+  .button:hover {
+    background-color: #005326;
+    color: #FFF; }
+  a.submit-button[disabled], a.submit-button.disabled,
+  button[disabled],
+  button.disabled,
+  [type='button'][disabled],
+  [type='button'].disabled,
+  [type='submit'][disabled],
+  [type='submit'].disabled,
+  .button[disabled],
+  .button.disabled {
+    background-color: #FFF;
+    border: 1px solid #768692;
+    color: #768692;
+    cursor: default;
+    transition: none; }
+
+#errors {
+  border: 3px solid #DA291C;
+  margin-top: 1em;
+  padding: .5em 1em;
+  width: 70%; }
+  #errors h2 {
+    font-size: 120%;
+    margin: 0; }
+  #errors ul {
+    color: #005EB8;
+    list-style-type: disc;
+    margin-bottom: 1em;
+    margin-left: 1.5em; }
+    #errors ul li {
+      margin-top: .75em; }
+
+html {
+  background-color: #FFF;
+  box-sizing: border-box;
+  color: #425563;
+  font-family: 'Frutiger W01', Arial;
+  line-height: 1.33; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #005EB8;
+  text-decoration: none; }
+  a:visited, a:active, a:focus {
+    color: #005EB8; }
+
+.sticky {
+  position: fixed;
+  top: 12rem; }
+
+#content {
+  padding: 1rem;
+  padding-top: 12rem; }
+  #content .save-notice.callout {
+    margin: 2em 0; }
+
+#content.no-padding {
+  padding: 12rem 0 0 0; }
+
+body {
+  margin: 0 auto;
+  max-width: 1020px;
+  overflow-x: hidden;
+  position: relative; }
+
+#deployed-environment-label {
+  background-color: #005EB8;
+  border: 1px solid #005EB8;
+  color: #FFF;
+  padding: 0em 0.5em;
+  margin-left: auto; }
+
+body > header {
+  max-width: 1020px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2; }
+  body > header .beta-banner {
+    background: #F0F4F5;
+    padding: 1.5em 1em;
+    display: inline-flex;
+    width: 100%; }
+    body > header .beta-banner a[target="_blank"]:after {
+      content: none; }
+    body > header .beta-banner .beta-icon {
+      background: #005EB8;
+      padding: 0em 0.75em;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #005eb8;
+      color: #FFF;
+      margin-right: 0.5em; }
+  body > header .top {
+    background-color: #FFF;
+    display: flex;
+    height: 5rem;
+    padding: 1rem; }
+    body > header .top > nav {
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between; }
+    body > header .top .auth .user {
+      padding-right: 1em; }
+  body > header .bottom {
+    background-color: #005EB8;
+    color: #FFF;
+    min-height: 3rem;
+    padding: 1rem; }
+    body > header .bottom a {
+      color: #FFF; }
+      body > header .bottom a:visited, body > header .bottom a:active, body > header .bottom a:focus {
+        color: #FFF; }
+    body > header .bottom button,
+    body > header .bottom .button {
+      background-color: #FFF;
+      color: #005EB8; }
+      body > header .bottom button[disabled],
+      body > header .bottom .button[disabled] {
+        color: #aeb7bd; }
+    body > header .bottom nav {
+      display: flex;
+      justify-content: flex-end; }
+      body > header .bottom nav.active-form {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%; }
+        body > header .bottom nav.active-form input {
+          flex-shrink: 0; }
+        body > header .bottom nav.active-form .title {
+          flex-grow: 2;
+          font-weight: bold;
+          padding: 0 1em; }
+        body > header .bottom nav.active-form a {
+          padding-right: 1em; }
+  body > header #home-link {
+    display: inline;
+    text-decoration: none;
+    vertical-align: top; }
+    body > header #home-link .nhs-digital-logo {
+      display: inline-block;
+      height: 3rem; }
+    body > header #home-link .title {
+      display: inline-block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      vertical-align: top; }
+
+body header div.white-control-bar {
+  background: #FFF;
+  border-bottom: 2px solid #005EB8; }
+
+body > header div.bottom.white-control-bar nav a {
+  color: #005EB8; }
+
+body > footer a {
+  color: #FFF; }
+  body > footer a:hover {
+    text-decoration: underline; }
+  body > footer a:visited, body > footer a:active, body > footer a:focus {
+    color: #FFF; }
+
+body > footer .top {
+  background-color: #425563;
+  color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  min-height: 11rem;
+  padding: 1em 2em; }
+  body > footer .top h2 {
+    margin: 0 0 1em; }
+  body > footer .top li {
+    padding-bottom: .5em; }
+
+body > footer .bottom {
+  background-color: #334451;
+  color: #FFF; }
+  body > footer .bottom .legal {
+    margin: 0;
+    padding: 1em; }
+    body > footer .bottom .legal .heading {
+      margin-right: 1em; }
+    body > footer .bottom .legal a {
+      text-decoration: underline; }
+
+main > .breadcrumb ol {
+  list-style-type: none;
+  margin-top: 2em; }
+  main > .breadcrumb ol li {
+    color: #005EB8;
+    display: inline-block;
+    font-size: smaller; }
+    main > .breadcrumb ol li::before {
+      content: '>'; }
+    main > .breadcrumb ol li:first-child::before {
+      content: none; }
+
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg); }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg); } }
+
+.loading-spinner {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 10000; }
+  .loading-spinner.enabled {
+    display: block; }
+  .loading-spinner::before {
+    animation: 2s linear infinite spinner;
+    border: solid 3px #eee;
+    border-bottom-color: #EF6565;
+    border-radius: 50%;
+    content: "";
+    height: 40px;
+    left: 50%;
+    opacity: inherit;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transform-origin: center;
+    width: 40px;
+    will-change: transform; }
+
+#unsaved-changes {
+  background-color: #fae100;
+  color: #212b32;
+  padding: 1em 4em;
+  display: none;
+  margin: 1em 0em; }
+  #unsaved-changes a:visited, #unsaved-changes a:active, #unsaved-changes a:focus {
+    color: #FFF; }
+  #unsaved-changes a.button {
+    background-color: #FFF;
+    color: #005EB8;
+    border: 1px solid #005EB8; }
+    #unsaved-changes a.button:hover {
+      background-color: #F0F4F5; }
+  #unsaved-changes input[type="submit"] {
+    width: 12em;
+    margin-right: 1em; }
+  #unsaved-changes.enabled {
+    display: block; }
+
+main {
+  display: block; }
+
+.sr {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0; }
+
+a[target="_blank"]:after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px; }
+
+#content a:not(.button) {
+  color: #005EB8;
+  text-decoration: underline; }
+  #content a:not(.button):hover {
+    background-color: #FFCD60;
+    text-decoration: none; }
+  #content a:not(.button):visited {
+    color: #330072; }
+
+#content a.back-link {
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: bold;
+  margin-top: 1em;
+  text-decoration: none; }
+  #content a.back-link::before {
+    content: '← Back ';
+    font-weight: normal; }
+
+#content p {
+  line-height: 1.33;
+  max-width: 770px; }
+
+details.help-reveal {
+  margin: .5em 0;
+  width: 70%; }
+  details.help-reveal > summary {
+    color: #005EB8;
+    cursor: pointer; }
+    details.help-reveal > summary .title {
+      text-decoration: underline; }
+  details.help-reveal > .contents {
+    background-color: #FFF;
+    border-left: 3px solid #005EB8;
+    color: #425563;
+    font-size: smaller;
+    font-weight: normal;
+    line-height: 1.33;
+    margin-top: .5em;
+    padding: .3em 0 .3em 1em; }
+    details.help-reveal > .contents > p {
+      margin: .3em 0; }
+
+fieldset.collapsible {
+  max-width: 55em; }
+  fieldset.collapsible > legend h2 {
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 0; }
+  fieldset.collapsible p {
+    padding-right: 5em; }
+
+#content .save-notice.callout, #onboarding.dashboard.page .callout, #compliance section p.callout,
+#compliance fieldset.callout,
+#compliance .standard-submitted {
+  background-color: #F0F4F5;
+  border: 0;
+  color: #425563;
+  margin-top: 0;
+  padding: 1.5em;
+  width: 80%; }
+  #content .save-notice.callout .title, #onboarding.dashboard.page .callout .title, #compliance section p.callout .title, #compliance fieldset.callout .title, #compliance .standard-submitted .title {
+    margin-top: 0; }
+
+#content .save-notice.callout, #onboarding.dashboard.page .callout {
+  border: 2px solid #005EB8; }
+
+.page-main-heading {
+  margin: 1.5em 0 1em; }
+  .page-main-heading h1 {
+    color: #212b32;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0; }
+  .page-main-heading h2 {
+    font-size: 1rem;
+    margin: .3em 0 0; }
+  .page-main-heading p {
+    margin: .5em 0 0; }
+  .page-main-heading .instructions {
+    color: #425563;
+    font-weight: bolder; }
+
+#home-page {
+  padding: 0;
+  margin: 0; }
+  #home-page p {
+    width: 66%; }
+  #home-page .welcome-banner {
+    margin: 0;
+    padding: 2em;
+    color: white;
+    background: #005EB8;
+    width: 100%; }
+    #home-page .welcome-banner .button {
+      background: white;
+      color: #005EB8; }
+  #home-page .content {
+    padding: 1em;
+    background: #F0F4F5;
+    margin: 0; }
+    #home-page .content .container {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      flex-wrap: wrap; }
+    #home-page .content .cards .card > a {
+      text-decoration: none; }
+    #home-page .content .cards .card {
+      cursor: pointer;
+      width: 30%;
+      min-width: 15em;
+      -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+      margin: 1em 0em; }
+      #home-page .content .cards .card:hover {
+        -webkit-box-shadow: 0px 0px 5px 0px black;
+        -moz-box-shadow: 0px 0px 5px 0px black;
+        box-shadow: 0px 0px 5px 0px black; }
+      #home-page .content .cards .card .upper {
+        padding: 1em;
+        background: #005EB8;
+        color: white;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 70%; }
+        #home-page .content .cards .card .upper h3 {
+          height: 25%;
+          width: 50%; }
+        #home-page .content .cards .card .upper img {
+          width: 50%;
+          min-width: 80px;
+          object-fit: contain; }
+      #home-page .content .cards .card .lower {
+        width: 100%;
+        height: 30%;
+        background: white;
+        font-size: smaller;
+        color: #212b32;
+        padding: 1em; }
+        #home-page .content .cards .card .lower div {
+          height: 50%; }
+        #home-page .content .cards .card .lower .icon {
+          text-align: right;
+          font-size: x-large; }
+    #home-page .content .steps .step:first-of-type {
+      border-left: none; }
+    #home-page .content .steps .step {
+      width: 25%;
+      padding: 1em;
+      border-left: solid 1px #768692;
+      min-width: 15em; }
+      #home-page .content .steps .step .upper .indicator {
+        border: 2px solid #005EB8;
+        background: white;
+        padding: 0.5em 0.9em;
+        border-radius: 100%; }
+      #home-page .content .steps .step .lower h3 {
+        color: #005EB8; }
+
+#about-page div.title-banner {
+  padding: 1em;
+  background: #005EB8;
+  color: #FFF;
+  width: 100%;
+  text-align: center;
+  margin-top: 1em; }
+
+#about-page div.about-content {
+  display: inline-flex; }
+
+#about-page div.about-content > div.nav-container {
+  width: 21em; }
+  #about-page div.about-content > div.nav-container div.nav-panel {
+    width: 20em; }
+    #about-page div.about-content > div.nav-container div.nav-panel div.nav-title {
+      width: 20em;
+      border-bottom: 5px solid #768692; }
+    #about-page div.about-content > div.nav-container div.nav-panel div.nav-item {
+      padding: 0.5em 0em; }
+
+#about-page div.about-content > div.page-content {
+  padding: 0em 1em;
+  width: 70%; }
+
+#about-page div.support-process-overview table {
+  width: 100%;
+  border-collapse: collapse; }
+  #about-page div.support-process-overview table tr, #about-page div.support-process-overview table thead {
+    width: 100%; }
+    #about-page div.support-process-overview table tr td, #about-page div.support-process-overview table tr th, #about-page div.support-process-overview table thead td, #about-page div.support-process-overview table thead th {
+      padding: 0.5em;
+      width: 50%;
+      border: 1px solid #768692; }
+  #about-page div.support-process-overview table th {
+    text-align: left; }
+  #about-page div.support-process-overview table td {
+    vertical-align: text-top; }
+
+#about-page div.support-supplier-checklist table {
+  width: 100%;
+  border-collapse: collapse; }
+  #about-page div.support-supplier-checklist table thead, #about-page div.support-supplier-checklist table tr {
+    width: 100%; }
+    #about-page div.support-supplier-checklist table thead td, #about-page div.support-supplier-checklist table thead th, #about-page div.support-supplier-checklist table tr td, #about-page div.support-supplier-checklist table tr th {
+      padding: 0.5em;
+      border: 1px solid #768692; }
+  #about-page div.support-supplier-checklist table th {
+    text-align: left; }
+  #about-page div.support-supplier-checklist table td {
+    vertical-align: text-top; }
+
+#onboarding.dashboard.page .onboarding-stages {
+  border-left: 1px solid #425563;
+  counter-reset: stage;
+  margin-left: 1em;
+  padding-left: 2em; }
+  #onboarding.dashboard.page .onboarding-stages li {
+    margin-bottom: 3em;
+    position: relative; }
+    #onboarding.dashboard.page .onboarding-stages li p {
+      max-width: 30em; }
+    #onboarding.dashboard.page .onboarding-stages li::before {
+      background-color: #FFF;
+      border: 1.5px solid #005EB8;
+      border-radius: 50%;
+      content: counter(stage);
+      counter-increment: stage 1;
+      display: inline-block;
+      height: 1.9em;
+      left: -3em;
+      padding-top: .2em;
+      position: absolute;
+      text-align: center;
+      top: -.1em;
+      width: 1.9em; }
+    #onboarding.dashboard.page .onboarding-stages li:last-child::after {
+      background-color: #FFF;
+      content: ' ';
+      display: inline-block;
+      height: calc(100% - 1.5em);
+      left: -3em;
+      position: absolute;
+      top: 1.8em;
+      width: 1em; }
+    #onboarding.dashboard.page .onboarding-stages li .title {
+      color: #005EB8;
+      margin: 0; }
+    #onboarding.dashboard.page .onboarding-stages li .action {
+      font-weight: bold;
+      margin: .5em 0; }
+    #onboarding.dashboard.page .onboarding-stages li .narrative {
+      font-size: smaller; }
+      #onboarding.dashboard.page .onboarding-stages li .narrative .name {
+        font-weight: bold; }
+    #onboarding.dashboard.page .onboarding-stages li.complete::before {
+      background-color: #007F3B;
+      border-color: #007F3B;
+      color: #FFF;
+      content: '✓'; }
+    #onboarding.dashboard.page .onboarding-stages li.complete .title {
+      color: #007F3B; }
+    #onboarding.dashboard.page .onboarding-stages li.unavailable .title {
+      color: #425563; }
+
+#onboarding.dashboard.page .callout {
+  margin: 2em 0; }
+
+#submit-controls input {
+  margin: 1em 0em; }
+
+#supplier-guide ul {
+  list-style-type: none; }
+  #supplier-guide ul li::before {
+    content: " • ";
+    color: #005EB8; }
+
+#add-contact {
+  margin-bottom: 1em; }
+
+#add-contact-button {
+  line-height: 1;
+  vertical-align: middle; }
+  #add-contact-button::before {
+    background-color: #005EB8;
+    color: #FFF;
+    content: '+';
+    display: inline-block;
+    font-size: 150%;
+    height: 1.1em;
+    margin-right: .3em;
+    text-align: center;
+    width: 1.1em; }
+    #add-contact-button::before a {
+      color: #FFF; }
+      #add-contact-button::before a:visited, #add-contact-button::before a:active, #add-contact-button::before a:focus {
+        color: #FFF; }
+    #add-contact-button::before button,
+    #add-contact-button::before .button {
+      background-color: #FFF;
+      color: #005EB8; }
+      #add-contact-button::before button[disabled],
+      #add-contact-button::before .button[disabled] {
+        color: #aeb7bd; }
+
+#my-solutions-page h1 {
+  color: #212b32; }
+
+#my-solutions-page a.submit-button {
+  text-decoration: none;
+  color: #FFF; }
+  #my-solutions-page a.submit-button:hover {
+    background-color: #005326;
+    color: #FFF; }
+
+#solutions-onboarding .one-third,
+#solutions-live .one-third {
+  width: 33%; }
+
+#solutions-onboarding table,
+#solutions-live table {
+  width: 80%;
+  border-collapse: collapse; }
+  #solutions-onboarding table thead,
+  #solutions-live table thead {
+    background: #005EB8;
+    color: #FFF; }
+    #solutions-onboarding table thead th,
+    #solutions-live table thead th {
+      text-align: left;
+      border-collapse: collapse;
+      padding: 0.5em 1em;
+      border: none; }
+    #solutions-onboarding table thead th.white-right-border,
+    #solutions-live table thead th.white-right-border {
+      border-right: 2px solid #FFF; }
+  #solutions-onboarding table tr td,
+  #solutions-live table tr td {
+    text-align: left;
+    border-collapse: collapse;
+    padding: 1em;
+    border: none; }
+  #solutions-onboarding table tr:nth-child(2n),
+  #solutions-live table tr:nth-child(2n) {
+    background: #F0F4F5; }
+
+#capability-summary {
+  background-color: #F0F4F5;
+  padding: 1em; }
+  #capability-summary [data-id] {
+    line-height: 150%; }
+  #capability-summary .standard-count.singular .singular,
+  #capability-summary .capability-count.singular .singular {
+    display: inherit; }
+  #capability-summary .standard-count.singular .plural,
+  #capability-summary .capability-count.singular .plural {
+    display: none; }
+  #capability-summary .standard-count.plural .singular,
+  #capability-summary .capability-count.plural .singular {
+    display: none; }
+  #capability-summary .standard-count.plural .plural,
+  #capability-summary .capability-count.plural .plural {
+    display: inherit; }
+  #capability-summary .capabilities [data-id],
+  #capability-summary .capabilities .associated,
+  #capability-summary .standards [data-id],
+  #capability-summary .standards .associated {
+    display: none; }
+    #capability-summary .capabilities [data-id].selected,
+    #capability-summary .capabilities .associated.selected,
+    #capability-summary .standards [data-id].selected,
+    #capability-summary .standards .associated.selected {
+      display: inherit; }
+
+#capability-selector {
+  background-color: #F0F4F5;
+  left: -1rem;
+  position: relative;
+  width: calc(100% + 1rem + 1rem); }
+  #capability-selector .capability-group {
+    border: 0;
+    border-top: solid 3px #005EB8;
+    margin: 1em 0 2em;
+    padding: 0 1.5rem;
+    width: 100%; }
+    #capability-selector .capability-group legend {
+      color: #005EB8;
+      cursor: pointer;
+      font-size: 1.2em;
+      font-weight: bold; }
+      #capability-selector .capability-group legend::before {
+        content: '▼';
+        display: inline-block;
+        font-size: larger;
+        padding-right: .25em; }
+    #capability-selector .capability-group.collapsed {
+      max-height: 2em; }
+      #capability-selector .capability-group.collapsed legend::before {
+        content: '▶'; }
+      #capability-selector .capability-group.collapsed > *:not(legend) {
+        display: none; }
+    #capability-selector .capability-group .capabilities {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 70rem; }
+      #capability-selector .capability-group .capabilities .capability {
+        background-color: #FFF;
+        background-repeat: no-repeat;
+        background-size: 5rem 5rem;
+        background-position-x: center;
+        background-position-y: 5.5rem;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        display: block;
+        height: 15rem;
+        max-height: 14rem;
+        margin: 1.5em .5em 1.5em .5em;
+        overflow: hidden;
+        padding: 1rem 1.25rem;
+        position: relative;
+        width: 18rem;
+        max-width: 17rem;
+        top: 0;
+        transition-property: max-height, max-width, top;
+        transition-duration: .1s;
+        transition-timing-function: linear; }
+        #capability-selector .capability-group .capabilities .capability.document-management {
+          background-image: url("/img/capabilities/document-management.png"); }
+        #capability-selector .capability-group .capabilities .capability.document-management.selected {
+          background-image: url("/img/capabilities/document-management-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.prescribing {
+          background-image: url("/img/capabilities/prescribing.png"); }
+        #capability-selector .capability-group .capabilities .capability.prescribing.selected {
+          background-image: url("/img/capabilities/prescribing-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.recording-consultations {
+          background-image: url("/img/capabilities/recording-consultations.png"); }
+        #capability-selector .capability-group .capabilities .capability.recording-consultations.selected {
+          background-image: url("/img/capabilities/recording-consultations-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.patient-information-maintenance {
+          background-image: url("/img/capabilities/patient-information-maintenance.png"); }
+        #capability-selector .capability-group .capabilities .capability.patient-information-maintenance.selected {
+          background-image: url("/img/capabilities/patient-information-maintenance-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.resource-management {
+          background-image: url("/img/capabilities/resource-management.png"); }
+        #capability-selector .capability-group .capabilities .capability.resource-management.selected {
+          background-image: url("/img/capabilities/resource-management-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.appointments-management-gp {
+          background-image: url("/img/capabilities/appointments-management-gp.png"); }
+        #capability-selector .capability-group .capabilities .capability.appointments-management-gp.selected {
+          background-image: url("/img/capabilities/appointments-management-gp-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.prescription-ordering-citizen {
+          background-image: url("/img/capabilities/prescribing-ordering-citizen.png"); }
+        #capability-selector .capability-group .capabilities .capability.prescription-ordering-citizen.selected {
+          background-image: url("/img/capabilities/prescribing-ordering-citizen-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.appointments-management-citizen {
+          background-image: url("/img/capabilities/appointments-management-citizen.png"); }
+        #capability-selector .capability-group .capabilities .capability.appointments-management-citizen.selected {
+          background-image: url("/img/capabilities/appointments-management-citizen-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.view-record-citizen {
+          background-image: url("/img/capabilities/view-record-citizen.png"); }
+        #capability-selector .capability-group .capabilities .capability.view-record-citizen.selected {
+          background-image: url("/img/capabilities/view-record-citizen-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.communicate-with-practice-citizen {
+          background-image: url("/img/capabilities/communicate-with-practice-citizen.png"); }
+        #capability-selector .capability-group .capabilities .capability.communicate-with-practice-citizen.selected {
+          background-image: url("/img/capabilities/communicate-with-practice-citizen-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.productivity {
+          background-image: url("/img/capabilities/productivity.png"); }
+        #capability-selector .capability-group .capabilities .capability.productivity.selected {
+          background-image: url("/img/capabilities/productivity-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.telecare {
+          background-image: url("/img/capabilities/telecare.png"); }
+        #capability-selector .capability-group .capabilities .capability.telecare.selected {
+          background-image: url("/img/capabilities/telecare-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.medicines-verification {
+          background-image: url("/img/capabilities/medicines-verification.png"); }
+        #capability-selector .capability-group .capabilities .capability.medicines-verification.selected {
+          background-image: url("/img/capabilities/medicines-verification-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.dispensing {
+          background-image: url("/img/capabilities/dispensing.png"); }
+        #capability-selector .capability-group .capabilities .capability.dispensing.selected {
+          background-image: url("/img/capabilities/dispensing-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.telecare {
+          background-image: url("/img/capabilities/telecare.png"); }
+        #capability-selector .capability-group .capabilities .capability.telecare.selected {
+          background-image: url("/img/capabilities/telecare-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.telehealth {
+          background-image: url("/img/capabilities/telehealth.png"); }
+        #capability-selector .capability-group .capabilities .capability.telehealth.selected {
+          background-image: url("/img/capabilities/telehealth-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.clinical-decision-support {
+          background-image: url("/img/capabilities/clinical-decision-support.png"); }
+        #capability-selector .capability-group .capabilities .capability.clinical-decision-support.selected {
+          background-image: url("/img/capabilities/clinical-decision-support-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.unstructured-data-extraction {
+          background-image: url("/img/capabilities/unstructured-data-extraction.png"); }
+        #capability-selector .capability-group .capabilities .capability.unstructured-data-extraction.selected {
+          background-image: url("/img/capabilities/unstructured-data-extraction-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.scanning {
+          background-image: url("/img/capabilities/scanning.png"); }
+        #capability-selector .capability-group .capabilities .capability.scanning.selected {
+          background-image: url("/img/capabilities/scanning-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.reporting {
+          background-image: url("/img/capabilities/reporting.png"); }
+        #capability-selector .capability-group .capabilities .capability.reporting.selected {
+          background-image: url("/img/capabilities/reporting-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.workflow {
+          background-image: url("/img/capabilities/workflow.png"); }
+        #capability-selector .capability-group .capabilities .capability.workflow.selected {
+          background-image: url("/img/capabilities/workflow-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.gp-extracts-verification {
+          background-image: url("/img/capabilities/gp-extracts-verification.png"); }
+        #capability-selector .capability-group .capabilities .capability.gp-extracts-verification.selected {
+          background-image: url("/img/capabilities/gp-extracts-verification-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.communication-management {
+          background-image: url("/img/capabilities/communication-management.png"); }
+        #capability-selector .capability-group .capabilities .capability.communication-management.selected {
+          background-image: url("/img/capabilities/communication-management-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.e-consultations-patient-service-user-to-professional {
+          background-image: url("/img/capabilities/e-consultations-patient-service-user-to-professional.png"); }
+          #capability-selector .capability-group .capabilities .capability.e-consultations-patient-service-user-to-professional .name {
+            font-size: 95%; }
+        #capability-selector .capability-group .capabilities .capability.e-consultations-patient-service-user-to-professional.selected {
+          background-image: url("/img/capabilities/e-consultations-patient-service-user-to-professional-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.e-consultations-professional-to-professional {
+          background-image: url("/img/capabilities/e-consultations-professional-to-professional.png"); }
+          #capability-selector .capability-group .capabilities .capability.e-consultations-professional-to-professional .name {
+            font-size: 95%; }
+        #capability-selector .capability-group .capabilities .capability.e-consultations-professional-to-professional.selected {
+          background-image: url("/img/capabilities/e-consultations-professional-to-professional-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.medicines-optimisation {
+          background-image: url("/img/capabilities/medicines-optimisation.png"); }
+        #capability-selector .capability-group .capabilities .capability.medicines-optimisation.selected {
+          background-image: url("/img/capabilities/medicines-optimisation-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.cross-organisation-appointment-booking {
+          background-image: url("/img/capabilities/cross-org-appointment-booking.png"); }
+        #capability-selector .capability-group .capabilities .capability.cross-organisation-appointment-booking.selected {
+          background-image: url("/img/capabilities/cross-org-appointment-booking-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.cross-organisation-workflow-tools {
+          background-image: url("/img/capabilities/cross-org-workflow-tools.png"); }
+        #capability-selector .capability-group .capabilities .capability.cross-organisation-workflow-tools.selected {
+          background-image: url("/img/capabilities/cross-org-workflow-tools-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.cross-organisation-workforce-management {
+          background-image: url("/img/capabilities/cross-org-workforce-management.png"); }
+        #capability-selector .capability-group .capabilities .capability.cross-organisation-workforce-management.selected {
+          background-image: url("/img/capabilities/cross-org-workforce-management-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.unified-care-record {
+          background-image: url("/img/capabilities/fully-shared-care-record.png"); }
+        #capability-selector .capability-group .capabilities .capability.unified-care-record.selected {
+          background-image: url("/img/capabilities/fully-shared-care-record-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.shared-care-plans {
+          background-image: url("/img/capabilities/shared-care-plan.png"); }
+        #capability-selector .capability-group .capabilities .capability.shared-care-plans.selected {
+          background-image: url("/img/capabilities/shared-care-plan-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.personal-health-budget {
+          background-image: url("/img/capabilities/personal-health-budget.png"); }
+        #capability-selector .capability-group .capabilities .capability.personal-health-budget.selected {
+          background-image: url("/img/capabilities/personal-health-budget-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.personal-health-record {
+          background-image: url("/img/capabilities/personal-health-record.png"); }
+        #capability-selector .capability-group .capabilities .capability.personal-health-record.selected {
+          background-image: url("/img/capabilities/personal-health-record-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.population-health-management {
+          background-image: url("/img/capabilities/population-health-management.png"); }
+        #capability-selector .capability-group .capabilities .capability.population-health-management.selected {
+          background-image: url("/img/capabilities/population-health-management-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.domiciliary-care {
+          background-image: url("/img/capabilities/domiciliary-care.png"); }
+        #capability-selector .capability-group .capabilities .capability.domiciliary-care.selected {
+          background-image: url("/img/capabilities/domiciliary-care-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.risk-stratification {
+          background-image: url("/img/capabilities/risk-stratification.png"); }
+        #capability-selector .capability-group .capabilities .capability.risk-stratification.selected {
+          background-image: url("/img/capabilities/risk-stratification-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.caseload-management {
+          background-image: url("/img/capabilities/caseload-management.png"); }
+        #capability-selector .capability-group .capabilities .capability.caseload-management.selected {
+          background-image: url("/img/capabilities/caseload-management-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.data-analytics-for-integrated-and-federated-care {
+          background-image: url("/img/capabilities/data-analytics-for-integrated-and-federated-care.png"); }
+          #capability-selector .capability-group .capabilities .capability.data-analytics-for-integrated-and-federated-care .name {
+            font-size: 95%; }
+        #capability-selector .capability-group .capabilities .capability.data-analytics-for-integrated-and-federated-care.selected {
+          background-image: url("/img/capabilities/data-analytics-for-integrated-and-federated-care-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.care-homes {
+          background-image: url("/img/capabilities/care-homes.png"); }
+        #capability-selector .capability-group .capabilities .capability.care-homes.selected {
+          background-image: url("/img/capabilities/care-homes-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.digital-diagnostics {
+          background-image: url("/img/capabilities/digital-diagnostics.png"); }
+        #capability-selector .capability-group .capabilities .capability.digital-diagnostics.selected {
+          background-image: url("/img/capabilities/digital-diagnostics-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.referral-management {
+          background-image: url("/img/capabilities/referral-management.png"); }
+        #capability-selector .capability-group .capabilities .capability.referral-management.selected {
+          background-image: url("/img/capabilities/referral-management-y.png"); }
+        #capability-selector .capability-group .capabilities .capability.social-prescribing {
+          background-image: url("/img/capabilities/social-prescribing.png"); }
+        #capability-selector .capability-group .capabilities .capability.social-prescribing.selected {
+          background-image: url("/img/capabilities/social-prescribing-y.png"); }
+        #capability-selector .capability-group .capabilities .capability:not(.revealed):hover {
+          background-image: none;
+          box-shadow: none;
+          max-height: 15rem;
+          outline: 3px solid #FFB81C;
+          max-width: 18rem;
+          top: -.5rem;
+          transition-property: max-height, max-width, top;
+          transition-duration: .1s;
+          transition-timing-function: linear; }
+        #capability-selector .capability-group .capabilities .capability .description {
+          line-height: 1.45;
+          max-height: 7.25rem;
+          opacity: 0;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+          #capability-selector .capability-group .capabilities .capability .description .full-description-link {
+            display: none; }
+          #capability-selector .capability-group .capabilities .capability .description::after {
+            bottom: -.3em;
+            content: '⟩';
+            display: none;
+            font-size: 250%;
+            left: 47.5%;
+            position: absolute;
+            transform: rotate(90deg); }
+        #capability-selector .capability-group .capabilities .capability:hover .description {
+          display: -webkit-box;
+          -webkit-line-clamp: 6;
+          -webkit-box-orient: vertical;
+          opacity: 1;
+          transition: opacity .2s ease-in; }
+          #capability-selector .capability-group .capabilities .capability:hover .description::after {
+            display: inline-block; }
+        #capability-selector .capability-group .capabilities .capability .name {
+          color: #005EB8;
+          font-weight: bold;
+          margin-top: 1rem;
+          text-align: center; }
+        #capability-selector .capability-group .capabilities .capability .reveal {
+          font-size: smaller;
+          font-weight: normal; }
+          #capability-selector .capability-group .capabilities .capability .reveal > *:not(.description) {
+            display: none; }
+        #capability-selector .capability-group .capabilities .capability.selected {
+          background-color: #005EB8;
+          color: #FFF; }
+          #capability-selector .capability-group .capabilities .capability.selected .name {
+            color: #FFF; }
+        #capability-selector .capability-group .capabilities .capability.revealed {
+          height: 16rem;
+          margin-bottom: 25rem;
+          max-height: inherit;
+          outline: none;
+          overflow: visible; }
+          #capability-selector .capability-group .capabilities .capability.revealed .reveal {
+            background-color: #FFF;
+            box-shadow: 0 4px 2px 2px rgba(0, 0, 0, 0.25);
+            color: #425563;
+            max-height: 50rem;
+            padding: 2rem;
+            position: absolute;
+            top: 16rem;
+            z-index: 1; }
+            #capability-selector .capability-group .capabilities .capability.revealed .reveal .description {
+              margin-bottom: 2em;
+              margin-top: 0;
+              max-height: none;
+              opacity: 1;
+              text-overflow: all; }
+              #capability-selector .capability-group .capabilities .capability.revealed .reveal .description::after {
+                display: none; }
+            #capability-selector .capability-group .capabilities .capability.revealed .reveal > *:not(.description) {
+              display: block; }
+            #capability-selector .capability-group .capabilities .capability.revealed .reveal .standards ul {
+              color: var(--color-nhs-blue);
+              list-style-type: disc;
+              padding-left: 1.25em; }
+            #capability-selector .capability-group .capabilities .capability.revealed .reveal .description .full-description-link {
+              display: inline-block; }
+            #capability-selector .capability-group .capabilities .capability.revealed .reveal .selection {
+              align-items: center;
+              display: flex;
+              flex-direction: row; }
+              #capability-selector .capability-group .capabilities .capability.revealed .reveal .selection .preamble {
+                margin-left: 1em; }
+            #capability-selector .capability-group .capabilities .capability.revealed .reveal [name^='capabilities'] {
+              left: -10em;
+              opacity: 0;
+              position: absolute; }
+              #capability-selector .capability-group .capabilities .capability.revealed .reveal [name^='capabilities']:not(:checked) ~ label.checked,
+              #capability-selector .capability-group .capabilities .capability.revealed .reveal [name^='capabilities']:checked ~ label.unchecked {
+                display: none; }
+              #capability-selector .capability-group .capabilities .capability.revealed .reveal [name^='capabilities']:focus ~ label.unchecked,
+              #capability-selector .capability-group .capabilities .capability.revealed .reveal [name^='capabilities']:focus ~ label.checked .remove {
+                outline: 2px solid Highlight;
+                outline: 5px auto -webkit-focus-ring-color; }
+              #capability-selector .capability-group .capabilities .capability.revealed .reveal [name^='capabilities'] ~ label.checked {
+                white-space: nowrap;
+                width: 40%; }
+                #capability-selector .capability-group .capabilities .capability.revealed .reveal [name^='capabilities'] ~ label.checked .selected {
+                  color: #007F3B;
+                  padding-right: 3em; }
+                #capability-selector .capability-group .capabilities .capability.revealed .reveal [name^='capabilities'] ~ label.checked .remove {
+                  color: #005EB8;
+                  text-decoration: underline; }
+        @media screen and (max-width: 46rem) {
+          #capability-selector .capability-group .capabilities .capability.revealed .reveal {
+            left: 0;
+            width: 16rem; } }
+        @media screen and (min-width: 46rem) and (max-width: 58rem) {
+          #capability-selector .capability-group .capabilities .capability.revealed .reveal {
+            width: 35rem; }
+          #capability-selector .capability-group .capabilities .capability:nth-child(2n+1).revealed .reveal {
+            left: 0; }
+          #capability-selector .capability-group .capabilities .capability:nth-child(2n+2).revealed .reveal {
+            left: -18rem; } }
+        @media screen and (min-width: 58rem) {
+          #capability-selector .capability-group .capabilities .capability.revealed .reveal {
+            width: 53rem; }
+          #capability-selector .capability-group .capabilities .capability:nth-child(3n+1).revealed .reveal {
+            left: 0; }
+          #capability-selector .capability-group .capabilities .capability:nth-child(3n+2).revealed .reveal {
+            left: -18rem; }
+          #capability-selector .capability-group .capabilities .capability:nth-child(3n+3).revealed .reveal {
+            left: -36rem; } }
+
+#compliance table.standards {
+  border-collapse: collapse;
+  color: #005EB8;
+  width: 100%; }
+  #compliance table.standards tr {
+    border-bottom: 2px solid #F0F4F5;
+    height: 3rem; }
+    #compliance table.standards tr td.name {
+      width: 50%; }
+      #compliance table.standards tr td.name i {
+        color: #212b32; }
+    #compliance table.standards tr td.status {
+      font-size: smaller;
+      width: 30%; }
+    #compliance table.standards tr td.owner {
+      font-size: smaller; }
+    #compliance table.standards tr.approved td.status, #compliance table.standards tr.approved td.owner, #compliance table.standards tr.submitted td.status, #compliance table.standards tr.submitted td.owner {
+      color: #007F3B; }
+    #compliance table.standards tr.failed td.status, #compliance table.standards tr.failed td.owner, #compliance table.standards tr.rejected td.status, #compliance table.standards tr.rejected td.owner {
+      color: #DA291C; }
+
+#compliance details.quick-links {
+  color: #005EB8; }
+  #compliance details.quick-links > summary {
+    cursor: pointer; }
+  #compliance details.quick-links ul {
+    list-style-type: disc; }
+    #compliance details.quick-links ul li {
+      margin: .25em 0 .25em 2em; }
+
+#compliance section p.callout a[target="_blank"]:after,
+#compliance fieldset.callout a[target="_blank"]:after,
+#compliance .standard-submitted a[target="_blank"]:after {
+  content: none; }
+
+#compliance .standard-submitted {
+  border: 2px solid #005EB8;
+  margin-top: 2em; }
+  #compliance .standard-submitted h3 {
+    margin-top: 0; }
+    #compliance .standard-submitted h3::after {
+      color: #007F3B;
+      content: '✔︎';
+      padding-left: 1em; }
+  #compliance .standard-submitted p {
+    margin-bottom: 0; }
+
+#compliance section > h3 {
+  margin-bottom: .5em; }
+
+#compliance .notification {
+  background-color: #005EB8;
+  color: #FFF;
+  margin-top: 1.5em;
+  max-width: 770px;
+  padding: 1em; }
+  #compliance .notification h1 {
+    margin: 0; }
+
+#compliance .has-feedback {
+  background-color: #F0F4F5;
+  border: 2px solid #005EB8;
+  color: #425563;
+  font-size: larger;
+  font-weight: bold;
+  margin-top: 1em;
+  padding: .5em 1em; }
+
+#compliance .history .message {
+  background-color: #F0F4F5;
+  color: #425563;
+  font-size: smaller;
+  font-weight: normal;
+  margin: .5em 0;
+  max-width: 770px;
+  padding: .75em 1em; }
+  #compliance .history .message .text {
+    margin: 0; }
+  #compliance .history .message .meta {
+    margin: .5em 0 0; }
+    #compliance .history .message .meta span + span {
+      padding-left: 1.5em; }
+
+#compliance .history .feedback:last-child {
+  background-color: #CDDFF0;
+  border: 3px solid #005EB8; }
+  #compliance .history .feedback:last-child .text {
+    font-size: larger;
+    font-weight: bold; }
+
+#compliance .history .expand-history,
+#compliance .history .collapse-history {
+  font-size: smaller;
+  font-weight: bold; }
+
+#compliance .history .expand-history {
+  display: none; }
+
+#compliance .history.collapsed .collapse-history,
+#compliance .history.collapsed .message {
+  display: none; }
+
+#compliance .history.collapsed .expand-history {
+  display: inline-block; }
+
+#compliance .upload-and-reply form .remove,
+#compliance .upload-and-reply form .evidence-message {
+  display: none; }
+
+#compliance .upload-and-reply form .file-input {
+  display: flex; }
+  #compliance .upload-and-reply form .file-input input[type=file] {
+    flex-grow: 1; }
+
+#compliance .upload-and-reply form p.sub-info {
+  font-size: smaller; }
+
+#compliance .upload-and-reply form.has-file .remove {
+  display: inline; }
+
+#compliance .upload-and-reply form.has-file .evidence-message {
+  display: block; }
+  #compliance .upload-and-reply form.has-file .evidence-message .label {
+    margin-bottom: .5em; }
+  #compliance .upload-and-reply form.has-file .evidence-message .help {
+    margin: .5em 0; }
+
+#compliance .upload-and-reply form .owner [name='ownerId'] {
+  display: none; }
+
+#compliance .upload-and-reply form .owner.changing [name='ownerId'] {
+  display: inline-block; }
+
+#compliance .upload-and-reply form .owner.changing #change-owner-button,
+#compliance .upload-and-reply form .owner.changing .current-owner {
+  display: none; }
+
+#compliance #submit-for-compliance {
+  margin-top: 1em; }
+  #compliance #submit-for-compliance::after {
+    content: ' ❯'; }
+
+#compliance-confirmation section {
+  background: #F0F4F5;
+  border: 2px solid #768692;
+  margin: 1em;
+  padding: 1em; }
+  #compliance-confirmation section div.section-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center; }
+    #compliance-confirmation section div.section-header h2 {
+      margin: 0.1em; }
+  #compliance-confirmation section a[target="_blank"]:after {
+    content: none; }
+  #compliance-confirmation section p, #compliance-confirmation section a {
+    margin-bottom: 2em; }
+
+#capability-assessment-page fieldset {
+  background: none; }
+
+#capability-assessment-page fieldset.trigger {
+  background: #F0F4F5;
+  border: 0;
+  padding: 0; }
+  #capability-assessment-page fieldset.trigger > legend {
+    background: #F0F4F5;
+    display: block;
+    width: 100%; }
+    #capability-assessment-page fieldset.trigger > legend h3 {
+      padding-left: 2rem; }
+  #capability-assessment-page fieldset.trigger .question {
+    margin: 0;
+    padding: 0 2rem 1em; }
+
+#capability-assessment-page div.instructions {
+  padding: 0 1em; }
+
+#capability-assessment-page div.dependant {
+  border-left: 0.5em solid #aeb7bd;
+  margin: .5em 0 0 2.67rem; }
+  #capability-assessment-page div.dependant fieldset.evidence-field {
+    background: #F0F4F5;
+    border: 0;
+    margin-left: 1.25em;
+    padding: 0; }
+    #capability-assessment-page div.dependant fieldset.evidence-field p.sub-info {
+      font-size: smaller; }
+    #capability-assessment-page div.dependant fieldset.evidence-field > legend {
+      background: #F0F4F5;
+      display: block;
+      width: 100%; }
+      #capability-assessment-page div.dependant fieldset.evidence-field > legend h3 {
+        padding-left: 1rem; }
+    #capability-assessment-page div.dependant fieldset.evidence-field p {
+      margin-top: 0;
+      padding-left: 1rem; }
+
+#capability-assessment-page div.latest-upload {
+  padding: 1em 0em 1em 1em; }
+  #capability-assessment-page div.latest-upload a[target="_blank"]:after {
+    content: none; }
+
+#capability-assessment-page .hidden {
+  display: none; }
+
+#capability-assessment-page label.radio-container {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  padding: 0 2rem 1em; }
+  #capability-assessment-page label.radio-container input {
+    opacity: 0;
+    position: absolute; }
+  #capability-assessment-page label.radio-container .checkmark {
+    background-color: white;
+    border: solid 3px #005EB8;
+    border-radius: 50%;
+    display: block;
+    height: 1.67em;
+    margin-right: 1em;
+    width: 1.67em; }
+    #capability-assessment-page label.radio-container .checkmark .inner-checkmark {
+      background: white;
+      border-radius: 50%;
+      display: block;
+      height: 50%;
+      margin: 25%;
+      width: 50%; }
+  #capability-assessment-page label.radio-container input:disabled:checked ~ .checkmark,
+  #capability-assessment-page label.radio-container input:disabled ~ .checkmark {
+    border-color: #768692; }
+  #capability-assessment-page label.radio-container input:hover:active ~ .checkmark .inner-checkmark {
+    background: #aeb7bd; }
+  #capability-assessment-page label.radio-container input:checked ~ .checkmark {
+    background: none;
+    border-color: #FFB81C; }
+    #capability-assessment-page label.radio-container input:checked ~ .checkmark .inner-checkmark {
+      background: black; }
+
+#capability-submission-confirmation div.summary-box {
+  background: #F0F4F5;
+  border: 1px solid black;
+  margin: 1em 0;
+  padding: .75em 2em;
+  width: auto; }
+  #capability-submission-confirmation div.summary-box div.evidence {
+    border-bottom: 2px solid #aeb7bd;
+    padding: 1em 0; }
+    #capability-submission-confirmation div.summary-box div.evidence a[target="_blank"]:after {
+      content: none; }
+  #capability-submission-confirmation div.summary-box div.capabilities {
+    border-bottom: 2px solid #aeb7bd;
+    margin: 0 0 .7em 0; }
+  #capability-submission-confirmation div.summary-box div.section-header {
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; }
+    #capability-submission-confirmation div.summary-box div.section-header h2 {
+      margin: 0 0 .25em; }
+  #capability-submission-confirmation div.summary-box h3 {
+    margin: 0.5em 0 .25em; }
+  #capability-submission-confirmation div.summary-box details summary > span {
+    color: #005EB8;
+    font-size: larger; }
+  #capability-submission-confirmation div.summary-box details summary ~ div.contents {
+    background: none;
+    border: 0;
+    font-size: initial; }
+  #capability-submission-confirmation div.summary-box .contact address {
+    margin-bottom: 1.5em; }
+    #capability-submission-confirmation div.summary-box .contact address p {
+      font-size: 100%;
+      font-style: normal;
+      line-height: 1.66;
+      margin: 0; }
+    #capability-submission-confirmation div.summary-box .contact address .role {
+      font-weight: bold; }
+  #capability-submission-confirmation div.summary-box .contacts ul {
+    columns: 2; }
+    #capability-submission-confirmation div.summary-box .contacts ul li {
+      break-inside: avoid; }

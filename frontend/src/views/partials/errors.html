@@ -1,0 +1,14 @@
+{{#if errors.items}}
+<section id="errors" role="alert">
+  <h2>To complete this page, resolve the following errors</h2>
+  <ul>
+    {{#errors.items}}
+      {{#if param}}
+      <li id="error-{{param}}" aria-live="assertive"><a href="#{{param}}">{{t msg}}</a></li>
+      {{else}}
+      <li aria-live="assertive">{{t msg}}</li>
+      {{/if}}
+    {{/errors.items}}
+  </ul>
+</section>
+{{/if}}

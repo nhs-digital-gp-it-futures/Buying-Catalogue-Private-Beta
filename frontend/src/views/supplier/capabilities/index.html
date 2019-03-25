@@ -1,0 +1,122 @@
+<div id="capability-assessment-page">
+  {{> errors}}
+
+  <header class="page-main-heading">
+    <h1>{{t 'CapAssPages.Assessment.Title'}}</h1>
+    <p id="uploading-video-evidence" class="instructions">{{t 'CapAssPages.Assessment.Instructions'}}</p>
+    {{#each (tt 'CapAssPages.Assessment.Guidance')}}
+    <p>{{{.}}}</p>
+    {{/each}}
+  </header>
+
+  {{#> form encoding="multipart/form-data" form_id=activeForm.id}}
+    {{#each solution.capabilities}}
+    {{#>collapsible-fieldset heading=name invalid=hasError}}
+      <div class="instructions">
+        <p>
+          {{t 'CapAssPages.Assessment.Evidence.Instructions'}}
+          <a href="{{url}}" target="_blank">{{ name }} capability</a>
+        </p>
+      </div>
+
+      <fieldset class="trigger" id="triggering-fieldset-{{claimID}}">
+        <legend><h3>{{t 'CapAssPages.Assessment.Evidence.Title'}}</h3></legend>
+        <p class="question">
+          {{t 'CapAssPages.Assessment.Evidence.Options.Question'}}
+        </p>
+        <label class="radio-container">
+        <input
+          type="radio"
+          name="uploading-video-evidence[{{claimID}}]"
+          value="yes"
+          {{#if ../../notEditable}}disabled{{/if}}
+          {{#if isUploadingEvidence}}checked{{/if}}
+          aria-hidden="false"
+        /><span class="checkmark"><span class="inner-checkmark"></span></span>{{t 'CapAssPages.Assessment.Evidence.Options.Positive'}}</label>
+
+        <label class="radio-container">
+        <input
+          type="radio"
+          name="uploading-video-evidence[{{claimID}}]"
+          value="no"
+          {{#if ../../notEditable}}disabled{{/if}}
+          {{#if hasRequestedLiveDemo}}checked{{/if}}
+          aria-hidden="false"
+        /><span class="checkmark"><span class="inner-checkmark"></span></span>{{t 'CapAssPages.Assessment.Evidence.Options.Negative'}}</label>
+      </fieldset>
+
+      <div class="dependant" id="upload-fieldset-{{claimID}}">
+        <fieldset class="evidence-field">
+          <legend><h3>{{t 'CapAssPages.Assessment.Evidence.Video.Title'}}</h3></legend>
+
+          {{#if latestFile}}
+          <input type="hidden" name="evidence-file[{{claimID}}]" value="true" {{#if ../../notEditable}}disabled{{/if}}/>
+          {{/if}}
+
+          <div>
+            <p><input type="file" name="evidence-file[{{claimID}}]" {{#if ../../notEditable}}disabled{{/if}} aria-label="Choose evidence file to upload"/></p>
+          </div>
+          <p class="sub-info">{{t 'CapAssPages.Assessment.Evidence.Video.Information'}}</p>
+
+          {{#latestFile}}
+            <div class="latest-upload">
+              {{t 'CapAssPages.Assessment.Evidence.Video.Previous'}} <a download target="_blank" href="{{downloadURL}}">{{ name }}</a>
+            </div>
+          {{/latestFile}}
+
+          <div>
+            <p id="evidence-description-label-{{claimID}}">
+              {{t 'CapAssPages.Assessment.Evidence.Video.Additional'}}
+            </p>
+            <div>
+              {{#>control invalid=false}}
+                <textarea name="evidence-description[{{claimID}}]"
+                  aria-required="true" maxlength="400" rows="5"
+                  {{#if ../../notEditable}}disabled{{/if}}
+                  aria-labelledby="evidence-description-label-{{claimID}}">{{#if isUploadingEvidence}}{{latestEvidence.evidence}}{{/if}}</textarea>
+                  <p class="character-count"></p>
+              {{/control}}
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="dependant" id="live-fieldset-{{claimID}}">
+        <fieldset class="evidence-field" {{#if ../../notEditable}}disabled{{/if}}>
+          <legend><h3>{{t 'CapAssPages.Assessment.Evidence.Notice.Title'}}</h3></legend>
+          <p>{{t 'CapAssPages.Assessment.Evidence.Notice.Additional'}}</p>
+        </fieldset>
+      </div>
+    {{/collapsible-fieldset}}
+  {{/each }}
+
+  <p>
+    {{t 'CapAssPages.Assessment.Save.Notice'}}
+  </p>
+  <button type="submit" name="action[continue]" value="continue" {{#if notEditable}}disabled{{/if}}>{{t 'CapAssPages.Assessment.Buttons.Submit'}}</button> {{/form}}
+</div>
+
+<script type="text/javascript">
+  /* global $, $$ */
+  "use strict";
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const triggeringFieldsets = $$('fieldset.trigger')
+
+    triggeringFieldsets.forEach(function (fieldset) {
+      const id = fieldset.id.replace('triggering-fieldset-', '') // ID from: triggering-fieldset-{{id}}
+      const upload = $('#upload-fieldset-' + id)
+      const live = $('#live-fieldset-' + id)
+
+      function showOnlyChosenInputSet () {
+        const yesRadio = fieldset.$('input[type="radio"][value="yes"]')
+        const noRadio = fieldset.$('input[type="radio"][value="no"]')
+        upload.classList.toggle('hidden', !yesRadio.checked)
+        live.classList.toggle('hidden', !noRadio.checked)
+      }
+
+      fieldset.addEventListener('change', showOnlyChosenInputSet)
+      showOnlyChosenInputSet()
+    })
+})
+</script>

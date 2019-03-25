@@ -1,0 +1,3160 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0-private-beta",
+    "title" : "catalogue-api",
+    "description" : "NHS Digital GP IT Futures Buying Catalog API"
+  },
+  "paths" : {
+    "/api/Capabilities/ByFramework/{frameworkId}" : {
+      "get" : {
+        "tags" : [ "Capabilities" ],
+        "summary" : "Get existing Capability/s which are in the given Framework",
+        "operationId" : "ApiCapabilitiesByFrameworkByFrameworkIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "frameworkId",
+          "in" : "path",
+          "description" : "CRM identifier of Framework",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Capabilities]"
+            }
+          },
+          "404" : {
+            "description" : "Framework not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Capabilities/ById/{id}" : {
+      "get" : {
+        "tags" : [ "Capabilities" ],
+        "summary" : "Get an existing capability given its CRM identifier\r\nTypically used to retrieve previous version",
+        "operationId" : "ApiCapabilitiesByIdByIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "CRM identifier of capability to find",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Capabilities"
+            }
+          },
+          "404" : {
+            "description" : "No capabilities not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Capabilities/ByIds" : {
+      "post" : {
+        "tags" : [ "Capabilities" ],
+        "summary" : "Get several existing capabilities given their CRM identifiers",
+        "operationId" : "ApiCapabilitiesByIdsPost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "ids",
+          "in" : "body",
+          "description" : "Array of CRM identifiers of capabilities to find",
+          "required" : false,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            },
+            "example" : [ "CAP1", "CAP8" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Capabilities"
+              }
+            }
+          },
+          "404" : {
+            "description" : "Capabilities not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Capabilities/ByStandard/{standardId}" : {
+      "get" : {
+        "tags" : [ "Capabilities" ],
+        "summary" : "Get existing Capability/s which require the given/optional Standard",
+        "operationId" : "ApiCapabilitiesByStandardByStandardIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "standardId",
+          "in" : "path",
+          "description" : "CRM identifier of Standard",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "isOptional",
+          "in" : "query",
+          "description" : "true if the specified Standard is optional with the Capability",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Capabilities]"
+            }
+          },
+          "404" : {
+            "description" : "Capability not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Capabilities" : {
+      "get" : {
+        "tags" : [ "Capabilities" ],
+        "summary" : "Retrieve all current capabilities in a paged list",
+        "operationId" : "ApiCapabilitiesGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success - if no capabilities found, return empty list",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Capabilities]"
+            }
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/CapabilitiesImplemented/ById/{id}" : {
+      "get" : {
+        "tags" : [ "CapabilitiesImplemented" ],
+        "summary" : "Retrieve claim, given the claim’s CRM identifier",
+        "operationId" : "ApiCapabilitiesImplementedByIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "CRM identifier of claim",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/CapabilitiesImplemented"
+            }
+          },
+          "404" : {
+            "description" : "Claim not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/CapabilitiesImplemented/BySolution/{solutionId}" : {
+      "get" : {
+        "tags" : [ "CapabilitiesImplemented" ],
+        "summary" : "Retrieve all claimed capabilities for a solution in a paged list,\r\ngiven the solution’s CRM identifier",
+        "operationId" : "ApiCapabilitiesImplementedBySolutionBySolutionIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "solutionId",
+          "in" : "path",
+          "description" : "CRM identifier of solution",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[CapabilitiesImplemented]"
+            }
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/CapabilitiesImplemented" : {
+      "put" : {
+        "tags" : [ "CapabilitiesImplemented" ],
+        "summary" : "Update an existing claimed capability with new information",
+        "operationId" : "ApiCapabilitiesImplementedPut",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "claimedcapability",
+          "in" : "body",
+          "description" : "claimed capability with updated information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/CapabilitiesImplemented"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "Solution or ClaimedCapability not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "CapabilitiesImplemented" ],
+        "summary" : "Create a new claimed capability for a solution",
+        "operationId" : "ApiCapabilitiesImplementedPost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "claimedcapability",
+          "in" : "body",
+          "description" : "new claimed capability information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/CapabilitiesImplemented"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/CapabilitiesImplemented"
+            }
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "CapabilitiesImplemented" ],
+        "summary" : "Delete an existing claimed capability for a solution",
+        "operationId" : "ApiCapabilitiesImplementedDelete",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "claimedcapability",
+          "in" : "body",
+          "description" : "existing claimed capability information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/CapabilitiesImplemented"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "ClaimedCapability not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/CapabilitiesImplementedEvidence/ByClaim/{claimId}" : {
+      "get" : {
+        "tags" : [ "CapabilitiesImplementedEvidence" ],
+        "summary" : "Get all Evidence for the given Claim\r\nEach list is a distinct 'chain' of Evidence ie original Evidence with all subsequent Evidence\r\nThe first item in each 'chain' is the most current Evidence.\r\nThe last item in each 'chain' is the original Evidence.",
+        "operationId" : "ApiCapabilitiesImplementedEvidenceByClaimByClaimIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "claimId",
+          "in" : "path",
+          "description" : "CRM identifier of Claim",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[IEnumerable[CapabilitiesImplementedEvidence]]"
+            }
+          },
+          "404" : {
+            "description" : "Claim not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+	"/api/CapabilitiesImplementedEvidence/ById/{id}" : {
+      "get" : {
+        "tags" : [ "CapabilitiesImplementedEvidence" ],
+        "summary" : "Get a CapabilityImplemented record by evidence Id",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "evidenceId",
+          "in" : "path",
+          "description" : "CRM identifier of evidence",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/CapabilitiesImplementedEvidence"
+            }
+          },
+          "404" : {
+            "description" : "evidence not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/CapabilitiesImplementedEvidence" : {
+      "post" : {
+        "tags" : [ "CapabilitiesImplementedEvidence" ],
+        "summary" : "Create a new evidence",
+        "operationId" : "ApiCapabilitiesImplementedEvidencePost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "evidence",
+          "in" : "body",
+          "description" : "new evidence information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/CapabilitiesImplementedEvidence"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/CapabilitiesImplementedEvidence"
+            }
+          },
+          "404" : {
+            "description" : "Claim not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/CapabilitiesImplementedReviews/ByEvidence/{evidenceId}" : {
+      "get" : {
+        "tags" : [ "CapabilitiesImplementedReviews" ],
+        "summary" : "Get all Reviews for a CapabilitiesImplemented\r\nEach list is a distinct 'chain' of Review ie original Review with all subsequent Review\r\nThe first item in each 'chain' is the most current Review.\r\nThe last item in each 'chain' is the original Review.",
+        "operationId" : "ApiCapabilitiesImplementedReviewsByEvidenceByEvidenceIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "evidenceId",
+          "in" : "path",
+          "description" : "CRM identifier of CapabilitiesImplementedEvidence",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[IEnumerable[CapabilitiesImplementedReviews]]"
+            }
+          },
+          "404" : {
+            "description" : "Evidence not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+	"/api/CapabilitiesImplementedReviews/ById/{reviewId}" : {
+      "get" : {
+        "tags" : [ "CapabilitiesImplementedReviews" ],
+        "summary" : "Get the CapabilityImplemented record for a given review id.",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "reviewId",
+          "in" : "path",
+          "description" : "CRM identifier of Review record",
+          "required" : true,
+          "type" : "string"
+        }],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/CapabilitiesImplemented"
+            }
+          },
+          "404" : {
+            "description" : "Review not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/CapabilitiesImplementedReviews" : {
+      "post" : {
+        "tags" : [ "CapabilitiesImplementedReviews" ],
+        "summary" : "Create a new Review for a CapabilitiesImplemented",
+        "operationId" : "ApiCapabilitiesImplementedReviewsPost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "review",
+          "in" : "body",
+          "description" : "new Review information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/CapabilitiesImplementedReviews"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/CapabilitiesImplementedReviews"
+            }
+          },
+          "404" : {
+            "description" : "CapabilitiesImplemented not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/CapabilityStandards" : {
+      "get" : {
+        "tags" : [ "CapabilityStandards" ],
+        "summary" : "Get all Capability Standards",
+        "operationId" : "ApiCapabilitiesStandardsGet",
+        "consumes" : [ "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[CapabilityStandard]"
+            }
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Contacts/ByOrganisation/{organisationId}" : {
+      "get" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Retrieve all contacts for an organisation in a paged list, given the organisation’s CRM identifier",
+        "operationId" : "ApiContactsByOrganisationByOrganisationIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "organisationId",
+          "in" : "path",
+          "description" : "CRM identifier of organisation",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Contacts]"
+            }
+          },
+          "404" : {
+            "description" : "Organisation not found in ODS"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Contacts/ByEmail/{email}" : {
+      "get" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Retrieve a contacts for an organisation, given the contact’s email address\r\nEmail address is case insensitive",
+        "operationId" : "ApiContactsByEmailByEmailGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "path",
+          "description" : "email address to search for",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Contacts"
+            }
+          },
+          "404" : {
+            "description" : "Contact not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Contacts/ById/{id}" : {
+      "get" : {
+        "tags" : [ "Contacts" ],
+        "summary" : "Retrieve a contact for an organisation, given the contact’s CRM identifier",
+        "operationId" : "ApiContactsByIdByIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "CRM identifier of contact",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Contacts"
+            }
+          },
+          "404" : {
+            "description" : "Contact not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Frameworks/ByCapability/{capabilityId}" : {
+      "get" : {
+        "tags" : [ "Frameworks" ],
+        "summary" : "Get existing framework/s which have the given capability",
+        "operationId" : "ApiFrameworksByCapabilityByCapabilityIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "capabilityId",
+          "in" : "path",
+          "description" : "CRM identifier of Capability",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Frameworks]"
+            }
+          },
+          "404" : {
+            "description" : "Capability not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Frameworks/ByStandard/{standardId}" : {
+      "get" : {
+        "tags" : [ "Frameworks" ],
+        "summary" : "Get existing framework/s which have the given standard",
+        "operationId" : "ApiFrameworksByStandardByStandardIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "standardId",
+          "in" : "path",
+          "description" : "CRM identifier of Standard",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Frameworks]"
+            }
+          },
+          "404" : {
+            "description" : "Standard not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Frameworks/ById/{id}" : {
+      "get" : {
+        "tags" : [ "Frameworks" ],
+        "summary" : "Get an existing framework given its CRM identifier\r\nTypically used to retrieve previous version",
+        "operationId" : "ApiFrameworksByIdByIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "CRM identifier of framework to find",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Frameworks"
+            }
+          },
+          "404" : {
+            "description" : "Framework not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Frameworks/BySolution/{solutionId}" : {
+      "get" : {
+        "tags" : [ "Frameworks" ],
+        "summary" : "Get existing framework/s on which a solution was onboarded, given the CRM identifier of the solution",
+        "operationId" : "ApiFrameworksBySolutionBySolutionIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "solutionId",
+          "in" : "path",
+          "description" : "CRM identifier of solution",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Frameworks]"
+            }
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Frameworks" : {
+      "get" : {
+        "tags" : [ "Frameworks" ],
+        "summary" : "Retrieve all current frameworks in a paged list",
+        "operationId" : "ApiFrameworksGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success - if no frameworks found, return empty list",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Frameworks]"
+            }
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/LinkManager/FrameworkSolution/Create/{frameworkId}/{solutionId}" : {
+      "post" : {
+        "tags" : [ "LinkManager" ],
+        "summary" : "Create a link between a Framework and a Solution",
+        "operationId" : "ApiLinkManagerFrameworkSolutionCreateByFrameworkIdBySolutionIdPost",
+        "consumes" : [ ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "frameworkId",
+          "in" : "path",
+          "description" : "CRM identifier of Framework",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "solutionId",
+          "in" : "path",
+          "description" : "CRM identifier of Solution",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "One entity not found"
+          },
+          "412" : {
+            "description" : "Association already exists"
+          }		 
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Organisations/ById/{organisationId}" : {
+      "get" : {
+        "tags" : [ "Organisations" ],
+        "summary" : "Retrieve an Organisation by the given Id",
+        "operationId" : "ApiOrganisationsByOrganisationIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "organisationId",
+          "in" : "path",
+          "description" : "CRM identifier of Organisation",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Organisations"
+            }
+          },
+          "404" : {
+            "description" : "Organisation not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Organisations/ByContact/{contactId}" : {
+      "get" : {
+        "tags" : [ "Organisations" ],
+        "summary" : "Retrieve an Organisation for the given Contact",
+        "operationId" : "ApiOrganisationsByContactByContactIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "contactId",
+          "in" : "path",
+          "description" : "CRM identifier of Contact",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Organisations"
+            }
+          },
+          "404" : {
+            "description" : "Organisation not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Solutions/ByFramework/{frameworkId}" : {
+      "get" : {
+        "tags" : [ "Solutions" ],
+        "summary" : "Get existing solution/s on which were onboarded onto a framework,\r\ngiven the CRM identifier of the framework",
+        "operationId" : "ApiSolutionsByFrameworkByFrameworkIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "frameworkId",
+          "in" : "path",
+          "description" : "CRM identifier of organisation to find",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Solutions]"
+            }
+          },
+          "404" : {
+            "description" : "Framework not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Solutions/ById/{id}" : {
+      "get" : {
+        "tags" : [ "Solutions" ],
+        "summary" : "Get an existing solution given its CRM identifier\r\nTypically used to retrieve previous version",
+        "operationId" : "ApiSolutionsByIdByIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "CRM identifier of solution to find",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Solutions"
+            }
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Solutions/ByOrganisation/{organisationId}" : {
+      "get" : {
+        "tags" : [ "Solutions" ],
+        "summary" : "Retrieve all current solutions in a paged list for an organisation,\r\ngiven the organisation’s CRM identifier",
+        "operationId" : "ApiSolutionsByOrganisationByOrganisationIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "organisationId",
+          "in" : "path",
+          "description" : "CRM identifier of organisation",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Solutions]"
+            }
+          },
+          "404" : {
+            "description" : "Organisation not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Solutions" : {
+      "put" : {
+        "tags" : [ "Solutions" ],
+        "summary" : "Update an existing solution with new information",
+        "operationId" : "ApiSolutionsPut",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "solution",
+          "in" : "body",
+          "description" : "contact with updated information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Solutions"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "Organisation or solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "Solutions" ],
+        "summary" : "Create a new solution for an organisation",
+        "operationId" : "ApiSolutionsPost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "solution",
+          "in" : "body",
+          "description" : "new solution information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Solutions"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Solutions"
+            }
+          },
+          "404" : {
+            "description" : "Organisation not found in CRM"
+          },
+          "500" : {
+            "description" : "Validation exception"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+	  "delete" : {
+        "tags" : [ "Solutions" ],
+        "summary" : "Delete an existing solution (will cascade delete to child entities)",
+        "operationId" : "ApiSolutionsDelete",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "solution",
+          "in" : "body",
+          "description" : "existing solution id",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Solutions"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+	"/api/porcelain/SolutionsEx/BySolution/{solutionId}" : {
+      "get" : {
+        "tags" : [ "SolutionsEx" ],
+        "summary" : "Get a Solution with a list of corresponding TechnicalContact, ClaimedCapability, ClaimedStandard et al",
+        "operationId" : "ApiPorcelainSolutionsExBySolution",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "solutionId",
+          "in" : "path",
+          "description" : "Id of the solution to retrieve.",
+          "required" : true,
+		  "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          },
+          "500" : {
+            "description" : "Datastore exception"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/porcelain/SolutionsEx/Update" : {
+      "put" : {
+        "tags" : [ "SolutionsEx" ],
+        "summary" : "Update an existing Solution, TechnicalContact, ClaimedCapability, ClaimedStandard et al with new information",
+        "operationId" : "ApiPorcelainSolutionsExUpdatePut",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "solnEx",
+          "in" : "body",
+          "description" : "Solution, TechnicalContact, ClaimedCapability, ClaimedStandard et al with updated information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/SolutionEx"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "Solution, TechnicalContact, ClaimedCapability, ClaimedStandard et al not found in CRM"
+          },
+          "500" : {
+            "description" : "Datastore exception"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Standards/ByCapability/{capabilityId}" : {
+      "get" : {
+        "tags" : [ "Standards" ],
+        "summary" : "Get existing/optional Standard/s which are in the given Capability",
+        "operationId" : "ApiStandardsByCapabilityByCapabilityIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "capabilityId",
+          "in" : "path",
+          "description" : "CRM identifier of Capability",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "isOptional",
+          "in" : "query",
+          "description" : "true if the specified Standard is optional with the Capability",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Standards]"
+            }
+          },
+          "404" : {
+            "description" : "Capability not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Standards/ByFramework/{frameworkId}" : {
+      "get" : {
+        "tags" : [ "Standards" ],
+        "summary" : "Get existing Standard/s which are in the given Framework",
+        "operationId" : "ApiStandardsByFrameworkByFrameworkIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "frameworkId",
+          "in" : "path",
+          "description" : "CRM identifier of Framework",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Standards]"
+            }
+          },
+          "404" : {
+            "description" : "Framework not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Standards/ById/{id}" : {
+      "get" : {
+        "tags" : [ "Standards" ],
+        "summary" : "Get an existing standard given its CRM identifier\r\nTypically used to retrieve previous version",
+        "operationId" : "ApiStandardsByIdByIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "CRM identifier of standard to find",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Standards"
+            }
+          },
+          "404" : {
+            "description" : "Standard not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Standards/ByIds" : {
+      "post" : {
+        "tags" : [ "Standards" ],
+        "summary" : "Get several existing Standards given their CRM identifiers",
+        "operationId" : "ApiStandardsByIdsPost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "ids",
+          "in" : "body",
+          "description" : "Array of CRM identifiers of Standards to find",
+          "required" : false,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            },
+            "example" : [ "INT12", "INT14", "INT16" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Standards"
+              }
+            }
+          },
+          "404" : {
+            "description" : "Standards not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/Standards" : {
+      "get" : {
+        "tags" : [ "Standards" ],
+        "summary" : "Retrieve all current standards in a paged list",
+        "operationId" : "ApiStandardsGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success - if no standards found, return empty list",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[Standards]"
+            }
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/StandardsApplicable/ById/{id}" : {
+      "get" : {
+        "tags" : [ "StandardsApplicable" ],
+        "summary" : "Retrieve claim, given the claim’s CRM identifier",
+        "operationId" : "ApiStandardsApplicableByIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "CRM identifier of claim",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/StandardsApplicable"
+            }
+          },
+          "404" : {
+            "description" : "Claim not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/StandardsApplicable/BySolution/{solutionId}" : {
+      "get" : {
+        "tags" : [ "StandardsApplicable" ],
+        "summary" : "Retrieve all claimed standards for a solution in a paged list,\r\n given the solution’s CRM identifier",
+        "operationId" : "ApiStandardsApplicableBySolutionBySolutionIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "solutionId",
+          "in" : "path",
+          "description" : "CRM identifier of solution",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[StandardsApplicable]"
+            }
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/StandardsApplicable" : {
+      "put" : {
+        "tags" : [ "StandardsApplicable" ],
+        "summary" : "Update an existing claimed standard with new information",
+        "operationId" : "ApiStandardsApplicablePut",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "claimedstandard",
+          "in" : "body",
+          "description" : "claimed standard with updated information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StandardsApplicable"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "Solution or ClaimedStandard not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "StandardsApplicable" ],
+        "summary" : "Create a new claimed standard for a solution",
+        "operationId" : "ApiStandardsApplicablePost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "claimedstandard",
+          "in" : "body",
+          "description" : "new claimed standard information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StandardsApplicable"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/StandardsApplicable"
+            }
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "StandardsApplicable" ],
+        "summary" : "Delete an existing claimed standard for a solution",
+        "operationId" : "ApiStandardsApplicableDelete",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "claimedstandard",
+          "in" : "body",
+          "description" : "existing claimed standard information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StandardsApplicable"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "ClaimedStandard not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/StandardsApplicableEvidence/ByClaim/{claimId}" : {
+      "get" : {
+        "tags" : [ "StandardsApplicableEvidence" ],
+        "summary" : "Get all Evidence for the given Claim\r\nEach list is a distinct 'chain' of Evidence ie original Evidence with all subsequent Evidence\r\nThe first item in each 'chain' is the most current Evidence.\r\nThe last item in each 'chain' is the original Evidence.",
+        "operationId" : "ApiStandardsApplicableEvidenceByClaimByClaimIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "claimId",
+          "in" : "path",
+          "description" : "CRM identifier of Claim",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[IEnumerable[StandardsApplicableEvidence]]"
+            }
+          },
+          "404" : {
+            "description" : "StandardsApplicable not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+	"/api/StandardsApplicableEvidence/ById/{Id}" : {
+      "get" : {
+        "tags" : [ "StandardsApplicableEvidence" ],
+        "summary" : "Get the standard applicable record by evidence.",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "CRM identifier of Evidence",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/StandardsApplicableEvidence"
+            }
+          },
+          "404" : {
+            "description" : "Evidence not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/StandardsApplicableEvidence" : {
+      "post" : {
+        "tags" : [ "StandardsApplicableEvidence" ],
+        "summary" : "Create a new evidence",
+        "operationId" : "ApiStandardsApplicableEvidencePost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "evidence",
+          "in" : "body",
+          "description" : "new evidence information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StandardsApplicableEvidence"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/StandardsApplicableEvidence"
+            }
+          },
+          "404" : {
+            "description" : "Claim not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/StandardsApplicableReviews/ByEvidence/{evidenceId}" : {
+      "get" : {
+        "tags" : [ "StandardsApplicableReviews" ],
+        "summary" : "Get all Reviews for a StandardsApplicable\r\nEach list is a distinct 'chain' of Review ie original Review with all subsequent Review\r\nThe first item in each 'chain' is the most current Review.\r\nThe last item in each 'chain' is the original Review.",
+        "operationId" : "ApiStandardsApplicableReviewsByEvidenceByEvidenceIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "evidenceId",
+          "in" : "path",
+          "description" : "CRM identifier of StandardsApplicableEvidence",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[IEnumerable[StandardsApplicableReviews]]"
+            }
+          },
+          "404" : {
+            "description" : "Evidence not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+	"/api/StandardsApplicableReviews/ById/{reviewId}" : {
+      "get" : {
+        "tags" : [ "StandardsApplicableReviews" ],
+        "summary" : "Retrieve StandardsApplicable record for a given review id.",
+        "operationId" : "ApiStandardsApplicableByReviewIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "reviewId",
+          "in" : "path",
+          "description" : "CRM identifier of review",
+          "required" : true,
+          "type" : "string"
+        }],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/StandardsApplicable"
+            }
+          },
+          "404" : {
+            "description" : "Review not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/StandardsApplicableReviews" : {
+      "post" : {
+        "tags" : [ "StandardsApplicableReviews" ],
+        "summary" : "Create a new Review for a StandardsApplicable",
+        "operationId" : "ApiStandardsApplicableReviewsPost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "review",
+          "in" : "body",
+          "description" : "new Review information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/StandardsApplicableReviews"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/StandardsApplicableReviews"
+            }
+          },
+          "404" : {
+            "description" : "StandardsApplicable not found"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/TechnicalContacts/BySolution/{solutionId}" : {
+      "get" : {
+        "tags" : [ "TechnicalContacts" ],
+        "summary" : "Retrieve all Technical Contacts for a solution in a paged list,\r\ngiven the solution’s CRM identifier",
+        "operationId" : "ApiTechnicalContactsBySolutionBySolutionIdGet",
+        "consumes" : [ ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "solutionId",
+          "in" : "path",
+          "description" : "CRM identifier of solution",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "pageIndex",
+          "in" : "query",
+          "description" : "1-based index of page to return.  Defaults to 1",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "number of items per page.  Defaults to 20",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/PaginatedList[TechnicalContacts]"
+            }
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    },
+    "/api/TechnicalContacts" : {
+      "put" : {
+        "tags" : [ "TechnicalContacts" ],
+        "summary" : "Update a Technical Contact with new information",
+        "operationId" : "ApiTechnicalContactsPut",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "techCont",
+          "in" : "body",
+          "description" : "Technical Contact with updated information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/TechnicalContacts"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "Technical Contact or Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "TechnicalContacts" ],
+        "summary" : "Create a new Technical Contact for a Solution",
+        "operationId" : "ApiTechnicalContactsPost",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "techCont",
+          "in" : "body",
+          "description" : "new Technical Contact information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/TechnicalContacts"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/TechnicalContacts"
+            }
+          },
+          "404" : {
+            "description" : "Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "TechnicalContacts" ],
+        "summary" : "Delete an existing Technical Contact for a Solution",
+        "operationId" : "ApiTechnicalContactsDelete",
+        "consumes" : [ "application/json-patch+json", "application/json", "text/json", "application/*+json" ],
+        "produces" : [ ],
+        "parameters" : [ {
+          "name" : "techCont",
+          "in" : "body",
+          "description" : "existing Technical Contact information",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/TechnicalContacts"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success"
+          },
+          "404" : {
+            "description" : "Technical Contact or Solution not found in CRM"
+          }
+        },
+        "security" : [ {
+          "Bearer" : [ ]
+        } ]
+      }
+    }
+  },
+  "definitions" : {
+    "PaginatedList[Capabilities]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Capabilities"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "Capabilities" : {
+      "description" : "A list of potential competencies a ‘solution’ can perform or provide eg\r\n* Mobile working\r\n* Training\r\n* Prescribing\r\n* Installation\r\nNote that a ‘capability’ has a link to zero or one previous ‘capability’\r\nGenerally, only interested in current ‘capability’",
+      "required" : [ "id" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "previousId" : {
+          "description" : "Unique identifier of previous version of entity",
+          "type" : "string"
+        },
+        "name" : {
+          "description" : "Name of Capability, as displayed to a user",
+          "type" : "string"
+        },
+        "description" : {
+          "description" : "Description of Capability, as displayed to a user",
+          "type" : "string"
+        },
+        "url" : {
+          "description" : "URL with further information",
+          "type" : "string"
+        }
+      }
+    },
+    "CapabilitiesImplemented" : {
+      "description" : "A ‘capability’ which a ‘solution’ asserts that it provides.\r\nThis is then assessed by NHS to verify the ‘solution’ complies with the ‘capability’ it has claimed.",
+      "required" : [ "capabilityId", "id", "solutionId" ],
+      "type" : "object",
+      "properties" : {
+        "capabilityId" : {
+          "description" : "Unique identifier of capability",
+          "type" : "string"
+        },
+        "status" : {
+          "description" : "Current status of this ClaimedCapability",
+          "enum" : [ "Draft", "Submitted", "Remediation", "Approved", "Rejected" ],
+          "type" : "string"
+        },
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "solutionId" : {
+          "description" : "Unique identifier of solution",
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "capabilityId" : "CAP6",
+        "status" : "Submitted",
+        "id" : "0F2614F9-2521-414A-A448-0096C0DF3ABE",
+        "solutionId" : "A3C6830F-2E7C-4545-A4B9-02D20C4C92E1"
+      }
+    },
+    "PaginatedList[CapabilitiesImplemented]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/CapabilitiesImplemented"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "PaginatedList[IEnumerable[CapabilitiesImplementedEvidence]]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/CapabilitiesImplementedEvidence"
+            }
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "CapabilitiesImplementedEvidence" : {
+      "description" : "A piece of 'evidence' which supports a claim to a ‘capability’.\r\nThis is then assessed by NHS to verify the ‘solution’ complies with the ‘capability’ it has claimed.",
+      "required" : [ "id", "claimId", "createdById" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "previousId" : {
+          "description" : "Unique identifier of previous version of entity",
+          "type" : "string"
+        },
+        "claimId" : {
+          "description" : "Unique identifier of Claim",
+          "type" : "string"
+        },
+        "createdById" : {
+          "description" : "Unique identifier of Contact who created record\r\nDerived from calling context\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "createdOn" : {
+          "format" : "date-time",
+          "description" : "UTC date and time at which record created\r\nSet by server when creating record\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "evidence" : {
+          "description" : "Serialised evidence data",
+          "type" : "string"
+        }
+      }
+    },
+    "IFormFile" : {
+      "type" : "object",
+      "properties" : {
+        "contentType" : {
+          "type" : "string",
+          "readOnly" : true
+        },
+        "contentDisposition" : {
+          "type" : "string",
+          "readOnly" : true
+        },
+        "headers" : {
+          "type" : "object",
+          "additionalProperties" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "readOnly" : true
+        },
+        "length" : {
+          "format" : "int64",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "name" : {
+          "type" : "string",
+          "readOnly" : true
+        },
+        "fileName" : {
+          "type" : "string",
+          "readOnly" : true
+        }
+      }
+    },
+    "PaginatedList[BlobInfo]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/BlobInfo"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "BlobInfo" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "description" : "Display name",
+          "type" : "string"
+        },
+        "isFolder" : {
+          "description" : "true if object is a folder",
+          "type" : "boolean"
+        },
+        "url" : {
+          "description" : "Externally accessible URL",
+          "type" : "string"
+        },
+        "timeLastModified" : {
+          "format" : "date-time",
+          "description" : "UTC when last modified",
+          "type" : "string"
+        }
+      }
+    },
+    "PaginatedList[IEnumerable[CapabilitiesImplementedReviews]]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/CapabilitiesImplementedReviews"
+            }
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "CapabilitiesImplementedReviews" : {
+      "description" : "Initially, a 'message' or response to 'evidence' which supports a claim to a ‘capability’.\r\nThereafter, this will be a response to a previous message/response.",
+      "required" : [ "id", "evidenceId", "createdById" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "previousId" : {
+          "description" : "Unique identifier of previous version of entity",
+          "type" : "string"
+        },
+        "evidenceId" : {
+          "description" : "Unique identifier of associated Evidence",
+          "type" : "string"
+        },
+        "createdById" : {
+          "description" : "Unique identifier of Contact who created record\r\nDerived from calling context\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "createdOn" : {
+          "format" : "date-time",
+          "description" : "UTC date and time at which record created\r\nSet by server when creating record\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "message" : {
+          "description" : "Serialised message data",
+          "type" : "string"
+        }
+      }
+    },
+    "CapabilityMappings" : {
+      "description" : "All CapabilityMapping with all corresponding Standard",
+      "type" : "object",
+      "properties" : {
+        "capabilityMapping" : {
+          "description" : "NHSD.GPITF.BuyingCatalog.Models.Porcelain.CapabilityMappings.CapabilityMapping",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/CapabilityMapping"
+          }
+        },
+        "standard" : {
+          "description" : "A list of NHSD.GPITF.BuyingCatalog.Models.Porcelain.CapabilityMappings.Standard",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Standards"
+          }
+        }
+      }
+    },
+    "PaginatedList[CapabilityStandard]" : {
+      "description" : "All CapabilityStandard N:N records",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "NHSD.GPITF.BuyingCatalog.Models.CapabilityStandard",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/CapabilityStandard"
+          }
+        }
+      }
+    },
+    "CapabilityMapping" : {
+      "description" : "A single Capability with its corresponding OptionalStandard",
+      "type" : "object",
+      "properties" : {
+        "capability" : {
+          "$ref" : "#/definitions/Capabilities",
+          "description" : "NHSD.GPITF.BuyingCatalog.Models.Porcelain.CapabilityMapping.Capability"
+        },
+        "optionalStandard" : {
+          "description" : "A list of OptionalStandard",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/OptionalStandard"
+          }
+        }
+      }
+    },
+    "CapabilityStandard" : {
+      "description" : "Link entity between Capability and Standard.",
+      "required" : [ "capabilityId", "standardId" ],
+      "type" : "object",
+      "properties" : {
+        "capabilityId" : {
+          "description" : "Unique identifier of the capability entity",
+          "type" : "string"
+        },
+        "standardId" : {
+          "description" : "Unique identifier of standard id.",
+          "type" : "string"
+        },
+        "isOptional" : {
+          "description" : "True if the Standard does not have to be supported in order to support the Capability",
+          "type" : "string"
+        }
+      }
+    },
+    "Standards" : {
+      "description" : "A formal set of requirements eg  * ISO 9001\r\nNote that a ‘standard’ has a link to zero or one previous ‘standard’\r\nGenerally, only interested in current ‘standard’",
+      "required" : [ "id" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "previousId" : {
+          "description" : "Unique identifier of previous version of entity",
+          "type" : "string"
+        },
+        "isOverarching" : {
+          "description" : "True if this standard applies to all solutions",
+          "type" : "boolean"
+        },
+        "name" : {
+          "description" : "Name of Standard, as displayed to a user",
+          "type" : "string"
+        },
+        "description" : {
+          "description" : "Description of Standard, as displayed to a user",
+          "type" : "string"
+        },
+        "url" : {
+          "description" : "URL with further information",
+          "type" : "string"
+        }
+      }
+    },
+    "OptionalStandard" : {
+      "description" : "A Standard and a flag associated with a Capability through a CapabilityMapping",
+      "required" : [ "standardId" ],
+      "type" : "object",
+      "properties" : {
+        "standardId" : {
+          "description" : "Unique identifier of Standard",
+          "type" : "string"
+        },
+        "isOptional" : {
+          "description" : "True if the Standard does not have to be supported in order to support the Capability",
+          "type" : "boolean"
+        }
+      }
+    },
+    "PaginatedList[Contacts]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Contacts"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "Contacts" : {
+      "description" : "A means of communicating with an organisation, typically a person, email address, telephone number etc.\r\nStandard MS Dynamics CRM entity",
+      "required" : [ "id", "organisationId", "emailAddress1" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "organisationId" : {
+          "description" : "Unique identifier of organisation",
+          "type" : "string"
+        },
+        "firstName" : {
+          "description" : "First name of contact",
+          "type" : "string"
+        },
+        "lastName" : {
+          "description" : "Last name of contact",
+          "type" : "string"
+        },
+        "emailAddress1" : {
+          "description" : "Primary email address of contact",
+          "type" : "string"
+        },
+        "phoneNumber1" : {
+          "description" : "Primary phone number of contact",
+          "type" : "string"
+        }
+      }
+    },
+    "PaginatedList[Frameworks]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Frameworks"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "Frameworks" : {
+      "description" : "An agreement between an ‘organisation’ and NHS which allows a ‘solution’ to be purchased.  There may be more than one active or current ‘framework’ at any point in time  Note that a ‘framework’ has a link to zero or one previous ‘framework’  Generally, only interested in current ‘framework’",
+      "required" : [ "id" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "previousId" : {
+          "description" : "Unique identifier of previous version of entity",
+          "type" : "string"
+        },
+        "name" : {
+          "description" : "Name of Framework, as displayed to a user",
+          "type" : "string"
+        },
+        "description" : {
+          "description" : "Description of Framework, as displayed to a user",
+          "type" : "string"
+        }
+      }
+    },
+    "PaginatedList[KeywordCount]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/KeywordCount"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "KeywordCount" : {
+      "description" : "How may times a keyword has appeared in a search",
+      "type" : "object",
+      "properties" : {
+        "keyword" : {
+          "description" : "Keyword",
+          "type" : "string"
+        },
+        "count" : {
+          "format" : "int32",
+          "description" : "Number of times this keyword has occurred",
+          "type" : "integer"
+        }
+      }
+    },
+    "Organisations" : {
+      "description" : "A 'Supplier' is a company who supplies ‘solutions’ to NHS buyers.\r\nA 'Buyer' is a company who purchases 'solutions' from a 'Supplier'.\r\nAn 'Admin' is a company, typically NHS Digital, who has ultimate control over all information in the Buying Catalog.\r\nStandard MS Dynamics CRM entity",
+      "required" : [ "id", "name", "odsCode", "primaryRoleId", "status" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "name" : {
+          "description" : "Name of a company, as displayed to the user",
+          "type" : "string"
+        },
+        "odsCode" : {
+          "description" : "ODS code for company",
+          "type" : "string"
+        },
+        "primaryRoleId" : {
+          "description" : "Primary ODS role code for company\r\nSuppliers have a primary role of \"RO92\"",
+          "type" : "string"
+        },
+        "status" : {
+          "description" : "Operational status of company\r\nTypically:  \"Active\", \"Inactive\"",
+          "type" : "string"
+        },
+        "description" : {
+          "description" : "Information about company",
+          "type" : "string"
+        }
+      }
+    },
+    "PaginatedList[SearchResult]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SearchResult"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "SearchResult" : {
+      "description" : "A SolutionEx and an indication of its relevance (Distance)",
+      "type" : "object",
+      "properties" : {
+        "solutionEx" : {
+          "$ref" : "#/definitions/SolutionEx",
+          "description" : "SolutionEx"
+        },
+        "distance" : {
+          "format" : "int32",
+          "description" : "How far away the SolutionEx is from ideal:\r\n  zero     =&gt; SolutionEx has exactly capabilities required\r\n  positive =&gt; SolutionEx has more capabilities than required\r\n  negative =&gt; SolutionEx has less capabilities than required",
+          "type" : "integer"
+        }
+      }
+    },
+    "SolutionEx" : {
+      "description" : "An Extended Solution with its corresponding Technical Contacts, ClaimedCapability, ClaimedStandard et al",
+      "type" : "object",
+      "properties" : {
+        "solution" : {
+          "$ref" : "#/definitions/Solutions",
+          "description" : "Solution"
+        },
+        "claimedCapability" : {
+          "description" : "A list of ClaimedCapability",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/CapabilitiesImplemented"
+          }
+        },
+        "claimedCapabilityEvidence" : {
+          "description" : "A list of ClaimedCapabilityEvidence",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/CapabilitiesImplementedEvidence"
+          }
+        },
+        "claimedCapabilityReview" : {
+          "description" : "A list of ClaimedCapabilityReview",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/CapabilitiesImplementedReviews"
+          }
+        },
+        "claimedStandard" : {
+          "description" : "A list of ClaimedStandard",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/StandardsApplicable"
+          }
+        },
+        "claimedStandardEvidence" : {
+          "description" : "A list of ClaimedStandardEvidence",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/StandardsApplicableEvidence"
+          }
+        },
+        "claimedStandardReview" : {
+          "description" : "A list of ClaimedStandardReview",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/StandardsApplicableReviews"
+          }
+        },
+        "technicalContact" : {
+          "description" : "A list of TechnicalContact",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/TechnicalContacts"
+          }
+        }
+      }
+    },
+    "Solutions" : {
+      "description" : "A product and/or service provided by an ‘organisation’.\r\nNote that a ‘solution’ has a link to zero or one previous ‘solution’\r\nGenerally, only interested in current ‘solution’\r\nStandard MS Dynamics CRM entity",
+      "required" : [ "id", "organisationId", "createdById", "modifiedById" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "previousId" : {
+          "description" : "Unique identifier of previous version of entity",
+          "type" : "string"
+        },
+        "organisationId" : {
+          "description" : "Unique identifier of organisation",
+          "type" : "string"
+        },
+        "version" : {
+          "description" : "Version of solution",
+          "type" : "string"
+        },
+        "status" : {
+          "description" : "Current status of this solution",
+          "enum" : [ "Failed", "Draft", "Registered", "CapabilitiesAssessment", "StandardsCompliance", "FinalApproval", "SolutionPage", "Approved" ],
+          "type" : "string"
+        },
+        "createdById" : {
+          "description" : "Unique identifier of Contact who created this entity\r\nDerived from calling context\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "createdOn" : {
+          "format" : "date-time",
+          "description" : "UTC date and time at which record created\r\nSet by server when creating record\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "modifiedById" : {
+          "description" : "Unique identifier of Contact who last modified this entity\r\nDerived from calling context\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "modifiedOn" : {
+          "format" : "date-time",
+          "description" : "UTC date and time at which record last modified\r\nSet by server when creating record\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "name" : {
+          "description" : "Name of solution, as displayed to a user",
+          "type" : "string"
+        },
+        "description" : {
+          "description" : "Description of solution, as displayed to a user",
+          "type" : "string"
+        },
+        "productPage" : {
+          "description" : "Serialised product page",
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "id" : "A3C6830F-2E7C-4545-A4B9-02D20C4C92E1",
+        "previousId" : "12968eb4-4160-4ec5-8bb7-3deca7c3f53b",
+        "organisationId" : "9c2fd4d4-98ca-41d7-b8f4-1ad6f6702127",
+        "version" : "2.0",
+        "status" : "Submitted",
+        "createdById" : "371b20b7-3bed-487d-aa5f-995f5924e579",
+        "createdOn" : "2017-12-25T06:45:00",
+        "modifiedById" : "371b20b7-3bed-487d-aa5f-995f5924e579",
+        "modifiedOn" : "2018-12-31T17:25:00",
+        "name" : "Really Kool Document Manager",
+        "description" : "Does Really Kool document management",
+        "productPage" : ""
+      }
+    },
+    "StandardsApplicable" : {
+      "description" : "A ‘Standard’ which a ‘Solution’ asserts that it provides.\r\nThis is then assessed by NHS to verify the ‘Solution’ complies with the ‘Standard’ it has claimed.",
+      "required" : [ "standardId", "id", "solutionId" ],
+      "type" : "object",
+      "properties" : {
+        "standardId" : {
+          "description" : "Unique identifier of standard",
+          "type" : "string"
+        },
+        "status" : {
+          "description" : "Current status of this ClaimedStandard",
+          "enum" : [ "NotStarted", "Draft", "Submitted", "Remediation", "Approved", "ApprovedFirstOfType", "ApprovedPartial", "Rejected" ],
+          "type" : "string"
+        },
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "solutionId" : {
+          "description" : "Unique identifier of solution",
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "standardId" : "INT2",
+        "status" : "Submitted",
+        "id" : "0F2614F9-2521-414A-A448-0096C0DF3ABE",
+        "solutionId" : "A3C6830F-2E7C-4545-A4B9-02D20C4C92E1"
+      }
+    },
+    "StandardsApplicableEvidence" : {
+      "description" : "A piece of 'evidence' which supports a claim to a ‘standard’.\r\nThis is then assessed by NHS to verify the ‘solution’ complies with the ‘standard’ it has claimed.",
+      "required" : [ "id", "claimId", "createdById" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "previousId" : {
+          "description" : "Unique identifier of previous version of entity",
+          "type" : "string"
+        },
+        "claimId" : {
+          "description" : "Unique identifier of Claim",
+          "type" : "string"
+        },
+        "createdById" : {
+          "description" : "Unique identifier of Contact who created record\r\nDerived from calling context\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "createdOn" : {
+          "format" : "date-time",
+          "description" : "UTC date and time at which record created\r\nSet by server when creating record\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "evidence" : {
+          "description" : "Serialised evidence data",
+          "type" : "string"
+        }
+      }
+    },
+    "StandardsApplicableReviews" : {
+      "description" : "Initially, a 'message' or response to 'evidence' which supports a claim to a ‘standard’.\r\nThereafter, this will be a response to a previous message/response.",
+      "required" : [ "id", "evidenceId", "createdById" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "previousId" : {
+          "description" : "Unique identifier of previous version of entity",
+          "type" : "string"
+        },
+        "evidenceId" : {
+          "description" : "Unique identifier of associated Evidence",
+          "type" : "string"
+        },
+        "createdById" : {
+          "description" : "Unique identifier of Contact who created record\r\nDerived from calling context\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "createdOn" : {
+          "format" : "date-time",
+          "description" : "UTC date and time at which record created\r\nSet by server when creating record\r\nSET ON SERVER",
+          "type" : "string"
+        },
+        "message" : {
+          "description" : "Serialised message data",
+          "type" : "string"
+        }
+      }
+    },
+    "TechnicalContacts" : {
+      "description" : "A means of communicating with an Organisation, typically a person, email address, telephone number etc,\r\nin the context of a Solution",
+      "required" : [ "id", "solutionId", "contactType", "emailAddress" ],
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "description" : "Unique identifier of entity",
+          "type" : "string"
+        },
+        "solutionId" : {
+          "description" : "Unique identifier of Solution",
+          "type" : "string"
+        },
+        "contactType" : {
+          "description" : "Description of type of TechnicalContact eg\r\n<list type=\"bullet\">\r\nLead Contact\r\nTechnical Contact\r\nExecutive Sponsor\r\nClinical Safety Officer\r\nConnection Agreement Signatory\r\nOther...\r\n</list>",
+          "type" : "string"
+        },
+        "firstName" : {
+          "description" : "First name of contact",
+          "type" : "string"
+        },
+        "lastName" : {
+          "description" : "Last name of contact",
+          "type" : "string"
+        },
+        "emailAddress" : {
+          "description" : "Primary email address of contact",
+          "type" : "string"
+        },
+        "phoneNumber" : {
+          "description" : "Primary phone number of contact",
+          "type" : "string"
+        }
+      },
+      "example" : {
+        "id" : "87a58dbf-ab78-4350-9f3d-9276de3e4be6",
+        "solutionId" : "A3C6830F-2E7C-4545-A4B9-02D20C4C92E1",
+        "contactType" : "Lead Contact",
+        "firstName" : "Jon",
+        "lastName" : "Dough",
+        "emailAddress" : "jon.dough @tpp.com",
+        "phoneNumber" : "0300 303 5678"
+      }
+    },
+    "PaginatedList[Solutions]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Solutions"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "PaginatedList[Standards]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Standards"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "PaginatedList[StandardsApplicable]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/StandardsApplicable"
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "PaginatedList[IEnumerable[StandardsApplicableEvidence]]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/StandardsApplicableEvidence"
+            }
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "PaginatedList[IEnumerable[StandardsApplicableReviews]]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/StandardsApplicableReviews"
+            }
+          },
+          "readOnly" : true
+        }
+      }
+    },
+    "PaginatedList[TechnicalContacts]" : {
+      "description" : "A paged list of objects",
+      "type" : "object",
+      "properties" : {
+        "pageIndex" : {
+          "format" : "int32",
+          "description" : "1-based index of which page this page\r\nDefaults to 1",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "totalPages" : {
+          "format" : "int32",
+          "description" : "Total number of pages based on NHSD.GPITF.BuyingCatalog.Models.PaginatedList`1.PageSize",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "pageSize" : {
+          "format" : "int32",
+          "description" : "Maximum number of items in this page\r\nDefaults to 20",
+          "type" : "integer",
+          "readOnly" : true
+        },
+        "items" : {
+          "description" : "List of items",
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/TechnicalContacts"
+          },
+          "readOnly" : true
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "Bearer" : {
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header"
+    }
+  }
+}

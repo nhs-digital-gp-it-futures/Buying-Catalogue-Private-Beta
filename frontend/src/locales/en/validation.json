@@ -1,0 +1,102 @@
+{
+  "Validation": {
+    "Solution": {
+      "Name": {
+        "Missing": "$t(Solution) name is missing",
+        "MissingAction": "Please enter a $t(Solution) name",
+        "TooLong": "$t(Solution) name exceeds maximum length of 60 characters",
+        "TooLongAction": "Please shorten. $t(Validation.Solution.Name.TooLong)",
+        "Duplicate": "$t(Solution) name and version already exists",
+        "DuplicateAction": "A $t(Solution) with this name and version has already been created. Please change $t(Solution) name or version."
+      },
+      "Description": {
+        "Missing": "Summary description is missing",
+        "MissingAction": "Please enter a Summary description",
+        "TooLong": "Summary description exceeds maximum length of 300 characters",
+        "TooLongAction": "Please shorten. Summary description maximum length is 300 characters"
+      },
+      "Version": {
+        "TooLong": "$t(Solution) version exceeds maximum length of 10 characters",
+        "TooLongAction": "Please shorten. $t(Validation.Solution.Version.TooLong)"
+      },
+      "Contacts": {
+        "ContactType": {
+          "Missing": "Contact type is missing",
+          "MissingAction": "Please enter the contact type",
+          "TooLong": "Contact type is too long",
+          "TooLongAction": "Please shorten. Contact type maximum length is 100 characters"
+        },
+        "FirstName": {
+          "Missing": "Contact first name is missing",
+          "MissingAction": "Please enter a first name",
+          "TooLong": "Contact first name is too long",
+          "TooLongAction": "Please shorten. Contact first name maximum length is 80 characters"
+        },
+        "LastName": {
+          "Missing": "Contact last name is missing",
+          "MissingAction": "Please enter a last name",
+          "TooLong": "Contact last name is too long",
+          "TooLongAction": "Please shorten. Contact last name maximum length is 80 characters"
+        },
+        "Email": {
+          "Missing": "Contact email is missing",
+          "MissingAction": "Please enter an email address",
+          "TooLong": "Contact email is too long",
+          "TooLongAction": "Please shorten. Contact email maximum length is 100 characters",
+          "Format": "Contact email is not valid",
+          "FormatAction": "Please enter a valid email address"
+        },
+        "Phone": {
+          "Missing": "Contact phone number is missing",
+          "MissingAction": "Please enter a phone number",
+          "TooLong": "Contact phone number is too long",
+          "TooLongAction": "Please shorten. Contact phone number maximum length is 88 characters"
+        }
+      }
+    },
+    "Capability": {
+      "Evidence": {
+        "Not Selected": "requires an option to be selected",
+        "File":{
+          "Missing": "is missing a video",
+          "MissingAction": "Please ensure all $t(Capability_plural) requiring evidence have a video uploaded."
+        },
+        "Description": {
+          "Missing":"is missing a description",
+          "MissingAction":"Please ensure all uploaded videos have been sufficiently described.",
+          "Too Long": "has a description that exceeds 400 characters.",
+          "Too LongAction": "Please ensure all descriptions do not exceed 400 characters."
+        },
+        "Submission": {
+          "Failed": "The $t(Solution) failed to be submitted for $t(Capability Assessment).",
+          "FailedAction": "Please try and submit the $t(Solution) again."
+        },
+        "Update": {
+          "Failed": "The $t(Solution) evidence was not successfully updated",
+          "FailedAction": "Please try and update the evidence again."
+        },
+        "Upload": {
+          "Failed": "The $t(Solution) evidence Files were not successfully uploaded.",
+          "FailedAction": "Please try and submit the $t(Solution) evidence files again."
+        },
+        "Retrieval": {
+          "Failed": "Evidence for the $t(Solution) was not successfully retrieved.",
+          "FailedAction": "Please Refresh the page."
+        }
+      }
+    },
+    "Standard": {
+      "Evidence": {
+        "Message": {
+          "TooLong": "The message you have entered must be less than 300 characters."
+        },
+        "File": {
+          "Missing": "Please upload your Traceability Matrix."
+        },
+        "Failed": {
+          "Update": "Failed to update your solution."
+        }
+      }
+    }
+  }
+}

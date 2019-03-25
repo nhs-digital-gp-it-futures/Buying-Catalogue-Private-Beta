@@ -1,0 +1,15 @@
+<div id="compliance-confirmation">
+    <h1>{{t 'CompliancePages.Confirmation.Heading' }}</h1>
+    <p>{{t 'CompliancePages.Confirmation.Information' }}</p>
+
+    {{> compliance-confirmation-details}}
+
+    {{#>form form_id=activeForm.id}}
+        <button
+            id="compliance-submission-confirmation-button"
+            type="submit"
+            name="action[submit]"
+            value="submit"
+            class="primary">{{t 'CompliancePages.Confirmation.SubmitButton'}}</button>
+    {{/form}}
+</div>

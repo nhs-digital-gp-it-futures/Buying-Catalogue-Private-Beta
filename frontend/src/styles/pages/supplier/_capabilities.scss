@@ -1,0 +1,408 @@
+#capability-summary {
+  background-color: $color-nhs-light-grey;
+  padding: 1em;
+
+  [data-id] {
+    line-height: 150%;
+  }
+
+  .standard-count,
+  .capability-count {
+    &.singular {
+      .singular { display: inherit; }
+      .plural { display: none; }
+    }
+
+    &.plural {
+      .singular { display: none; }
+      .plural { display: inherit; }
+    }
+  }
+
+  .capabilities,
+  .standards {
+    [data-id],
+    .associated, .optionals {
+      display: none;
+
+      &.selected {
+        display: inherit;
+      }
+    }
+
+  }
+}
+
+#capability-selector {
+  background-color: $color-capability-selector-bg;
+  left: -$content-padding;
+  position: relative;
+  width: calc(100% + #{$content-padding} + #{$content-padding});
+
+  .capability-group {
+    border: 0;
+    border-top: solid 3px $color-capability-selector-group-fg;
+    margin: 1em 0 2em;
+    padding: 0 1.5rem;
+    width: 100%;
+
+    legend {
+      color: $color-capability-selector-group-fg;
+      cursor: pointer;
+      font-size: 1.2em;
+      font-weight: bold;
+
+      &::before {
+        content: '▼';
+        display: inline-block;
+        font-size: larger;
+        padding-right: .25em;
+      }
+    }
+
+    &.collapsed {
+      max-height: 2em;
+
+      legend {
+        &::before {
+          content: '▶';
+        }
+      }
+
+      > *:not(legend) {
+        display: none;
+      }
+    }
+
+    .capabilities {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 70rem;
+
+      .capability {
+        background-color: $color-capability-selector-capability-bg;
+        background-repeat: no-repeat;
+        background-size: 5rem 5rem;
+        background-position-x: center;
+        background-position-y: 5.5rem;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, .25);
+        cursor: pointer;
+        display: block;
+        height: 15rem;
+        max-height: 14rem;
+        margin: 1.5em .5em 1.5em .5em;
+        overflow: hidden;
+        padding: 1rem 1.25rem;
+        position: relative;
+        width: 18rem;
+        max-width: 17rem;
+        top: 0;
+        transition-property: max-height, max-width, top;
+        transition-duration: .1s;
+        transition-timing-function: linear;
+
+        &.document-management { background-image: url('/img/capabilities/document-management.png'); }
+        &.document-management.selected { background-image: url('/img/capabilities/document-management-y.png'); }
+        &.prescribing { background-image: url('/img/capabilities/prescribing.png'); }
+        &.prescribing.selected { background-image: url('/img/capabilities/prescribing-y.png'); }
+        &.recording-consultations { background-image: url('/img/capabilities/recording-consultations.png'); }
+        &.recording-consultations.selected { background-image: url('/img/capabilities/recording-consultations-y.png'); }
+        &.patient-information-maintenance { background-image: url('/img/capabilities/patient-information-maintenance.png'); }
+        &.patient-information-maintenance.selected { background-image: url('/img/capabilities/patient-information-maintenance-y.png'); }
+        &.resource-management { background-image: url('/img/capabilities/resource-management.png'); }
+        &.resource-management.selected { background-image: url('/img/capabilities/resource-management-y.png'); }
+        &.appointments-management-gp { background-image: url('/img/capabilities/appointments-management-gp.png'); }
+        &.appointments-management-gp.selected { background-image: url('/img/capabilities/appointments-management-gp-y.png'); }
+        &.prescription-ordering-citizen { background-image: url('/img/capabilities/prescribing-ordering-citizen.png'); }
+        &.prescription-ordering-citizen.selected { background-image: url('/img/capabilities/prescribing-ordering-citizen-y.png'); }
+        &.appointments-management-citizen { background-image: url('/img/capabilities/appointments-management-citizen.png'); }
+        &.appointments-management-citizen.selected { background-image: url('/img/capabilities/appointments-management-citizen-y.png'); }
+        &.view-record-citizen { background-image: url('/img/capabilities/view-record-citizen.png'); }
+        &.view-record-citizen.selected { background-image: url('/img/capabilities/view-record-citizen-y.png'); }
+        &.communicate-with-practice-citizen { background-image: url('/img/capabilities/communicate-with-practice-citizen.png'); }
+        &.communicate-with-practice-citizen.selected { background-image: url('/img/capabilities/communicate-with-practice-citizen-y.png'); }
+        &.productivity { background-image: url('/img/capabilities/productivity.png'); }
+        &.productivity.selected { background-image: url('/img/capabilities/productivity-y.png'); }
+        &.telecare { background-image: url('/img/capabilities/telecare.png'); }
+        &.telecare.selected { background-image: url('/img/capabilities/telecare-y.png'); }
+        &.medicines-verification { background-image: url('/img/capabilities/medicines-verification.png'); }
+        &.medicines-verification.selected { background-image: url('/img/capabilities/medicines-verification-y.png'); }
+        &.dispensing { background-image: url('/img/capabilities/dispensing.png'); }
+        &.dispensing.selected { background-image: url('/img/capabilities/dispensing-y.png'); }                
+        &.telecare { background-image: url('/img/capabilities/telecare.png'); }
+        &.telecare.selected { background-image: url('/img/capabilities/telecare-y.png'); }        
+        &.telehealth { background-image: url('/img/capabilities/telehealth.png'); }
+        &.telehealth.selected { background-image: url('/img/capabilities/telehealth-y.png'); }
+        &.clinical-decision-support { background-image: url('/img/capabilities/clinical-decision-support.png'); }
+        &.clinical-decision-support.selected { background-image: url('/img/capabilities/clinical-decision-support-y.png'); }
+        &.unstructured-data-extraction { background-image: url('/img/capabilities/unstructured-data-extraction.png'); }
+        &.unstructured-data-extraction.selected { background-image: url('/img/capabilities/unstructured-data-extraction-y.png'); }
+        &.scanning { background-image: url('/img/capabilities/scanning.png'); }
+        &.scanning.selected { background-image: url('/img/capabilities/scanning-y.png'); }
+        &.reporting { background-image: url('/img/capabilities/reporting.png'); }
+        &.reporting.selected { background-image: url('/img/capabilities/reporting-y.png'); }
+        &.workflow { background-image: url('/img/capabilities/workflow.png'); }
+        &.workflow.selected { background-image: url('/img/capabilities/workflow-y.png'); }
+        &.gp-extracts-verification { background-image: url('/img/capabilities/gp-extracts-verification.png'); }
+        &.gp-extracts-verification.selected { background-image: url('/img/capabilities/gp-extracts-verification-y.png'); }
+        &.communication-management { background-image: url('/img/capabilities/communication-management.png'); }
+        &.communication-management.selected { background-image: url('/img/capabilities/communication-management-y.png'); }
+        &.e-consultations-patient-service-user-to-professional {
+          background-image: url('/img/capabilities/e-consultations-patient-service-user-to-professional.png');
+          .name { font-size: 95%; }
+        }
+        &.e-consultations-patient-service-user-to-professional.selected { background-image: url('/img/capabilities/e-consultations-patient-service-user-to-professional-y.png'); }
+        &.e-consultations-professional-to-professional {
+          background-image: url('/img/capabilities/e-consultations-professional-to-professional.png');
+          .name { font-size: 95%; }
+        }
+        &.e-consultations-professional-to-professional.selected { background-image: url('/img/capabilities/e-consultations-professional-to-professional-y.png'); }
+        &.medicines-optimisation { background-image: url('/img/capabilities/medicines-optimisation.png'); }
+        &.medicines-optimisation.selected { background-image: url('/img/capabilities/medicines-optimisation-y.png'); }
+        &.cross-organisation-appointment-booking { background-image: url('/img/capabilities/cross-org-appointment-booking.png'); }
+        &.cross-organisation-appointment-booking.selected { background-image: url('/img/capabilities/cross-org-appointment-booking-y.png'); }
+        &.cross-organisation-workflow-tools { background-image: url('/img/capabilities/cross-org-workflow-tools.png'); }
+        &.cross-organisation-workflow-tools.selected { background-image: url('/img/capabilities/cross-org-workflow-tools-y.png'); }
+        &.cross-organisation-workforce-management { background-image: url('/img/capabilities/cross-org-workforce-management.png'); }
+        &.cross-organisation-workforce-management.selected { background-image: url('/img/capabilities/cross-org-workforce-management-y.png'); }
+        &.unified-care-record { background-image: url('/img/capabilities/fully-shared-care-record.png'); }
+        &.unified-care-record.selected { background-image: url('/img/capabilities/fully-shared-care-record-y.png'); }
+        &.shared-care-plans { background-image: url('/img/capabilities/shared-care-plan.png'); }
+        &.shared-care-plans.selected { background-image: url('/img/capabilities/shared-care-plan-y.png'); }
+        &.personal-health-budget { background-image: url('/img/capabilities/personal-health-budget.png'); }
+        &.personal-health-budget.selected { background-image: url('/img/capabilities/personal-health-budget-y.png'); }
+        &.personal-health-record { background-image: url('/img/capabilities/personal-health-record.png'); }
+        &.personal-health-record.selected { background-image: url('/img/capabilities/personal-health-record-y.png'); }
+        &.population-health-management { background-image: url('/img/capabilities/population-health-management.png'); }
+        &.population-health-management.selected { background-image: url('/img/capabilities/population-health-management-y.png'); }
+        &.domiciliary-care { background-image: url('/img/capabilities/domiciliary-care.png'); }
+        &.domiciliary-care.selected { background-image: url('/img/capabilities/domiciliary-care-y.png'); }
+        &.risk-stratification { background-image: url('/img/capabilities/risk-stratification.png'); }
+        &.risk-stratification.selected { background-image: url('/img/capabilities/risk-stratification-y.png'); }
+        &.caseload-management { background-image: url('/img/capabilities/caseload-management.png'); }
+        &.caseload-management.selected { background-image: url('/img/capabilities/caseload-management-y.png'); }
+        &.data-analytics-for-integrated-and-federated-care {
+          background-image: url('/img/capabilities/data-analytics-for-integrated-and-federated-care.png');
+          .name { font-size: 95%; }
+        }
+        &.data-analytics-for-integrated-and-federated-care.selected { background-image: url('/img/capabilities/data-analytics-for-integrated-and-federated-care-y.png'); }
+        &.care-homes { background-image: url('/img/capabilities/care-homes.png'); }
+        &.care-homes.selected { background-image: url('/img/capabilities/care-homes-y.png'); }
+        &.digital-diagnostics { background-image: url('/img/capabilities/digital-diagnostics.png'); }
+        &.digital-diagnostics.selected { background-image: url('/img/capabilities/digital-diagnostics-y.png'); }
+        &.referral-management { background-image: url('/img/capabilities/referral-management.png'); }
+        &.referral-management.selected { background-image: url('/img/capabilities/referral-management-y.png'); }
+        &.social-prescribing { background-image: url('/img/capabilities/social-prescribing.png'); }
+        &.social-prescribing.selected { background-image: url('/img/capabilities/social-prescribing-y.png'); }
+
+        &:not(.revealed):hover {
+          background-image: none;
+          box-shadow: none;
+          max-height: 15rem;
+          outline: 3px solid $color-capability-selector-capability-outline;
+          max-width: 18rem;
+          top: -.5rem;
+          transition-property: max-height, max-width, top;
+          transition-duration: .1s;
+          transition-timing-function: linear;
+        }
+
+        .description {
+          line-height: 1.45;
+          max-height: 7.25rem;
+          opacity: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          .full-description-link {
+            display: none;
+          }
+
+          &::after {
+            bottom: -.3em;
+            content: '⟩';
+            display: none;
+            font-size: 250%;
+            left: 47.5%;
+            position: absolute;
+            transform: rotate(90deg);
+          }
+        }
+
+        &:hover .description {
+          // From https://stackoverflow.com/a/52454350 for Webkit compatible browsers
+          // to support block-level text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 6;
+          -webkit-box-orient: vertical;
+
+          opacity: 1;
+          transition: opacity .2s ease-in;
+
+          &::after {
+            display: inline-block;
+          }
+        }
+
+        .name {
+          color: $color-capability-selector-capability-name-fg;
+          font-weight: bold;
+          margin-top: 1rem;
+          text-align: center;
+        }
+
+        .reveal {
+          font-size: smaller;
+          font-weight: normal;
+
+          & > *:not(.description) {
+            display: none;
+          }
+        }
+
+        &.selected {
+          background-color: $color-capability-selector-capability-selected-bg;
+          color: $color-capability-selector-capability-selected-fg;
+
+          .name {
+            color: $color-capability-selector-capability-selected-name-fg;
+          }
+        }
+
+        &.revealed {
+          height: 16rem;
+          margin-bottom: 25rem;
+          max-height: inherit;
+          outline: none;
+          overflow: visible;
+
+          .reveal {
+            background-color: $color-capability-selector-reveal-bg;
+            box-shadow: 0 4px 2px 2px rgba(0, 0, 0, .25);
+            color: $color-capability-selector-reveal-fg;
+            max-height: 50rem;
+            padding: 2rem;
+            position: absolute;
+            top: 16rem;
+            z-index: 1;
+
+            .description {
+              margin-bottom: 2em;
+              margin-top: 0;
+              max-height: none;
+              opacity: 1;
+              text-overflow: all;
+
+              &::after {
+                display: none;
+              }
+            }
+
+            & > *:not(.description) {
+              display: block;
+            }
+
+            .standards ul {
+              color: var(--color-nhs-blue);
+              list-style-type: disc;
+              padding-left: 1.25em;
+            }
+
+            .description .full-description-link {
+              display: inline-block;
+            }
+
+            .selection {
+              align-items: center;
+              display: flex;
+              flex-direction: row;
+
+              .preamble {
+                margin-left: 1em;
+              }
+            }
+
+            // styling the reveal's checkbox like a button when unchecked, and as a
+            // combination of a tick and unselect link when checked
+            [name^='capabilities'] {
+              left: -10em;
+              opacity: 0; // make it invisible but still accessible
+              position: absolute; // take it out of flow so the labels align correctly
+
+              // show the appropriate label only
+              &:not(:checked) ~ label.checked,
+              &:checked ~ label.unchecked {
+                display: none;
+              }
+
+              // give the label the appearance of focus
+              &:focus ~ label.unchecked,
+              &:focus ~ label.checked .remove {
+                outline: 2px solid Highlight;
+                outline: 5px auto -webkit-focus-ring-color;
+              }
+
+              ~ label.checked {
+                white-space: nowrap;
+                width: 40%;
+
+                .selected {
+                  color: $color-nhs-green;
+                  padding-right: 3em;
+                }
+
+                .remove {
+                  color: $color-nhs-blue;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+
+        // reveal width and position responds to viewport width
+        @media screen and (max-width: 46rem) {
+          &.revealed .reveal {
+            left: 0;
+            width: 16rem;
+          }
+        }
+
+        @media screen and (min-width: 46rem) and (max-width: 58rem) {
+          &.revealed .reveal {
+            width: 35rem;
+          }
+
+          &:nth-child(2n+1).revealed .reveal {
+            left: 0;
+          }
+
+          &:nth-child(2n+2).revealed .reveal {
+            left: -18rem;
+          }
+        }
+
+        @media screen and (min-width: 58rem) {
+          &.revealed .reveal {
+            width: 53rem;
+          }
+
+          &:nth-child(3n+1).revealed .reveal {
+            left: 0;
+          }
+
+          &:nth-child(3n+2).revealed .reveal {
+            left: -18rem;
+          }
+
+          &:nth-child(3n+3).revealed .reveal {
+            left: -36rem;
+          }
+        }
+      }
+    }
+  }
+}

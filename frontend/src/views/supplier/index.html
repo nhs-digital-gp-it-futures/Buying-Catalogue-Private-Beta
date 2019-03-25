@@ -1,0 +1,51 @@
+{{> errors}}
+
+<div id="my-solutions-page">
+  <h1>{{t 'MySolutions.Title'}}</h1>
+  <p>{{t 'MySolutions.WelcomeMessage'}}</p>
+  <a id="add-new-solution" class="button submit-button" href="{{addUrl}}">{{t 'MySolutions.AddSolutionButton'}}</a>
+</div>
+
+<section id="solutions-onboarding">
+<h2>{{t 'MySolutions.Onboarding.Title'}}</h2>
+{{#if solutions.onboarding}}
+<table>
+  <thead>
+    <tr>
+      <th class="white-right-border one-third">{{t 'MySolutions.Onboarding.Table.Headings.NameAndVersion'}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#solutions.onboarding}}
+    <tr>
+      <td><a href="{{url}}">{{displayName}}</a></td>
+    </tr>
+    {{/solutions.onboarding}}
+  </tbody>
+</table>
+{{else}}
+  <p>{{t 'MySolutions.Onboarding.NoneFound'}}</p>
+{{/if}}
+</section>
+
+<section id="solutions-live">
+<h2>{{t 'MySolutions.Published.Title'}}</h2>
+{{#if solutions.live}}
+<table>
+  <thead>
+    <tr>
+      <th class="white-right-border one-third">{{t 'MySolutions.Published.Table.Headings.NameAndVersion'}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#solutions.live}}
+    <tr>
+      <td><a href="{{url}}">{{displayName}}</a></td>
+    </tr>
+    {{/solutions.live}}
+  </tbody>
+</table>
+{{else}}
+  <p>{{t 'MySolutions.Published.NoneFound'}}</p>
+{{/if}}
+</section>

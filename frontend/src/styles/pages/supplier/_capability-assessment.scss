@@ -1,0 +1,201 @@
+#capability-assessment-page {
+  fieldset {
+    background: none;
+  }
+
+  fieldset.trigger {
+    background: $color-nhs-light-grey;
+    border: 0;
+    padding: 0;
+
+    > legend {
+      background: $color-nhs-light-grey;
+      display: block;
+      width: 100%;
+
+      h3 {
+        padding-left: 2rem;
+      }
+    }
+
+    .question {
+      margin: 0;
+      padding: 0 2rem 1em;
+    }
+  }
+
+  div.instructions {
+    padding: 0 1em;
+  }
+
+  div.dependant {
+    border-left: .5em solid $color-nhs-light-mid-grey;
+    margin: .5em 0 0 2.67rem;
+
+    fieldset.evidence-field {
+      background: $color-nhs-light-grey;
+      border: 0;
+      margin-left: 1.25em;
+      padding: 0;
+      p.sub-info {
+        font-size: smaller;
+      }
+      > legend {
+        background: $color-nhs-light-grey;
+        display: block;
+        width: 100%;
+
+        h3 {
+          padding-left: 1rem;
+        }
+      }
+
+      p {
+        margin-top: 0;
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  div.latest-upload {
+    padding: 1em 0em 1em 1em;
+    a[target="_blank"]:after {
+      content: none;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  label.radio-container {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    padding: 0 2rem 1em;
+
+    input {
+      // width: 0px;
+      // height: 0px;
+      opacity: 0;
+      position: absolute;
+    }
+
+    .checkmark {
+      background-color: white;
+      border: solid 3px $color-nhs-blue;
+      border-radius: 50%;
+      display: block;
+      height: 1.67em;
+      margin-right: 1em;
+      width: 1.67em;
+
+      .inner-checkmark {
+        background: white;
+        border-radius: 50%;
+        display: block;
+        height: 50%;
+        margin: 25%;
+        width: 50%;
+      }
+    }
+
+    input:disabled:checked ~ .checkmark,
+    input:disabled ~ .checkmark {
+      border-color: $color-nhs-mid-grey;
+    }
+
+    input:hover:active ~ .checkmark {
+      .inner-checkmark {
+        background: $color-nhs-light-mid-grey;
+      }
+    }
+
+    input:checked ~ .checkmark {
+      background: none;
+      border-color: $color-nhs-warm-yellow;
+
+      .inner-checkmark {
+        background: black;
+      }
+    }
+  }
+}
+
+#capability-submission-confirmation {
+  div.summary-box {
+    background: $color-nhs-light-grey;
+    border: 1px solid black;
+    margin: 1em 0;
+    padding: .75em 2em;
+    width: auto;
+
+    div.evidence {
+      border-bottom: 2px solid $color-nhs-light-mid-grey;
+      padding: 1em 0;
+      a[target="_blank"]:after {
+        content: none;
+      }
+    }
+
+    div.capabilities {
+      border-bottom: 2px solid $color-nhs-light-mid-grey;
+      margin: 0 0 .7em 0;
+    }
+
+    div.section-header {
+      align-content: center;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      h2 {
+        margin: 0 0 .25em;
+      }
+    }
+
+    h3 {
+      margin: 0.5em 0 .25em;
+    }
+
+    details {
+      summary > span {
+        color: $color-nhs-blue;
+        font-size: larger;
+      }
+
+      summary ~ div.contents {
+        background: none;
+        border: 0;
+        font-size: initial;
+      }
+    }
+
+    .contact {
+      address {
+        margin-bottom: 1.5em;
+
+        p {
+          font-size: 100%;
+          font-style: normal;
+          line-height: 1.66;
+          margin: 0;
+        }
+
+        .role {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .contacts {
+      ul {
+        columns: 2;
+
+        li {
+          break-inside: avoid;
+        }
+      }
+    }
+  }
+}

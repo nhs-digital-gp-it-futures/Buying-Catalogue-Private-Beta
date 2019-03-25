@@ -1,0 +1,19 @@
+﻿{
+  "urls": "http://*:5100",
+
+  "wwwroot": "wwwroot",
+
+  "UseCRM": false,
+
+  "Log":
+  {
+    "CRM": true,
+    "SharePoint": true,
+    "BearerAuth": true
+  },
+
+  "Cache":
+  {
+    "Host" : "localhost"
+  }
+}

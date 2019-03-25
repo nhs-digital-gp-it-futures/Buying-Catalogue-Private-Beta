@@ -1,0 +1,18 @@
+<div id="capability-submission-confirmation">
+
+    {{> errors}}
+
+    <header class="page-main-heading">
+        <h1>{{t 'CapAssPages.Confirmation.Title'}}</h1>
+        <p>{{t 'CapAssPages.Confirmation.Information'}}</p>
+    </header>
+
+    {{> solution-summary-details}}
+
+    <p>
+        {{t 'CapAssPages.Assessment.Submission.Notice'}}
+    </p>
+    {{#> form form_id=activeForm.id}}
+        <button type="submit" name="action[continue]" value="{{t 'Buttons.Save and continue'}}" {{#if notEditable}}disabled{{/if}}>Submit&#8250;</button>
+    {{/form}}
+</div>

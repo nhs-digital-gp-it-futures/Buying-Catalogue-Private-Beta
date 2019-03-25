@@ -1,0 +1,5 @@
+<fieldset class="collapsible{{#invalid}} invalid{{/invalid}}"
+  {{#id}}id="{{.}}"{{/id}}>
+  <legend tabindex="0">{{#if legend}}{{t legend}}{{else}}<h2>{{t heading}}</h2>{{/if}}</legend>
+  {{> @partial-block}}
+</fieldset>

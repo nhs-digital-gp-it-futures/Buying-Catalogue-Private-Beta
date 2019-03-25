@@ -1,0 +1,33 @@
+
+{{#each (tt 'Support.Custom Sections.Process Overview.Sections')}}
+<div class="support-process-overview">
+    <div><h3>{{t Title}}</h3></div>
+    <table class="two-columns">
+        <thead>
+            <th>
+                {{t Left.Title}}
+            </th>
+            <th>
+                {{t Right.Title}}
+            </th>
+        </thead>
+        <tr>
+            <td>
+                {{#Left.Text}}
+                    <p>{{t .}}</p>
+                {{/Left.Text}}
+            </td>
+            <td>
+                {{#Right.Text}}
+                    <p>{{t .}}</p>
+                {{/Right.Text}}
+            </td>
+        </tr>
+    </table>
+    <div class="post-text">
+        {{#PostText}}
+            <p>{{t .}}</p>
+        {{/PostText}}
+    </div>
+</div>
+{{/each}}

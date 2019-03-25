@@ -1,0 +1,36 @@
+{
+  "author": {
+    "name": "Helen Dikareva",
+    "url": "elena.dikareva@devexpress.com"
+  },
+  "bugs": {
+    "url": "https://github.com/helen-dikareva/axe-testcafe/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "axe-core": "^3.1"
+  },
+  "deprecated": false,
+  "description": "The TestCafe module that allows you to use the aXe accessibility engine in TestCafe tests",
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/helen-dikareva/axe-testcafe",
+  "keywords": [
+    "axe",
+    "testcafe",
+    "test",
+    "accessibility"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "axe-testcafe",
+  "peerDependencies": {
+    "testcafe": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helen-dikareva/axe-testcafe.git"
+  },
+  "version": "1.2.0"
+}

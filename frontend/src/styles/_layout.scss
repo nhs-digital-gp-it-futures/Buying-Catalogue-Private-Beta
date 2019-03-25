@@ -1,0 +1,355 @@
+$header-top-height: 5rem;
+$header-bottom-height: 3rem;
+$beta-banner-height: 4rem;
+$header-total-height: $header-top-height + $header-bottom-height + $beta-banner-height;
+$header-padding: 1rem;
+
+$content-padding: 1rem;
+
+html {
+  background-color: $color-bg;
+  box-sizing: border-box;
+  color: $color-fg;
+  font-family: 'Frutiger W01', Arial;
+  line-height: 1.33;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $color-link-fg;
+  text-decoration: none;
+
+  &:visited,
+  &:active,
+  &:focus {
+    color: $color-link-fg;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: $header-total-height;
+}
+
+@mixin reversed {
+  background-color: $color-reversed-bg;
+  color: $color-reversed-fg;
+
+  a {
+    color: $color-link-reversed-fg;
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: $color-link-reversed-fg;
+    }
+  }
+
+  button,
+  .button {
+    background-color: $color-button-reversed-bg;
+    color: $color-button-reversed-fg;
+
+    &[disabled] {
+      color: $color-button-reversed-disabled-fg;
+    }
+  }
+}
+
+#content {
+  // set general padding as per design
+  padding: $content-padding;
+
+  // account for fixed header with JS support @see src/static/js/app.js
+  padding-top: $header-total-height;
+
+  .save-notice.callout {
+    @extend %callout-with-border;
+    margin: 2em 0;
+  }
+}
+
+
+
+#content.no-padding {
+  padding: $header-total-height 0 0 0;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1020px;
+  overflow-x: hidden; // horizontal scrolling is never desirable
+  position: relative;
+}
+
+#deployed-environment-label {
+  background-color: $color-nhs-blue;
+  border: 1px solid $color-nhs-blue;
+  color: $color-nhs-white;
+  padding: 0em 0.5em;
+  margin-left: auto;
+}
+
+body > header {
+  max-width: 1020px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  .beta-banner {
+    background: $color-nhs-light-grey;
+    padding: 1.5em 1em;
+    display: inline-flex;
+    width: 100%;
+
+    a[target="_blank"]:after {
+      content: none;
+    }
+
+    .beta-icon {
+      background: $color-nhs-blue;
+      padding:0em 0.75em;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(0, 94, 184);
+      color: $color-nhs-white;
+      margin-right: 0.5em;
+    }
+  }
+
+  .top {
+    background-color: $color-bg;
+    display: flex;
+    height: $header-top-height;
+    padding: $header-padding;
+
+    > nav {
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between
+    }
+
+    .auth {
+      .user {
+        padding-right: 1em;
+      }
+    }
+  }
+
+  .bottom {
+    @include reversed;
+
+    min-height: $header-bottom-height;
+    padding: $header-padding;
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+
+      &.active-form {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        input {
+          flex-shrink: 0
+        }
+
+        .title {
+          flex-grow: 2;
+          font-weight: bold;
+          padding: 0 1em;
+        }
+
+        a {
+          padding-right: 1em;
+        }
+      }
+    }
+  }
+
+  #home-link {
+    display: inline;
+    text-decoration: none;
+    vertical-align: top;
+
+    .nhs-digital-logo {
+      display: inline-block;
+      height: $header-top-height - 2 * $header-padding;
+    }
+
+    .title {
+      display: inline-block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      vertical-align: top;
+    }
+  }
+}
+
+body header div.white-control-bar {
+  background: $color-nhs-white;
+  border-bottom: 2px solid $color-nhs-blue;
+}
+
+body > header div.bottom.white-control-bar nav a {
+  color: $color-nhs-blue;
+}
+
+body > footer {
+  a {
+    color: $color-footer-link-fg;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: $color-footer-link-fg;
+    }
+  }
+
+  .top {
+    background-color: $color-footer-top-bg;
+    color: $color-footer-top-fg;
+    display: flex;
+    justify-content: space-between;
+    min-height: 11rem;
+    padding: 1em 2em;
+
+    h2 {
+      margin: 0 0 1em;
+    }
+
+    li {
+      padding-bottom: .5em;
+    }
+  }
+
+  .bottom {
+    background-color: $color-footer-bottom-bg;
+    color: $color-footer-bottom-fg;
+
+    .legal {
+      margin: 0;
+      padding: 1em;
+
+      .heading {
+        margin-right: 1em;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+main > .breadcrumb {
+  ol {
+    list-style-type: none;
+    margin-top: 2em;
+
+    li {
+      color: $color-nhs-blue;
+      display: inline-block;
+      font-size: smaller;
+
+      &::before {
+        content: '>';
+      }
+
+      &:first-child::before {
+        content: none;
+      }
+    }
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  background-color: rgba(0, 0, 0, .4);
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 10000;
+
+  &.enabled {
+    display: block;
+  }
+
+  &::before {
+    animation: 2s linear infinite spinner;
+    border: solid 3px #eee;
+    border-bottom-color: #EF6565;
+    border-radius: 50%;
+    content: "";
+    height: 40px;
+    left: 50%;
+    opacity: inherit;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transform-origin: center;
+    width: 40px;
+    will-change: transform;
+  }
+}
+
+#unsaved-changes {
+  background-color: #fae100;
+  color: $color-nhs-black;
+  padding: 1em 4em;
+  display: none;
+  margin: 1em 0em;
+  max-width: 55em;
+  a {
+    &:visited,
+    &:active,
+    &:focus {
+      color: $color-link-reversed-fg;
+    }
+  }
+  a.button {
+    background-color: $color-nhs-white;
+    color: $color-nhs-blue;
+    border: 1px solid $color-nhs-blue;
+    &:hover {
+      background-color: $color-nhs-light-grey;
+    }
+  }
+  input[type="submit"] {
+    width: 12em;
+    margin-right: 1em;
+  }
+
+  &.enabled {
+    display: block;
+  }
+}

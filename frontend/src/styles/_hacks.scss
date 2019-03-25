@@ -1,0 +1,5 @@
+// Hacks to improve compatibility with legacy browsers
+
+main {
+  display: block; // Otherwise IE11 doesn't apply padding
+}

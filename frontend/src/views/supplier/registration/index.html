@@ -1,0 +1,77 @@
+<div id="onboarding" class="dashboard page">
+
+<header class="page-main-heading">
+  <h1>{{t 'Onboarding.Title' }}</h1>
+  {{#if solution}}
+  <p>{{t 'Onboarding.Subtitle.Existing'}}</p>
+  {{else}}
+  <p>{{t 'Onboarding.Subtitle.New'}}</p>
+  {{/if}}
+</header>
+
+{{#if registrationComplete}}
+<div class="callout">
+  <h2 class="title">{{t 'Onboarding.RegistrationCompleteCallout.Title'}}</h2>
+  {{#each (tt 'Onboarding.RegistrationCompleteCallout.Text')}}
+  <p>{{{.}}}</p>
+  {{/each}}
+</div>
+{{/if}}
+
+{{#if capabilityAssessmentSubmitted}}
+<div class="callout">
+  <h2 class="title">{{t 'Onboarding.CapabilityAssessmentSubmittedCallout.Title'}}</h2>
+  {{#each (tt 'Onboarding.CapabilityAssessmentSubmittedCallout.Text')}}
+  <p>{{{.}}}</p>
+  {{/each}}
+</div>
+{{/if}}
+
+{{#if capabilityAssessmentApproved}}
+<div class="callout">
+  <h2 class="title">{{t 'Onboarding.CapabilityAssessmentApprovedCallout.Title'}}</h2>
+  {{#each (tt 'Onboarding.CapabilityAssessmentApprovedCallout.Text')}}
+  <p>{{{.}}}</p>
+  {{/each}}
+</div>
+{{/if}}
+
+{{#unless solution}}
+<div class="callout">
+  <h2>{{t 'Onboarding.StartingCallout.Title'}}</h2>
+  {{#each (tt 'Onboarding.StartingCallout.Text')}}
+    <p>{{{.}}}</p>
+  {{/each}}
+</div>
+{{/unless}}
+
+<ol class="onboarding-stages">
+  {{#each (tt 'Onboarding.Stages')}}
+  {{#with (lookup ../stages @index)}}
+  <li{{#class}} class="{{.}}"{{/class}}>
+    <h2 class="title">{{../Title}}</h2>
+    {{#if url}}
+    <p class="action">Status: {{status}}. {{#if link}}<a href="{{url}}">{{link}}</a>{{/if}}</p>
+    {{/if}}
+    {{#if ../Subtitle}}
+    <p>{{../Subtitle}}</p>
+    {{/if}}
+    <p class="narrative">
+      <span class="name">{{../Name}}.</span>
+      {{../Narrative}}
+    </p>
+  </li>
+  {{/with}}
+  {{/each}}
+</ol>
+
+<div id="supplier-guide">
+  {{#> help-reveal
+    title='Onboarding.Help.Title'}}
+    {{#each (tt 'Onboarding.Help.Text')}}
+      <p>{{{.}}}</p>
+    {{/each}}
+  {{/help-reveal}}
+</div>
+
+</div>

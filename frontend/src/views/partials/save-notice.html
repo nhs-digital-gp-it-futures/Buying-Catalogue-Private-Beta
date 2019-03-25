@@ -1,0 +1,8 @@
+{{#if solutionSaved}}
+<div class="save-notice callout">
+  <h2 class="title">{{t 'Notice.Saved.Title'}}</h2>
+  {{#each (tt 'Notice.Saved.Text')}}
+  <p>{{{.}}}</p>
+  {{/each}}
+</div>
+{{/if}}

@@ -1,0 +1,14 @@
+<div id="capability-submission-confirmation">
+
+    {{> errors}}
+
+    <header class="page-main-heading">
+        <h1>{{t 'CapAssPages.Summary.Title'}}</h1>
+        <p>{{t 'CapAssPages.Summary.Information'}}</p>
+    </header>
+
+    {{> solution-summary-details}}
+    {{#backlink}}
+    <a class="back-link" href="{{.}}">{{t 'CapAssPages.Summary.Backlink.Title'}}</a>
+    {{/backlink}}
+</div>

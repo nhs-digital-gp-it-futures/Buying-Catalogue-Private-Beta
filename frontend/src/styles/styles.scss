@@ -1,0 +1,73 @@
+@import 'normalize';
+@import 'fonts';
+@import 'palette';
+@import 'icons';
+@import 'forms';
+@import 'layout';
+@import 'hacks';
+
+// a few miscellaneous styles that probably belong elsewhere but no
+// clear categorisation pattern has yet emerged
+
+// visible only to screen readers
+.sr {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+
+// "external" link trailing icon
+a[target="_blank"]:after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
+}
+
+#content {
+  // style all body links that are not buttons to NHS Digital Design Guidelines
+  a:not(.button) {
+    color: $color-link-fg;
+    text-decoration: underline;
+
+    &:hover {
+      background-color: $color-link-hover-bg;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $color-link-visited-fg;
+    }
+  }
+
+  // back link annotation
+  a.back-link {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: bold;
+    margin-top: 1em;
+    text-decoration: none;
+
+    &::before {
+      content: '← Back ';
+      font-weight: normal;
+    }
+  }
+
+  // default style for paragraphs
+  p {
+    line-height: 1.33;
+    max-width: 770px;
+  }
+}
+
+@import 'components/help-reveal';
+@import 'components/collapsible-fieldset';
+@import 'components/callout';
+@import 'components/page-main-heading';
+
+@import 'pages/home';
+@import 'pages/about';
+@import 'pages/supplier/registration';
+@import 'pages/supplier/capabilities';
+@import 'pages/supplier/compliance';
+@import 'pages/supplier/capability-assessment';

@@ -1,0 +1,173 @@
+#onboarding.dashboard.page {
+  .onboarding-stages {
+    border-left: 1px solid $color-fg;
+    counter-reset: stage;
+    margin-left: 1em;
+    padding-left: 2em;
+
+    li {
+      margin-bottom: 3em;
+      position: relative;
+      p {
+        max-width: 30em;
+      }
+      &::before {
+        background-color: $color-bg;
+        border: 1.5px solid $color-nhs-blue;
+        border-radius: 50%;
+        content: counter(stage);
+        counter-increment: stage 1;
+        display: inline-block;
+        height: 1.9em;
+        left: -3em;
+        padding-top: .2em;
+        position: absolute;
+        text-align: center;
+        top: -.1em;
+        width: 1.9em;
+      }
+
+      // hack to obscure the border under the last number
+      &:last-child::after {
+        background-color: $color-bg;
+        content: ' ';
+        display: inline-block;
+        height: calc(100% - 1.5em);
+        left: -3em;
+        position: absolute;
+        top: 1.8em;
+        width: 1em;
+      }
+
+      .title {
+        color: $color-nhs-blue;
+        margin: 0;
+      }
+
+      .action {
+        font-weight: bold;
+        margin: .5em 0;
+      }
+
+      .narrative {
+        font-size: smaller;
+
+        .name {
+          font-weight: bold;
+        }
+      }
+
+      &.complete {
+        &::before {
+          background-color: $color-nhs-green;
+          border-color: $color-nhs-green;
+          color: $color-bg;
+          content: '✓';
+        }
+
+        .title {
+          color: $color-nhs-green;
+        }
+      }
+
+      &.unavailable {
+        .title {
+          color: $color-fg;
+        }
+      }
+    }
+  }
+
+  .callout {
+    @extend %callout-with-border;
+    margin: 2em 0;
+  }
+}
+
+#submit-controls {
+  input {
+    margin: 1em 0em;
+  }
+}
+
+#supplier-guide {
+  ul {
+    list-style-type: none;
+    li::before {
+      content: " • ";
+      color: $color-nhs-blue;
+    }
+  }
+}
+
+#add-contact {
+  margin-bottom: 1em;
+}
+
+#add-contact-button {
+  line-height: 1;
+  vertical-align: middle;
+
+  &::before {
+    @include reversed;
+
+    content: '+';
+    display: inline-block;
+    font-size: 150%;
+    height: 1.1em;
+    margin-right: .3em;
+    text-align: center;
+    width: 1.1em;
+  }
+}
+
+#my-solutions-page {
+  h1 {
+    color: $color-nhs-black;
+  }
+  a.submit-button {
+    text-decoration: none;
+    color:$color-nhs-white;
+    &:hover {
+      background-color: $color-button-hover-bg;
+      color: $color-button-hover-fg;
+    }
+  }
+}
+
+#solutions-onboarding,
+#solutions-live {
+  .one-third {
+    width: 33%;
+  }
+
+  table {
+    width: 80%;
+    border-collapse: collapse;
+    thead {
+      background: $color-nhs-blue;
+      color: $color-nhs-white;
+      th {
+        text-align: left;
+        border-collapse: collapse;
+        padding: 0.5em 1em;
+        border:none;
+      }
+
+      th.white-right-border {
+        border-right: 2px solid $color-nhs-white;
+      }
+    }
+    tr {
+      td {
+        text-align: left;
+        border-collapse: collapse;
+        padding: 1em;
+        border:none;
+      }
+    }
+    tr:nth-child(2n) {
+      background: $color-nhs-light-grey
+    }
+  }
+}

@@ -1,0 +1,29 @@
+
+<div id="home-page">
+    <div class="welcome-banner">
+        <h1>{{t 'HomePage.BannerSection.Title'}}</h1>
+        <p>{{t 'HomePage.BannerSection.Subtitle'}}</p>
+        <p>{{t 'HomePage.BannerSection.Information'}}</p>
+        <a href="{{t 'HomePage.BannerSection.Button.Href'}}"class="button">{{t 'HomePage.BannerSection.Button.Text'}}</a>
+    </div>
+    <div class="content">
+
+        <h2>{{t 'HomePage.AboutSection.Title'}}</h2>
+        <p>{{t 'HomePage.AboutSection.Information'}}</p>
+
+        <div class="cards container">
+            {{#each (tt 'HomePage.AboutSection.Cards')}}
+                {{>card title=title href=href image=image alt=alt info=info icon=icon}}
+            {{/each}}
+        </div>
+
+
+        <h2>{{t 'HomePage.HowSection.Title'}}</h2>
+        <p>{{t 'HomePage.HowSection.Information'}}</p>
+        <div class="steps container">
+            {{#each (tt 'HomePage.HowSection.Steps')}}
+                {{>step number=number info=info}}
+            {{/each}}
+        </div>
+    </div>
+</div>

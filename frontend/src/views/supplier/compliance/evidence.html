@@ -1,0 +1,214 @@
+<div id="compliance" class="evidence page">
+
+{{> errors}}
+
+{{#unless latestFile}}
+<div class="notification" role="alert">
+  <h1>{{t 'CompliancePages.Evidence.NoCurrentFileNotification.Heading'}}</h1>
+  {{#each (tt 'CompliancePages.Evidence.NoCurrentFileNotification.Text')}}
+  <p>{{{.}}}</p>
+  {{/each}}
+</div>
+{{else}}
+  {{#if assessmentIncomplete}}
+  <div class="notification" role="alert">
+    <h1>{{t 'CompliancePages.Evidence.CapAssIncompleteNotification.Heading'}}</h1>
+    {{#each (tt 'CompliancePages.Evidence.CapAssIncompleteNotification.Text')}}
+    <p>{{{.}}}</p>
+    {{/each}}
+  </div>
+  {{/if}}
+  {{#if standardNotStarted}}
+  <div class="notification" role="alert">
+    <h1>{{t 'CompliancePages.Evidence.FileAvailable.Heading'}}</h1>
+    {{#each (tt 'CompliancePages.Evidence.FileAvailable.Text')}}
+    <p>{{{.}}}</p>
+    {{/each}}
+  </div>
+  {{/if}}
+{{/unless}}
+
+{{#if isSubmitted}}
+  <header class="page-main-heading">
+    <h1>{{t 'CompliancePages.Evidence.Submitted.Title'}}</h1>
+  </header>
+    <div class="has-feedback">
+      <h2>{{ claim.standard.name }}</h2>
+      <h3>{{t 'CompliancePages.Evidence.Submitted.Previous File.Title'}}</h3>
+      {{#if latestFile}}
+        <a class="file-download-link" download target="_blank" href="{{latestFile.downloadURL}}">{{latestFile.name}}</a>
+      {{/if}}
+    </div>
+  {{else}}
+  <header class="page-main-heading">
+    <h1>{{ claim.standard.name }}</h1>
+    <p>{{t 'CompliancePages.Evidence.Subtitle'}}</p>
+  </header>
+
+
+  {{#each (tt 'CompliancePages.Evidence.Preamble')}}
+  <p class="preamble">{{{.}}}</p>
+  {{/each}}
+
+  <details class="quick-links">
+    <summary>{{t 'CompliancePages.Evidence.QuickLinks.Heading'}}</summary>
+    <ul>
+      <li><a href="{{claim.standard.url}}" target="_blank">{{claim.standard.name}}</a></li>
+      {{#claim.capabilities}}
+      <li><a href="{{url}}" target="_blank">{{name}}</a></li>
+      {{/claim.capabilities}}
+    </ul>
+  </details>
+
+  {{#if latestFile}}
+    <section class="current-file">
+      <h2>{{t 'CompliancePages.Evidence.CurrentFile.Heading'}}</h2>
+      <section class="has-feedback">
+        {{#latestReview}}
+          <p>{{message}}</p>
+          <p>{{t 'Catalogue Authority'}}</p>
+          <p>{{createdOn}}</p>
+        {{/latestReview}}
+        <a class="file-download-link" download target="_blank" href="{{latestFile.downloadURL}}">{{latestFile.name}}</a>
+      </section>
+    </section>
+
+    {{#if allowSubmission}}
+    <section class="upload-and-reply">
+      <h3>{{t 'CompliancePages.Evidence.Reply.Heading'}}</h3>
+      {{#>form encoding="multipart/form-data" form_id=activeForm.id}}
+        <fieldset class="callout">
+          <div class="file-input">
+            <input type="file" name="matrix-file" aria-label="File Upload">
+            <a href="#" class="remove">{{t 'CompliancePages.Evidence.Reply.Remove'}}</a>
+          </div>
+          <p class="sub-info">{{t 'CompliancePages.Evidence.Reply.Information'}}</p>
+
+          <div class="control evidence-message">
+            <h4 class="label">{{t 'CompliancePages.Evidence.Reply.Message.Label'}}</h4>
+            <p class="help">{{t 'CompliancePages.Evidence.Reply.Message.Help'}}</p>
+            <textarea name="message" maxlength="300" aria-label="Evidence Message Description Text Area"></textarea>
+            <p class="character-count"></p>
+          </div>
+
+          <div class="standard-owner">
+            <p class="owner">
+              <label id="candidate-owners-label">{{t 'CompliancePages.Evidence.Owner.Label'}}</label>
+              <span class="current-owner">{{claim.ownerContact.displayName}}</span>
+              <a id="change-owner-button" href="#">{{t 'CompliancePages.Evidence.Owner.ChangeButton'}}</a>
+              <select name="ownerId" aria-labelledby="candidate-owners-label">
+                {{#each candidateOwners}}
+                <option value="{{id}}"{{#current}} selected{{/current}}>
+                  {{#if contactType}}
+                  {{contactType}} ({{firstName}} {{lastName}})
+                  {{else}}
+                  {{firstName}} {{lastName}}
+                  {{/if}}
+                </option>
+                {{/each}}
+              </select>
+            </p>
+            {{#> help-reveal title='CompliancePages.Evidence.Owner.Help.Title'}}
+              {{t 'CompliancePages.Evidence.Owner.Help.Text'}}
+            {{/help-reveal}}
+          </div>
+        </fieldset>
+
+        <button
+          id="submit-for-compliance"
+          type="submit"
+          name="action[submit]"
+          value="{{#if allowDirectSubmission}}direct{{else}}submit{{/if}}"
+          class="primary">{{t 'CompliancePages.Evidence.Buttons.Submit'}}</button>
+      {{/form}}
+    </section>
+    {{else}}
+    <section>
+      <button id="submit-for-compliance" type="submit" class="primary" disabled>{{t 'CompliancePages.Evidence.Buttons.Submit'}}</button>
+    </section>
+    {{/if}}
+  {{/if}}
+{{/if}}
+
+{{#if claim.submissionHistory}}
+  <section class="history collapsed">
+    <h2>{{t 'CompliancePages.Evidence.History.Heading'}}</h2>
+
+    <a href="#" class="expand-history">{{t 'CompliancePages.Evidence.History.Show'}}</a>
+    <a href="#" class="collapse-history">{{t 'CompliancePages.Evidence.History.Hide'}}</a>
+
+    {{#claim.submissionHistory}}
+    <div id="{{id}}" class="message">
+      <p class="text">{{message}}</p>
+      <p class="meta">
+        <span class="when">{{createdOn}}</span>
+        <span class="from">
+        {{#if isFeedback}}
+          {{t 'Catalogue Authority'}}
+        {{else}}
+          {{#with (lookup ../claim.historyContacts createdById)}}
+            {{firstName}} {{lastName}}
+          {{/with}}
+        {{/if}}
+        </span>
+        <span class="what">
+          {{#if isFeedback}}
+            {{t 'CompliancePages.Evidence.History.FeedbackSent'}}
+          {{else}}
+            {{t 'CompliancePages.Evidence.History.FileSent'}}
+          {{/if}}
+        </span>
+      </p>
+    </div>
+    {{/claim.submissionHistory}}
+  </section>
+{{/if}}
+
+<a class="back-link" href="../../">{{t 'CompliancePages.Evidence.Backlink.Title'}}</a>
+
+</div>
+
+<script type="text/javascript">
+/* global $, $$ */
+document.addEventListener('DOMContentLoaded', function () {
+  $$('#compliance .history .expand-history, #compliance .history .collapse-history').forEach(
+    function (el) {
+      el.addEventListener('click', function (ev) {
+        ev.preventDefault()
+        el.closest('.history').classList.toggle('collapsed')
+      })
+    }
+  )
+
+  const replyForm = $('#compliance .upload-and-reply form')
+  const replyFileInput = $('input[type=file]', replyForm)
+
+  function updateForFileInputState () {
+    const fileInputFilled = !!replyFileInput.value
+    const elSubmit = $('#submit-for-compliance')
+    replyForm.classList.toggle('has-file', fileInputFilled)
+    elSubmit.disabled = !fileInputFilled && elSubmit.value !== 'direct'
+  }
+
+  if (replyForm) {
+    replyForm.addEventListener('change', updateForFileInputState)
+    $('.remove', replyForm).addEventListener('click', function (ev) {
+      ev.preventDefault()
+
+      replyFileInput.value = ''
+      updateForFileInputState()
+    })
+
+    updateForFileInputState()
+  }
+
+  const changeOwnerButton = $('#change-owner-button')
+  if (changeOwnerButton) {
+    changeOwnerButton.addEventListener('click', function (ev) {
+      ev.preventDefault()
+
+      changeOwnerButton.closest('.owner').classList.add('changing')
+    })
+  }
+})
+</script>

@@ -1,0 +1,209 @@
+$width-input-border: 2px;
+$radius-input-border: 0;
+
+// apply global focus ring style. body ancestor is to prevent IE11 focusing the entire page.
+body *:focus {
+  outline: 3px solid $color-nhs-warm-yellow;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+  border: $width-input-border solid $color-input-border;
+  border-radius: $radius-input-border;
+  display: block;
+  padding: .5em;
+  width: 60%;
+
+  &.narrow {
+    width: 20%;
+  }
+
+  .control.invalid & {
+    border-color: $color-input-invalid-border;
+  }
+}
+
+.control {
+  .character-count {
+    color: $color-collapsible-fieldset-validations-fg;
+    font-size: smaller;
+    margin-top: .25em;
+
+    &.invalid {
+      color: $color-nhs-red;
+    }
+  }
+}
+
+div.dependant fieldset div.control {
+  margin: 1rem 1rem;
+}
+
+fieldset {
+  &.collapsible {
+    background-color: $color-collapsible-fieldset-bg;
+    border: $border-collapsible-fieldset;
+    border-radius: $radius-collapsible-fieldset-border;
+    color: $color-fg;
+    margin-bottom: .5em;
+    padding: 2rem 0 0;
+    position: relative;
+
+    > legend {
+      background-color: $color-collapsible-fieldset-legend-bg;
+      color: $color-collapsible-fieldset-legend-fg;
+      cursor: pointer;
+      height: 2rem;
+      left: 0;
+      padding: .4rem 1rem;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      &::before {
+        content: $icon-upward-pointing-arrow;
+        font-size: smaller;
+        padding-right: 1rem;
+      }
+    }
+
+    &.invalid {
+      border: $border-collapsible-fieldset-error;
+
+      > legend {
+        background-color: $color-collapsible-fieldset-legend-error-bg;
+        color: $color-collapsible-fieldset-legend-error-fg;
+      }
+    }
+
+    &.collapsed {
+      height: 2.5rem;
+
+      > legend {
+        background-color: $color-collapsible-fieldset-legend-collapsed-bg;
+        color: $color-collapsible-fieldset-legend-collapsed-fg;
+
+        &::before {
+          content: $icon-downward-pointing-arrow;
+        }
+      }
+
+      > *:not(legend) {
+        display: none;
+      }
+
+      &.invalid {
+        > legend {
+          background-color: $color-collapsible-fieldset-legend-error-collapsed-bg;
+          color: $color-collapsible-fieldset-legend-error-collapsed-fg;
+        }
+      }
+    }
+
+    .preamble {
+      background-color: $color-collapsible-fieldset-preamble-bg;
+      color: $color-collapsible-fieldset-preamble-fg;
+      margin: 0;
+
+      p {
+        margin: 0;
+        padding: 1rem 3rem 1rem;
+      }
+    }
+
+    .control {
+      margin: 1rem 3rem;
+
+      label {
+        font-size: larger;
+        font-weight: bold;
+      }
+
+      .info {
+        color: $color-collapsible-fieldset-validations-fg;
+        font-size: smaller;
+        margin: .5em 0;
+      }
+
+      .action {
+        display: none;
+      }
+
+      &.invalid {
+        border-left: 4px solid $color-input-invalid-border;
+        padding-left: .5rem;
+
+        .action {
+          color: $color-input-invalid-message-fg;
+          display: block;
+          font-size: smaller;
+          margin: .5em 0;
+        }
+      }
+    }
+  }
+}
+
+a.submit-button {
+  text-decoration: none;
+  color:white;
+  &:hover {
+    background-color: $color-button-hover-bg;
+    color: $color-button-hover-fg;
+  }
+}
+
+a.submit-button,
+button,
+[type='button'],
+[type='submit'],
+.button {
+  background-color: $color-button-bg;
+  border: 0;
+  border-bottom: 1px solid $color-nhs-black;
+  color: $color-button-fg;
+  cursor: pointer;
+  font-size: .9rem;
+  min-width: 5em;
+  padding: .4em 1em .3em;
+  transition: background-color .25s;
+
+  &:hover {
+    background-color: $color-button-hover-bg;
+    color: $color-button-hover-fg;
+  }
+
+  &[disabled],
+  &.disabled {
+    background-color: $color-button-disabled-bg;
+    border: 1px solid $color-button-disabled-fg;
+    color: $color-button-disabled-fg;
+    cursor: default;
+    transition: none;
+  }
+}
+
+#errors {
+  border: 3px solid $color-input-invalid-border;
+  margin-top: 1em;
+  padding: .5em 1em;
+  width: 70%;
+
+  h2 {
+    font-size: 120%;
+    margin: 0;
+  }
+
+  ul {
+    color: $color-nhs-blue;
+    list-style-type: disc;
+    margin-bottom: 1em;
+    margin-left: 1.5em;
+
+    li {
+      margin-top: .75em;
+    }
+  }
+}

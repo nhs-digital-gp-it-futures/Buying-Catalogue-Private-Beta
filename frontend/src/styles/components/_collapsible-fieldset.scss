@@ -1,0 +1,17 @@
+// Standardising fieldset width and padding
+
+fieldset.collapsible {
+  max-width: 55em;
+
+  > legend {
+    h2 {
+      display: inline-block;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+  }
+
+  p {
+    padding-right: 5em;
+  }
+}

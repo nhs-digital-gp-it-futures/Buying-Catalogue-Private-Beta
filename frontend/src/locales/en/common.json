@@ -1,0 +1,141 @@
+{
+  "NHSD": {
+    "Name": "NHS Digital"
+  },
+  "NHS": {
+    "Name": "NHS"
+  },
+  "Catalogue": {
+    "Title": "Buying Catalogue",
+    "Fullname": "$t(NHSD.Name) $t(Catalogue.Title)",
+    "Shortname": "Catalogue"
+  },
+  "Solution": "Solution",
+  "Solution_plural": "Solutions",
+  "Solution_possessive": "Solution's",
+  "Capability": "Capability",
+  "Capability_plural": "Capabilities",
+  "Core Capabilities": "Foundation $t(Capability_plural)",
+  "Non-core Capabilities": "Other $t(Capability_plural)",
+  "Standard": "Standard",
+  "Standard_plural": "Standards",
+  "Standard_possessive": "Standard's",
+  "Standard_plural_possessive": "Standards'",
+  "Associated Standard": "associated $t(Standard)",
+  "Associated Standards": "associated $t(Standard_plural)",
+  "Overarching Standard": "overarching $t(Standard)",
+  "Overarching Standards": "overarching $t(Standard_plural)",
+  "Assessment": "assessment",
+  "Compliance": "compliance",
+  "Capability_Assessment": "$t(Capability) $t(Assessment)",
+  "Capabilities Assessment": "$t(Capability_plural) $t(Assessment)",
+  "Standards Compliance": "$t(Standard_plural) $t(Compliance)",
+  "Standards and Capabilities": "$t(Capability_plural) and $t(Standard_plural)",
+  "Traceability Matrix": "Traceability Matrix",
+  "Assessment team": "$t(Assessment) team",
+  "Catalogue Authority": "Catalogue Authority",
+  "Lead Contact": "lead contact",
+  "GPITFutures": {
+    "Name": "GP IT Futures",
+    "Framework": "Framework",
+    "Fullname": "$t(GPITFutures.Name) $t(GPITFutures.Framework)"
+  },
+  "Buttons": {
+    "Save and continue": "Save & continue",
+    "Save": "Save",
+    "Save and exit": "Save & exit",
+    "Save and complete": "Save & complete"
+  },
+  "Authentication": {
+    "Login": "Log in",
+    "Logout": "Log Out",
+    "Greeting": "Welcome, {{user.contact.firstName}}"
+  },
+  "Optional Standards":{
+    "Notice Text": [
+      "You may also be required to comply with at least one of these associated standards. Some of these may be optional depending on the implementation of your solution. Please see confluence for further understanding."
+    ]
+  },
+  "Statuses": {
+    "Standard": {
+      "Failed": "Failed",
+      "NotStarted": "Not started",
+      "Draft": "Draft",
+      "Submitted": "Submitted {{when}}",
+      "Remediation": "Feedback {{when}}",
+      "Approved": "Approved {{when}}",
+      "Rejected": "Rejected {{when}}",
+      "NotReady": "Waiting for TM"
+    }
+  },
+  "Unsaved Changes": {
+    "Title": "You have unsaved changes",
+    "Continue Without Saving": "Continue without Saving",
+    "Information": "If you leave without saving, you will lose any changes you have made to this page."
+  },
+  "Notice": {
+    "Saved": {
+      "Title": "Solution Saved",
+      "Text": ["Your solution was successfully saved."]
+    }
+  },
+  "Footer": {
+    "Sections": [
+      {
+        "Heading": "Suppliers' Guide",
+        "Links": [
+          {
+            "Text": "About the $t(Catalogue.Title)",
+            "Url": "/about#catalogue"
+          },
+          {
+            "Text": "Process overview",
+            "Url": "/about#Process overview"
+          },
+          {
+            "Text": "Supplier checklist",
+            "Url": "/about#Supplier checklist"
+          }
+        ]
+      },
+      {
+        "Heading": "Contact us",
+        "Links": [
+          {
+            "Text": "Catalogue submissions",
+            "Url": "/about#Contact us"
+          },
+          {
+            "Text": "NHS Digital service desk",
+            "Url": "/about#Contact us"
+          }
+        ]
+      },
+      {
+        "Heading": "Further information",
+        "Links": [
+          {
+            "Text": "$t(NHSD.Name)",
+            "Url": "https://digital.nhs.uk/"
+          },
+          {
+            "Text": "$t(Standards and Capabilities) Model",
+            "Url": "https://gpitbjss.atlassian.net/wiki/spaces/GPITF/overview"
+          }
+        ]
+      }
+    ],
+    "Legal": {
+      "Heading": "",
+      "Text": "This is a beta service. You can read guidance about this service under ",
+      "Link": {
+        "Text": "Support.",
+        "Url": "/about"
+      }
+    }
+  },
+  "Beta Banner": {
+    "Title": "BETA",
+    "Message": "This is a new service –  your <a target='_blank' href='mailto:buying.catalogue@nhs.net'>feedback</a> will help us to improve it. "
+  }
+}

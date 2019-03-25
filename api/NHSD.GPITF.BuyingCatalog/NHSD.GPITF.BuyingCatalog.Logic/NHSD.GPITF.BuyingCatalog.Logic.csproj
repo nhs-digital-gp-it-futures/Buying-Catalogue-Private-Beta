@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\NHSD.GPITF.BuyingCatalog.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>..\NHSD.GPITF.BuyingCatalog\bin\Debug\netcoreapp2.1\</OutputPath>
+    <NoWarn>1701;1702;1705;8002;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>..\NHSD.GPITF.BuyingCatalog\bin\Release\netcoreapp2.1\</OutputPath>
+    <NoWarn>1701;1702;1705;8002;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\NHSD.GPITF.BuyingCatalog.snk" Link="NHSD.GPITF.BuyingCatalog.snk" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NHSD.GPITF.BuyingCatalog\NHSD.GPITF.BuyingCatalog.csproj" />
+  </ItemGroup>
+
+</Project>

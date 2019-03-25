@@ -1,0 +1,8 @@
+﻿{
+  "urls": "http://*:5001",
+
+  "GIF":
+  {
+    "Authority_Uri": "http://crm:5001"
+  }
+}

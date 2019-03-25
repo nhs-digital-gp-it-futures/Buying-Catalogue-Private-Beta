@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NHSD.GPITF.BuyingCatalog.Datastore.Database.Importer": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Dev\\NHSBuyingCatalogue\\beta-private\\api\\NHSD.GPITF.BuyingCatalog\\Data\\"
+    }
+  }
+}

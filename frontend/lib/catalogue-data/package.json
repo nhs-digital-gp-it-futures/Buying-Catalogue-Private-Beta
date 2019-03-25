@@ -1,0 +1,21 @@
+{
+  "name": "catalogue-data",
+  "version": "0.1.0-private-beta",
+  "description": "Data abstraction layer between the catalogue API and the usage layers",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Mitchell <paul.mitchell@bjss.com>",
+  "dependencies": {
+    "cache-manager": "^2.9.0",
+    "cache-manager-memory-store": "^1.1.0",
+    "cache-manager-redis-store": "^1.5.0",
+    "catalogue-api": "../catalogue-api",
+    "express-session-cache-manager": "^1.0.2",
+    "lodash": "^4.17.10",
+    "superagent-logger": "^1.1.0",
+    "superagent": "*"
+  }
+}

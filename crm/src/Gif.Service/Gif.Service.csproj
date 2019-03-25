@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <Description>IO.Swagger</Description>
+    <Copyright>IO.Swagger</Copyright>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>Gif.Service</AssemblyName>
+    <PackageId>IO.Swagger</PackageId>
+    <NoWarn>NU1605;CS1591;NU1603;NU1701;CS1572;CS1573</NoWarn>
+    <UserSecretsId>626ab5c7-7b51-49fe-acea-005970d864c3</UserSecretsId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\ContactApi.cs" />
+    <Compile Remove="Models\Capabilities.cs" />
+    <Compile Remove="Models\CapabilitiesImplemented.cs" />
+    <Compile Remove="Models\CapabilitiesImplementedEvidence.cs" />
+    <Compile Remove="Models\CapabilitiesImplementedReviews.cs" />
+    <Compile Remove="Models\Frameworks.cs" />
+    <Compile Remove="Models\GenCode.cs" />
+    <Compile Remove="Models\Solutions.cs" />
+    <Compile Remove="Models\Standards.cs" />
+    <Compile Remove="Models\StandardsApplicable.cs" />
+    <Compile Remove="Models\StandardsApplicableEvidence.cs" />
+    <Compile Remove="Models\TechnicalContacts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="hosting.json" />
+    <Content Remove="nlog.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="2.2.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.6.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.OData.Client" Version="7.5.1" />
+    <PackageReference Include="Microsoft.OData.Core" Version="7.5.1" />
+    <PackageReference Include="Microsoft.OData.Edm" Version="7.5.1" />
+    <PackageReference Include="Microsoft.Spatial" Version="7.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="2.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.0" />
+    <PackageReference Include="NLog" Version="4.5.10" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.7.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+    <PackageReference Include="System.ServiceModel.Web" Version="1.0.0" />
+    <PackageReference Include="ZNetCS.AspNetCore.Authentication.Basic" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hosting.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Samc4.CipherUtil">
+      <HintPath>..\..\lib\Samc4.CipherUtil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+</Project>

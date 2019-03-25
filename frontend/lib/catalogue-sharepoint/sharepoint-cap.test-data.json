@@ -1,0 +1,46 @@
+{
+    "pageIndex": 1,
+    "totalPages": 1,
+    "pageSize": 20,
+    "items": [
+      {
+        "name": "test_folder_1",
+        "isFolder": true,
+        "url": "test_url_1",
+        "timeLastModified": "2018-10-23T08:41:29.000Z"
+      },
+      {
+        "name": "test_folder_2",
+        "isFolder": true,
+        "url": "test_url_2",
+        "timeLastModified": "2018-09-28T14:28:20.000Z"
+      },
+      {
+        "name": "test_folder_3",
+        "isFolder": true,
+        "url": "test_url_3",
+        "timeLastModified": "2018-09-28T14:28:20.000Z"
+      },
+      {
+        "name": "test_folder_4",
+        "isFolder": true,
+        "url": "test_url_4",
+        "timeLastModified": "2018-10-23T09:18:30.000Z"
+      },
+      {
+        "name": "test_file_1",
+        "isFolder": false,
+        "url": "test_url_5",
+        "timeLastModified": "2018-10-23T08:29:06.000Z"
+      },
+      {
+        "name": "test_file_2",
+        "isFolder": false,
+        "url": "test_url_6",
+        "timeLastModified": "2018-10-22T13:11:31.000Z"
+      }
+    ],
+    "hasPreviousPage": false,
+    "hasNextPage": false
+  }
+  

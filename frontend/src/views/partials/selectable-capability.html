@@ -1,0 +1,56 @@
+<li tabindex="0" data-cap-id="{{id}}" class="capability {{types}}"{{#if isFirst}} id="{{firstId}}"{{/if}}>
+  <h3 class="name">{{name}}</h3>
+
+  <section class="reveal">
+    <p class="description">
+      {{description}}
+      {{#url}}
+        <a href="{{.}}" target="_blank" class="full-description-link">{{t 'Onboarding.Capabilities.Reveal.FullDescriptionLinkText'}}</a>
+      {{/url}}
+    </p>
+    <p>{{t 'Onboarding.Capabilities.Reveal.CompliancePreamble'}}</p>
+
+    <div>
+    <section class="standards">
+      <ul>
+        {{#standardsByGroup.associated}}
+          {{#unless isOptional}}
+          <li><a href="{{url}}" target="_blank">{{name}}</a></li>
+          {{/unless}}
+        {{/standardsByGroup.associated}}
+        </ul>
+        {{#hasOptionals}}
+          {{#each (tt 'Optional Standards.Notice Text')}}
+              <p>{{.}}</p>
+          {{/each}}
+        {{/hasOptionals}}
+        <ul>
+          {{#standardsByGroup.associated}}
+          {{#if isOptional}}
+          <li><a href="{{url}}" target="_blank">{{name}}</a></li>
+          {{/if}}
+        {{/standardsByGroup.associated}}
+      </ul>
+    </section>
+    </div>
+
+    <section class="selection">
+      <div class="controls">
+        <input
+          id="select-capability-{{id}}" 
+          type="checkbox"
+          name="capabilities[{{id}}]"
+          {{#selected}} checked value="{{.}}"{{/selected}}
+          value=""
+          data-id="{{id}}"
+          data-std-ids="{{standardIds}}">
+        <label for="select-capability-{{id}}" class="unchecked button">{{t 'Onboarding.Capabilities.Reveal.Selection.Select'}}</label>
+        <label for="select-capability-{{id}}" class="checked">
+          <span class="selected">{{t 'Onboarding.Capabilities.Reveal.Selection.Selected'}}</span>
+          <span class="remove">{{t 'Onboarding.Capabilities.Reveal.Selection.RemoveSelection'}}</span>
+        </label>
+      </div>
+      <p class="preamble">{{t 'Onboarding.Capabilities.Reveal.Selection.Preamble'}}</p>
+    </section>
+  </section>
+</li>

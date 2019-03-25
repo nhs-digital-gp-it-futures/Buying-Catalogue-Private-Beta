@@ -1,0 +1,36 @@
+
+<div class="support-supplier-checklist">
+    {{#each (tt 'Support.Custom Sections.Supplier Checklist.Tables')}}
+    {{#Preamble}}
+        <p>
+            {{.}}
+        </p>
+    {{/Preamble}}
+    <table>
+        <thead>
+            {{#Headings}}
+            <th>
+                {{t .}}
+            </th>
+            {{/Headings}}
+        </thead>
+        {{#each Rows}}
+        <tr>
+            {{#each .}}
+            <td>
+                {{#each .}}
+                <p>{{t .}}</p>
+                {{/each}}
+            </td>
+            {{/each}}
+        </tr>
+        {{/each}}
+    </table>
+    {{#Postamble}}
+        <p>
+            {{.}}
+        </p>
+    {{/Postamble}}
+
+    {{/each}}
+</div>

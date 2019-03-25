@@ -1,0 +1,17 @@
+%callout {
+  background-color: $color-callout-bg;
+  border: 0;
+  color: $color-callout-fg;
+  margin-top: 0;
+  padding: 1.5em;
+  width: 80%;
+
+  .title {
+    margin-top: 0;
+  }
+}
+
+%callout-with-border {
+  @extend %callout;
+  border: 2px solid $color-nhs-blue;
+}

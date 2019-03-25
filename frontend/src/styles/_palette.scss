@@ -1,0 +1,100 @@
+// concrete colour palette based on NHS Digital branding guidelines
+$color-nhs-white: #FFF;
+$color-nhs-blue: #005EB8;
+$color-nhs-light-blue: #CDDFF0;
+$color-nhs-light-grey: #F0F4F5;
+$color-nhs-light-mid-grey: #aeb7bd;
+$color-nhs-mid-grey: #768692;
+$color-nhs-dark-grey: #425563;
+$color-nhs-black: #212b32;
+$color-nhs-warm-yellow: #FFB81C;
+$color-nhs-red: #DA291C;
+$color-nhs-green: #007F3B;
+$color-nhs-dark-green: #005326;
+
+// abstract colour palette - use this in actual styles
+$color-bg: $color-nhs-white;
+$color-fg: $color-nhs-dark-grey;
+
+$color-reversed-bg: $color-nhs-blue;
+$color-reversed-fg: $color-nhs-white;
+
+$color-link-fg: $color-nhs-blue;
+$color-link-reversed-fg: $color-nhs-white;
+$color-link-hover-bg: #FFCD60;
+$color-link-visited-fg: #330072;
+
+$color-footer-top-bg: $color-nhs-dark-grey;
+$color-footer-top-fg: $color-nhs-white;
+$color-footer-bottom-bg: #334451;
+$color-footer-bottom-fg: $color-nhs-white;
+$color-footer-link-fg: $color-nhs-white;
+
+$color-input-border: $color-nhs-blue;
+$color-input-outline: $color-nhs-warm-yellow;
+$color-input-invalid-border: $color-nhs-red;
+$color-input-invalid-message-fg: $color-nhs-red;
+
+$color-collapsible-fieldset-bg: $color-nhs-light-grey;
+$color-collapsible-fieldset-fg: $color-fg;
+$border-collapsible-fieldset: 1px solid $color-nhs-blue;
+$radius-collapsible-fieldset-border: 3px;
+$color-collapsible-fieldset-legend-bg: $color-reversed-bg;
+$color-collapsible-fieldset-legend-fg: $color-reversed-fg;
+$color-collapsible-fieldset-legend-collapsed-bg: $color-bg;
+$color-collapsible-fieldset-legend-collapsed-fg: $color-nhs-blue;
+$border-collapsible-fieldset-error: 1px solid $color-nhs-red;
+$color-collapsible-fieldset-legend-error-bg: $color-nhs-red;
+$color-collapsible-fieldset-legend-error-fg: $color-nhs-white;
+$color-collapsible-fieldset-legend-error-collapsed-bg: $color-bg;
+$color-collapsible-fieldset-legend-error-collapsed-fg: $color-nhs-red;
+$color-collapsible-fieldset-preamble-bg: $color-bg;
+$color-collapsible-fieldset-preamble-fg: $color-fg;
+$color-collapsible-fieldset-validations-fg: $color-nhs-mid-grey;
+$color-collapsible-fieldset-info-fg: $color-nhs-mid-grey;
+
+$color-help-reveal-summary-bg: inherit;
+$color-help-reveal-summary-fg: $color-nhs-blue;
+$color-help-reveal-contents-bg: $color-bg;
+$color-help-reveal-contents-fg: $color-fg;
+$color-help-reveal-contents-border: $color-nhs-blue;
+
+$color-button-bg: $color-nhs-green;
+$color-button-hover-bg: $color-nhs-dark-green;
+$color-button-fg: $color-nhs-white;
+$color-button-hover-fg: $color-nhs-white;
+$color-button-disabled-bg: $color-nhs-white;
+$color-button-disabled-fg: $color-nhs-mid-grey;
+$color-button-primary-bg: $color-nhs-green;
+$color-button-primary-hover-bg: $color-nhs-dark-green;
+$color-button-primary-fg: $color-nhs-white;
+$color-button-primary-hover-fg: $color-nhs-white;
+$color-button-reversed-bg: $color-nhs-white;
+$color-button-reversed-hover-bg: $color-nhs-white;
+$color-button-reversed-fg: $color-nhs-blue;
+$color-button-reversed-hover-fg: $color-nhs-blue;
+$color-button-reversed-disabled-fg: #aeb7bd;
+
+$color-capability-selector-bg: $color-nhs-light-grey;
+$color-capability-selector-group-fg: $color-nhs-blue;
+$color-capability-selector-capability-bg: $color-bg;
+$color-capability-selector-capability-outline: $color-input-outline;
+$color-capability-selector-capability-name-fg: $color-nhs-blue;
+$color-capability-selector-capability-selected-bg: $color-nhs-blue;
+$color-capability-selector-capability-selected-fg: $color-nhs-white;
+$color-capability-selector-capability-selected-name-fg: $color-nhs-white;
+$color-capability-selector-reveal-bg: $color-bg;
+$color-capability-selector-reveal-fg: $color-fg;
+
+$color-compliance-table-border: $color-nhs-light-grey;
+$color-compliance-table-fg: $color-nhs-blue;
+$color-compliance-table-good-fg: $color-nhs-green;
+$color-compliance-table-bad-fg: $color-nhs-red;
+
+$color-help-reveal-summary-fg: $color-nhs-blue;
+$color-help-reveal-border: $color-nhs-blue;
+$color-help-reveal-contents-bg: $color-bg;
+$color-help-reveal-contents-fg: $color-fg;
+
+$color-callout-bg: $color-nhs-light-grey;
+$color-callout-fg: $color-fg;

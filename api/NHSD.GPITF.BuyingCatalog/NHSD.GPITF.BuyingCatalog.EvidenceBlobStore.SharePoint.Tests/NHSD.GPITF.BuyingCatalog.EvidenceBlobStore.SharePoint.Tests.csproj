@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\NHSD.GPITF.BuyingCatalog.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <OutputPath></OutputPath>
+    <NoWarn>1701;1702;1705;8002;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <OutputPath></OutputPath>
+    <NoWarn>1701;1702;1705;8002;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.4.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
+    <PackageReference Include="Moq" Version="4.8.3" />
+    <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\NHSD.GPITF.BuyingCatalog.snk" Link="NHSD.GPITF.BuyingCatalog.snk" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NHSD.GPITF.BuyingCatalog.EvidenceBlobStore.SharePoint\NHSD.GPITF.BuyingCatalog.EvidenceBlobStore.SharePoint.csproj" />
+    <ProjectReference Include="..\NHSD.GPITF.BuyingCatalog.Logic.Tests\NHSD.GPITF.BuyingCatalog.Logic.Tests.csproj" />
+    <ProjectReference Include="..\NHSD.GPITF.BuyingCatalog\NHSD.GPITF.BuyingCatalog.csproj" />
+  </ItemGroup>
+
+</Project>

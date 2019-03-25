@@ -1,0 +1,1516 @@
+{
+  "capabilityMapping": [
+    {
+      "capability": {
+        "id": "CAP1",
+        "previousId": null,
+        "name": "Appointments Management - Citizen",
+        "description": "\"This capability will allow Citizens to view",
+        "url": " book and cancel appointments with the ability to add additional information, Appointments slots and their availability are configured by the Practice.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/69926984/Manage+Appointments+-+Citizen"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "CSS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT19",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP10",
+        "previousId": null,
+        "name": "Patient Information Maintenance",
+        "description": "\"Have the ability to record data",
+        "url": " organise and search for Patient Records; with the ability to produce some Patient based reporting. Also have the ability to configure Patient and Proxy access to Citizen Services.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/206143859/Patient+Information+Maintenance"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS13",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "INT15",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT23",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT25",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT27",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT28",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT32",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP11",
+        "previousId": null,
+        "name": "Prescribing",
+        "description": "Be able to to record various types of Prescriptions and appliances and be able to review them for Patients. Supporting information required for prescribing will also be accessible which includes listed items to prescribe and drug tariff information.",
+        "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/122126414/Prescribing"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS14",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "INT15",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT19",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT31",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP12",
+        "previousId": null,
+        "name": "Prescription Ordering - Citizen",
+        "description": "\"Citizens can view",
+        "url": " request and amend different types of prescription requests. Nominated pharmacies for electronic prescription requests can be chosen and amended.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/66650232/Order+Prescriptions+-+Citizen"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS15",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "INT19",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP13",
+        "previousId": null,
+        "name": "Recording Consultations",
+        "description": "Have the ability to record different types of consultations and specific data relating to consultations giving a more complete Patient record. Also supports the ability to create and share data entry forms which relate to consultations.",
+        "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/118292928/Recording+Consultations"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS16",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "INT1",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT11",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT12",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT13",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT15",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT16",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT2",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT29",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT30",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT31",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT5",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT8",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP14",
+        "previousId": null,
+        "name": "Reporting",
+        "description": "This capability will support the analysis of data locally for Practices. Data from other capabilities can be consumed and analysed to support clinical care and management of the Practice",
+        "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/321650709/Reporting"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS17",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP15",
+        "previousId": null,
+        "name": "Scanning",
+        "description": "This capability supports the conversion of paper based documentation into a digital format which will also give the ability for image enhancement to control the quality of the conversion.",
+        "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/308610268/Scanning"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS18",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP16",
+        "previousId": null,
+        "name": "Telecare",
+        "description": "\"Provide ability for the Patient to share data to support monitoring of Patients",
+        "url": " remote care and communication. Functionality will also include alert triggers to actively manage the Patients care.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/256770138/Telecare"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS19",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP17",
+        "previousId": null,
+        "name": "Unstructured Data Extraction",
+        "description": "Provides functionality to able to extract information from documents for Practice use such as populating Patient data and associating Clinical Codes against the document when associating with Patient Records.",
+        "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/308445974/Unstructured+Data+Extraction"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS20",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP18",
+        "previousId": null,
+        "name": "View Record - Citizen",
+        "description": "This capability will cater for Citizens being able to view relevant data from their Patient Record remotely. Access to Patient Record data will be configured by the Practice.",
+        "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/69599244/View+Record+-+Citizen"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS21",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "INT19",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP19",
+        "previousId": null,
+        "name": "Workflow",
+        "description": "\"Supports days to day activities of the practice by defining",
+        "url": " creating and allocating tasks and workflow items to Practice staff. Also allows for monitoring resource with reports, for example on workflow statuses and end dates for completion.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/97616243/Workflow"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS22",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "INT12",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP2",
+        "previousId": null,
+        "name": "Appointments Management - GP",
+        "description": "\"Supports the day to day recording",
+        "url": " configuration, planning and scheduling of appointments in the Practice. Functionality also includes Practice reporting on appointments data.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/97550757"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "CSS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT12",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT19",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT33",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP3",
+        "previousId": null,
+        "name": "Clinical Decision Support",
+        "description": "Support decision making activities at the point of care by interacting with the Clinician via alerts to improve safety for the Patient. Functionality will also support auditing of decision making activity",
+        "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/226918754/Clinical+Decision+Support"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "CSS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP4",
+        "previousId": null,
+        "name": "Communicate With Practice - Citizen",
+        "description": "\"Gives Citizens the ability to create",
+        "url": " view and respond to communications with the Practice. Configured Practice Users and groups can be set up as suitable recipients of communications.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/69926932/Communicate+With+Practice+-+Citizen"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "CSS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT19",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP5",
+        "previousId": null,
+        "name": "Digital Diagnostics",
+        "description": "\"Functionality will cater for electronic requesting for Patients",
+        "url": " for example Pathology and Radiology. Test results can be received, reviewed and stored against the Patient record.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/506366069/Digital+Diagnostics"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "CSS8",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP6",
+        "previousId": null,
+        "name": "Document Management",
+        "description": "\"Have the ability to store and retrieve documents of varying formats which may or may not relate to Patients. Supports the management of documentation which includes secure tracking",
+        "url": " categorisation, and annotation.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/142802997/Document+Management"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "CSS9",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT15",
+          "isOptional": false
+        },
+        {
+          "standardId": "INT19",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP7",
+        "previousId": null,
+        "name": "GP Extracts Verification",
+        "description": "Gives the ability to extract and send data to the calculating quality reporting service. Searching and reporting functionality will be provided to establish Patients included and excluded from the data extract.",
+        "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/555024671/GP+Extracts+Verification"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS10",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "INT16",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    },
+    {
+      "capability": {
+        "id": "CAP8",
+        "previousId": null,
+        "name": "GP Referral Management",
+        "description": "Have the ability to record and review electronic referrals for Patients to other services. This will support recording referral information against the Patient Record and Patient based reporting on referrals",
+        "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/452985309/GP+Referral+Management"
+      },
+      "optionalStandard": [
+        {
+          "standardId": "CSS11",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "CSS3",
+          "isOptional": true
+        },
+        {
+          "standardId": "INT9",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS1",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS2",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS3",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS4",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS5",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS6",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS7",
+          "isOptional": false
+        },
+        {
+          "standardId": "OS8",
+          "isOptional": false
+        }
+      ]
+    }
+  ],
+  "standard": [
+    {
+      "id": "CSS1",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Citizen Access",
+      "description": "Supports Citizens to access their services safely and securely. Also supports Citizens in viewing and updating Patient information online.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/552075388/Citizen+Access"
+    },
+    {
+      "id": "CSS3",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Mobile Working",
+      "description": "Supports clinicians accessing information from a supported mobile device from any location.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/153321496/Mobile+Working"
+    },
+    {
+      "id": "CSS4",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Appointments Management - Citizen",
+      "description": "\"This capability will allow Citizens to view",
+      "url": " book and cancel appointments with the ability to add additional information, Appointments slots and their availability are configured by the Practice.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/69926984/Manage+Appointments+-+Citizen"
+    },
+    {
+      "id": "INT19",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Management Information (MI) Reporting",
+      "description": "The Management Information (MI)&nbsp;Reporting Specification is a monthly collection of aggregated counts of data which cover a number of Capabilities.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/308707523/Management+Information+%28MI%29+Reporting"
+    },
+    {
+      "id": "OS1",
+      "previousId": null,
+      "isOverarching": true,
+      "name": "Business Continuity / Disaster Recovery",
+      "description": "Suppliers that provide systems will need to ensure that there are robust business continuity plans in place in the event of disaster recovery.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/205979765/Business+Continuity+and+Disaster+Recovery"
+    },
+    {
+      "id": "OS2",
+      "previousId": null,
+      "isOverarching": true,
+      "name": "Clinical Safety",
+      "description": "This standard ensures that Suppliers and buyers of GP IT Systems are carrying out effective clinical risk management relating to Patient safety.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/227050579/Clinical+Safety"
+    },
+    {
+      "id": "OS3",
+      "previousId": null,
+      "isOverarching": true,
+      "name": "Data Migration",
+      "description": "Supports the safe and effective migration of data moving between GP IT Systems when a Practice moves from one Clinical System Supplier to another for part or all of their system .",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/227051317/Data+Migration"
+    },
+    {
+      "id": "OS4",
+      "previousId": null,
+      "isOverarching": true,
+      "name": "Data Standards",
+      "description": "\"Details data standards e.g. ISNs with which a supplier must be compliant when developing and implementing their systems",
+      "url": " examples are fields lengths and formats.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/554959771/Data+Standards"
+    },
+    {
+      "id": "OS5",
+      "previousId": null,
+      "isOverarching": true,
+      "name": "GP Systems Training",
+      "description": "Defines what training collateral and activities are expected of suppliers delivering capabilities into health and social care.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/628458169/GP+Systems+Training"
+    },
+    {
+      "id": "OS6",
+      "previousId": null,
+      "isOverarching": true,
+      "name": "Hosting/Infrastructure",
+      "description": "\"Supports best practices for infrastructure and hosting of systems. For example",
+      "url": " ensuring that systems are cost effective, secure and energy efficient.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/304742417"
+    },
+    {
+      "id": "OS7",
+      "previousId": null,
+      "isOverarching": true,
+      "name": "Information Governance",
+      "description": "\"Supports confidentiality",
+      "url": " availability (to authorised users when required), and accuracy of data processed by systems.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/69632186/Information+Governance"
+    },
+    {
+      "id": "OS8",
+      "previousId": null,
+      "isOverarching": true,
+      "name": "Non-Functional Requirements",
+      "description": "\"Defines the standards for the operation of GP IT Systems relating to all capabilities",
+      "url": " for example the availability of data to a Citizen online.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/494797442"
+    },
+    {
+      "id": "CSS13",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Patient Information Maintenance",
+      "description": "\"Have the ability to record data",
+      "url": " organise and search for Patient Records; with the ability to produce some Patient based reporting. Also have the ability to configure Patient and Proxy access to Citizen Services.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/206143859/Patient+Information+Maintenance"
+    },
+    {
+      "id": "CSS2",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Common Reporting",
+      "description": "\"Supports the local",
+      "url": " regional and national reporting requirements of a General Practice. Report templates can be defined with search criteria and data can be interrogated at different levels.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/275185997/Common+Reporting"
+    },
+    {
+      "id": "INT15",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "GP2GP",
+      "description": "The GP2GP record transfer mechanism enables a patient's record to be electronically transferred directly and securely when they move from one practice to another.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/258572312/GPES+Data+Extraction"
+    },
+    {
+      "id": "INT23",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "National Record Locator Service (NRLS)",
+      "description": "\"The National Record Locator Service (NRLS) aims to provide a national capability for locating and",
+      "url": " ultimately, sharing patient records across health and care systems.\\r\\n\\r\\nFurther information is available at the NRLS web site.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/395083780"
+    },
+    {
+      "id": "INT25",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "NHAIS HA/GP Links",
+      "description": "\"National Health Application and Infrastructure Services (NHAIS) is a system which manages services",
+      "url": " Patient registration and demographic details for England, Wales and Northern Ireland. NHAIS HA (Health Authority) / GP interfaces allow for the two-way exchange of data covering Registration changes and the processing of Items of Service claims.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/226920341"
+    },
+    {
+      "id": "INT27",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Personal Demographics Service (PDS)",
+      "description": "\"The Personal Demographics Service (PDS) is the national electronic database of NHS patient details such as name",
+      "url": " address, date of birth and NHS Number (known as demographic information).\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/468844616"
+    },
+    {
+      "id": "INT28",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Primary Care Clinical Terminology Usage Report",
+      "description": "\"This is a report to collect data from each system supplier on the frequency of use of clinical coded terms",
+      "url": " both terminology (SNOMED CT, Read v2, CTV3) and local codes, recorded through their system for currently registered Patients over a 12 month period for all entries which are part of the GP record, aggregated across the selected Practices.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/308675463/Primary+Care+Clinical+Terminology+Usage+Report"
+    },
+    {
+      "id": "INT32",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Transfer of Care",
+      "description": "Patients move between care settings and responsibility for them is handed over from one clinician to another. Transfer of care messaging ensures that the clinical context and information about the patient is transferred when this occurs",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/450265196/Transfer+of+Care"
+    },
+    {
+      "id": "CSS14",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Prescribing",
+      "description": "Be able to to record various types of Prescriptions and appliances and be able to review them for Patients. Supporting information required for prescribing will also be accessible which includes listed items to prescribe and drug tariff information.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/122126414/Prescribing"
+    },
+    {
+      "id": "INT31",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Summary Care Record (SCR)",
+      "description": "\"The Summary Care Record (SCR) is an electronic record of important Patient information",
+      "url": " created from GP medical records. It can be seen and used by authorised staff in other areas of the health and care system involved in the Patient's direct care.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/308773309"
+    },
+    {
+      "id": "INT6",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Electronic Prescription Service (EPS)",
+      "description": "EPS allows prescribers (like GP Systems) to send prescriptions electronically to a dispenser (such as a pharmacy) of the patient's choice. This makes the prescribing and dispensing process more efficient and convenient for patients and staff. NHS Digital has an EPS homepage.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/621183516"
+    },
+    {
+      "id": "CSS15",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Prescription Ordering - Citizen",
+      "description": "\"Citizens can view",
+      "url": " request and amend different types of prescription requests. Nominated pharmacies for electronic prescription requests can be chosen and amended.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/66650232/Order+Prescriptions+-+Citizen"
+    },
+    {
+      "id": "CSS16",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Recording Consultations",
+      "description": "Have the ability to record different types of consultations and specific data relating to consultations giving a more complete Patient record. Also supports the ability to create and share data entry forms which relate to consultations.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/118292928/Recording+Consultations"
+    },
+    {
+      "id": "INT1",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "111",
+      "description": "Standard to support the NHS111 CDA messages sent to GPs.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/621412807/111"
+    },
+    {
+      "id": "INT11",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "FGM Risk Indication System (RIS)",
+      "description": "\"This is a national IT service and forms part of the national Spine architecture. It allows FGM risk information for girls under 18 to be to created",
+      "url": " deleted, stored and shared with relevant NHS healthcare professionals across departmental, organisational and geographical boundaries within England, supporting effective early intervention and ongoing safeguarding of girls potentially at risk of FGM.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/431260313/FGM"
+    },
+    {
+      "id": "INT12",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "GP Connect Interfaces",
+      "description": "GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/308641833/GP2GP"
+    },
+    {
+      "id": "INT13",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "GP Data Set",
+      "description": "The standard GP Data Set is a regular extraction of patient-related data from GP systems to NHS Digital",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/450429588/GP+Connect+Interfaces"
+    },
+    {
+      "id": "INT16",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "GPES Data Extraction",
+      "description": "\"The General Practice Extraction Service (GPES) is a service that securely collects information",
+      "url": " with consent, from GP systems, and delivers it to approved organisations with the aim of directly improving patient care.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/275513479/GP+Payments"
+    },
+    {
+      "id": "INT2",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Child Health Eventing",
+      "description": "\"The Maternity and Digital Child Health programmes are planning to implement event-based",
+      "url": " publish-subscribe messaging for Maternity and Child Health, e.g. immunisations and an electronic red book. NHS Digital intends to develop an event management service to support this implementation. An ISN is expected to be published in February 2019.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/512328528/Child+Health+Eventing"
+    },
+    {
+      "id": "INT29",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Reasonable Adjustments Flagging",
+      "description": "\"Reasonable Adjustments Flagging is a mechanism for patients with learning disabilities to have their need for reasonable adjustments to be flagged",
+      "url": " and for the flag and the required adjustments themselves to be made available to people involved in their care via a national capability.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/441188767/Reasonable+Adjustments+Flagging"
+    },
+    {
+      "id": "INT30",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Screening messaging",
+      "description": "Some screening programmes use the Digital Diagnostics & Pathology Messaging standards to return results to GP systems. Variant NHS004 of the MEDRPT message was created to enable it to carry screening results.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/517177904/Screening+messaging"
+    },
+    {
+      "id": "INT5",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Digital Diagnostics & Pathology Messaging",
+      "description": "Pathology messaging involves the electronic transmission of results of pathology tests to GP systems in response to a test request placed with laboratories.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/512393754"
+    },
+    {
+      "id": "INT8",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "eMED3 (Fit Notes)",
+      "description": "This standard supports the collection of aggregated data generated by the issue of fit notes by GPs.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/431423976"
+    },
+    {
+      "id": "CSS17",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Reporting",
+      "description": "This capability will support the analysis of data locally for Practices. Data from other capabilities can be consumed and analysed to support clinical care and management of the Practice",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/321650709/Reporting"
+    },
+    {
+      "id": "CSS18",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Scanning",
+      "description": "This capability supports the conversion of paper based documentation into a digital format which will also give the ability for image enhancement to control the quality of the conversion.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/308610268/Scanning"
+    },
+    {
+      "id": "CSS19",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Telecare",
+      "description": "\"Provide ability for the Patient to share data to support monitoring of Patients",
+      "url": " remote care and communication. Functionality will also include alert triggers to actively manage the Patients care.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/256770138/Telecare"
+    },
+    {
+      "id": "CSS20",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Unstructured Data Extraction",
+      "description": "Provides functionality to able to extract information from documents for Practice use such as populating Patient data and associating Clinical Codes against the document when associating with Patient Records.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/308445974/Unstructured+Data+Extraction"
+    },
+    {
+      "id": "CSS21",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "View Record - Citizen",
+      "description": "This capability will cater for Citizens being able to view relevant data from their Patient Record remotely. Access to Patient Record data will be configured by the Practice.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/69599244/View+Record+-+Citizen"
+    },
+    {
+      "id": "CSS22",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Workflow",
+      "description": "\"Supports days to day activities of the practice by defining",
+      "url": " creating and allocating tasks and workflow items to Practice staff. Also allows for monitoring resource with reports, for example on workflow statuses and end dates for completion.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/97616243/Workflow"
+    },
+    {
+      "id": "CSS5",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Appointments Management - GP",
+      "description": "\"Supports the day to day recording",
+      "url": " configuration, planning and scheduling of appointments in the Practice. Functionality also includes Practice reporting on appointments data.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/97550757"
+    },
+    {
+      "id": "INT33",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Winter Pressures Reporting",
+      "description": "A weekly collection of data on all General Practice appointments from November 2017 through to October 2019.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/308445562/Winter+Pressures+Reporting"
+    },
+    {
+      "id": "CSS6",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Clinical Decision Support",
+      "description": "Support decision making activities at the point of care by interacting with the Clinician via alerts to improve safety for the Patient. Functionality will also support auditing of decision making activity",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/226918754/Clinical+Decision+Support"
+    },
+    {
+      "id": "CSS7",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Communicate With Practice - Citizen",
+      "description": "\"Gives Citizens the ability to create",
+      "url": " view and respond to communications with the Practice. Configured Practice Users and groups can be set up as suitable recipients of communications.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/69926932/Communicate+With+Practice+-+Citizen"
+    },
+    {
+      "id": "CSS8",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Digital Diagnostics",
+      "description": "\"Functionality will cater for electronic requesting for Patients",
+      "url": " for example Pathology and Radiology. Test results can be received, reviewed and stored against the Patient record.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/506366069/Digital+Diagnostics"
+    },
+    {
+      "id": "CSS9",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "Document Management",
+      "description": "\"Have the ability to store and retrieve documents of varying formats which may or may not relate to Patients. Supports the management of documentation which includes secure tracking",
+      "url": " categorisation, and annotation.\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/142802997/Document+Management"
+    },
+    {
+      "id": "CSS10",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "GP Extracts Verification",
+      "description": "Gives the ability to extract and send data to the calculating quality reporting service. Searching and reporting functionality will be provided to establish Patients included and excluded from the data extract.",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/555024671/GP+Extracts+Verification"
+    },
+    {
+      "id": "CSS11",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "GP Referral Management",
+      "description": "Have the ability to record and review electronic referrals for Patients to other services. This will support recording referral information against the Patient Record and Patient based reporting on referrals",
+      "url": "https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/452985309/GP+Referral+Management"
+    },
+    {
+      "id": "INT9",
+      "previousId": null,
+      "isOverarching": false,
+      "name": "e-Referrals Service (eRS)",
+      "description": "\"The NHS e-Referral Service (eRS) combines electronic booking with a choice of place",
+      "url": " date and time for first hospital or clinic appointments\",https://gpitbjss.atlassian.net/wiki/spaces/ISDNU/pages/457344166"
+    }
+  ]
+}

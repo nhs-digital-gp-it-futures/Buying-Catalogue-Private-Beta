@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{meta.title}}{{#meta.title}} - {{/meta.title}}{{t 'Catalogue.Fullname'}}</title>
+
+    <!--[if IE]><link rel="shortcut icon" href="/webfiles/1548245354813/icons/favicon.ico"><![endif]-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/manifest.json">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,es7"></script>
+    <script type="text/javascript" src="/js/vendor/modernizr-custom.js"></script>
+    <script type="text/javascript" src="/js/vendor/details-element-polyfill.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+  </head>
+  <body>
+    <header role="banner" aria-label="Site header">
+      <div class="beta-banner">
+        <div class="beta-icon">{{t 'Beta Banner.Title'}}</div>
+        <div>{{t 'Beta Banner.Message'}}</div>
+        {{#meta.deployedEnvironment}}
+          <div id="deployed-environment-label">
+              {{.}}
+          </div>
+        {{/meta.deployedEnvironment}}
+      </div>
+      <div class="top">
+        <a href="#content" class="sr" id="skip-to-main-content-link">Skip to main content</a>
+        <nav aria-label="Main">
+          <a id="home-link" href="/#content" aria-label="Home">
+            {{> nhs-digital-logo }}
+          </a>
+          
+          <div id="account" aria-label="Account">
+            {{> user-authentication-nav }}
+          </div>
+        </nav>
+      </div>
+      <div class="bottom {{#unless user.is_authenticated}}white-control-bar{{/unless}}">
+        {{#if activeForm}}
+        <nav class="active-form" aria-label="Save controls">
+          <div class="left-nav-divide">
+              <input type="submit"
+              {{#if activeForm.id}}
+              form="{{activeForm.id}}"
+              {{else}}
+              disabled
+              {{/if}}
+              class="button"
+              name="action[save]"
+              value="{{t 'Buttons.Save'}}">
+            {{#activeForm.title}}<span class="title">{{.}}</span>{{/activeForm.title}}
+          </div>
+          <div class="right-nav-divide">
+              <a href="/about#content">Support</a>
+              <input type="submit"
+                {{#if activeForm.id}}
+                form="{{activeForm.id}}"
+                {{else}}
+                disabled
+                {{/if}}
+                class="button"
+                name="action[exit]"
+                value="{{t 'Buttons.Save and exit'}}">
+          </div>
+        </nav>
+        {{else}}
+        <nav class="no-active-form" aria-label="Secondary">
+          <a href="/about#content">Support</a>
+        </nav>
+        {{/if}}
+      </div>
+    </header>
+    <main id="content" class="{{#if onHomePage}}no-padding{{/if}}">
+      {{> breadcrumbs}}
+      <div id="unsaved-changes"
+            role="alertdialog"
+            aria-labelledby="unsaved-changes-title"
+            aria-describedby="unsaved-changes-desc">
+        <h2 id="unsaved-changes-title">{{t 'Unsaved Changes.Title'}}</h2>
+        <p id="unsaved-changes-desc">{{t 'Unsaved Changes.Information'}}</p>
+        <input type="submit"
+              {{#if activeForm.id}}
+              form="{{activeForm.id}}"
+              {{else}}
+              disabled
+              {{/if}}
+              class="button"
+              name="action[save]"
+              value="{{t 'Buttons.Save'}}">
+          <a class="button">{{t 'Unsaved Changes.Continue Without Saving'}}</a>
+        </div>
+        {{> save-notice}}
+      {{{body}}}
+    </main>
+    <footer aria-label="Site footer">
+      <div class="top">
+        {{#each (tt 'Footer.Sections') as |section|}}
+        <section aria-labelledby="footer-section-{{@index}}-label">
+          <h2 id="footer-section-{{@index}}-label" role="none">{{section.Heading}}</h2>
+          <ul>
+          {{#each section.Links as |link|}}
+            <li><a href="{{link.Url}}">{{link.Text}}</a></li>
+          {{/each}}
+          </ul>
+        </section>
+        {{/each}}
+      </div>
+      <div class="bottom">
+        <p class="legal">
+          <span class="heading">{{t 'Footer.Legal.Heading'}}</span>
+          <span class="text">{{t 'Footer.Legal.Text'}}</span>
+          {{#if (t 'Footer.Legal.Link.Text')}}
+            <a href="{{t 'Footer.Legal.Link.Url'}}">{{t 'Footer.Legal.Link.Text'}}</a>
+          {{/if}}
+        </p>
+      </div>
+    </footer>
+    <div class="loading-spinner"></div>
+  </body>
+</html>

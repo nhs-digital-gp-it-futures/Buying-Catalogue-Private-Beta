@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  crm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gpitf/catalogue-crm:private-beta
+    ports:
+      - "5001:5001"
+    networks:
+      - beta_network
+    environment:
+      - ASPNETCORE_ENVIRONMENT
+      - GIF_AUTHORITY_URI
+      - GIF_CRM_AUTHORITY
+      - GIF_CRM_URL
+      - GIF_AZURE_CLIENT_ID
+      - GIF_ENCRYPTED_CLIENT_SECRET
+      - CRM_CLIENTID
+      - CRM_CLIENTSECRET
+      - LOG_CRM
+      - LOG_CONNECTIONSTRING
+
+networks:
+  beta_network:
+    driver: bridge

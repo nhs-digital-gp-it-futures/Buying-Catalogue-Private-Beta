@@ -1,0 +1,94 @@
+<div class="summary-box" id="summary-details">
+    {{>section-header title="CapAssPages.Confirmation.Registration.Title" href=editUrls.registration}}
+    <h3>{{t 'CapAssPages.Confirmation.Registration.Subtitle.Solution'}}</h3>
+    {{#solution}}
+        <p>{{name}}</p>
+        <p>{{description}}</p>
+        <p>{{version}}</p>
+
+        <div class="lead contact">
+            <h3>{{t 'CapAssPages.Confirmation.Registration.Subtitle.LeadContact'}}</h3>
+            {{#contacts.[0]}}
+                <address>
+                <p class="name">{{firstName}} {{lastName}}</p>
+                <p class="email">{{emailAddress}}</p>
+                <p class="phone">{{phoneNumber}}</p>
+                </address>
+            {{/contacts.[0]}}
+        </div>
+
+        {{#if contacts.[1]}}
+        <div class="contacts">
+            <h3>{{t 'CapAssPages.Confirmation.Registration.Subtitle.Contacts'}}</h3>
+            <ul>
+            {{#contacts}}
+                {{#unless @first}}
+                <li class="contact">
+                    <address>
+                    <p class="role">{{contactType}}</p>
+                    <p class="name">{{firstName}} {{lastName}}</p>
+                    <p class="email">{{emailAddress}}</p>
+                    <p class="phone">{{phoneNumber}}</p>
+                    </address>
+                </li>
+                {{/unless}}
+            {{/contacts}}
+            </ul>
+        </div>
+        {{/if}}
+    {{/solution}}
+</div>
+
+<div class="summary-box" id="summary-capabilities">
+    {{>section-header title="CapAssPages.Confirmation.Capabilities.Title" href=editUrls.capabilities.selection}}
+
+    <h3>{{t 'CapAssPages.Confirmation.Capabilities.Subtitle.Capabilities'}}</h3>
+    <div class="capabilities">
+        {{#solution.capabilities}}
+            <p><a target="_blank" href="{{url}}">{{name}}</a></p>
+        {{/solution.capabilities}}
+    </div>
+    {{#>help-reveal title="CapAssPages.Confirmation.Capabilities.Subtitle.Standards"}}
+        <h3>{{t 'CapAssPages.Confirmation.Capabilities.Subtitle.Associated'}}</h3>
+        {{#solution.standardsByGroup.associated}}
+            {{#unless isOptional}}
+                <p><a href="">{{name}}</a></p>
+            {{/unless}}
+        {{/solution.standardsByGroup.associated}}
+
+        {{#if solution.hasOptionalStandards}}
+            {{#each (tt 'Optional Standards.Notice Text')}}
+                <p>{{.}}</p>
+            {{/each}}
+        {{/if}}
+
+        {{#solution.standardsByGroup.associated}}
+            {{#if isOptional}}
+                <p><a href="">{{name}}</a></p>
+            {{/if}}
+        {{/solution.standardsByGroup.associated}}
+
+        <h3>{{t 'CapAssPages.Confirmation.Capabilities.Subtitle.Overarching'}}</h3>
+        {{#solution.standardsByGroup.overarching}}
+            <p><a target="_blank" href="{{url}}">{{name}}</a></p>
+        {{/solution.standardsByGroup.overarching}}
+    {{/help-reveal}}
+</div>
+
+<div class="summary-box" id="summary-evidence">
+    {{>section-header title="CapAssPages.Confirmation.Evidence.Title" href=editUrls.capabilities.evidence}}
+
+    {{#solution.capabilities}}
+    <div class="evidence">
+        <h3>{{name}}</h3>
+        {{#if isLiveDemo}}
+            <p>{{t 'CapAssPages.Confirmation.Evidence.Information.LiveDemo'}}</p>
+        {{else}}
+            <p>{{t 'CapAssPages.Confirmation.Evidence.Information.RecordedVideo'}}</p>
+            <p><a download target="_blank" href="{{latestFile.downloadURL}}">{{latestFile.name}}</a></p>
+            <p>{{latestEvidence.evidence}}</p>
+        {{/if}}
+        {{#if missingEvidence}}{{t 'CapAssPages.Confirmation.Evidence.Error'}}{{/if}}
+    </div>
+    {{/solution.capabilities}}
+</div>

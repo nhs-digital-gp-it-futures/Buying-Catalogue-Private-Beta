@@ -1,0 +1,4 @@
+Id	PreviousId	EvidenceId	CreatedById	CreatedOn	OriginalDate	Message
+2e0bb2cf-db98-474c-b101-f4a7bb1d8a53		e977b40a-8150-4fd6-b1ff-12b4bfc1edd4	371b20b7-3bed-487d-aa5f-995f5924e579	2006-02-21T12:03:00	2006-02-21T12:03:00	First Capability Assessment First Message
+66442f9c-a6ce-48f3-bab2-b8d89f27010e	2e0bb2cf-db98-474c-b101-f4a7bb1d8a53	e977b40a-8150-4fd6-b1ff-12b4bfc1edd4	371b20b7-3bed-487d-aa5f-995f5924e579	2006-02-21T12:03:00	2006-02-21T12:03:00	First Capability Assessment Second Message
+2ac2142b-7537-400d-9088-180a05afbc00		0c53d5de-954d-4bd1-9b60-2ed2de96d606	371b20b7-3bed-487d-aa5f-995f5924e579	2016-06-30T07:33:00	2016-06-30T07:33:00	Second Capability Assessment First Message

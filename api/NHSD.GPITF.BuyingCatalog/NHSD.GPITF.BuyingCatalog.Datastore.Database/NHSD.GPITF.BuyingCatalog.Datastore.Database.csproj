@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT'">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\NHSD.GPITF.BuyingCatalog.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>..\NHSD.GPITF.BuyingCatalog\bin\Debug\netcoreapp2.1\</OutputPath>
+    <NoWarn>1701;1702;1705;8002;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>..\NHSD.GPITF.BuyingCatalog\bin\Release\netcoreapp2.1\</OutputPath>
+    <NoWarn>1701;1702;1705;8002;</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="Dapper.Contrib" Version="1.50.4" />
+    <PackageReference Include="FluentValidation" Version="7.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.2" />
+    <PackageReference Include="MySql.Data" Version="8.0.11" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Npgsql" Version="3.2.7" />
+    <PackageReference Include="Polly-Signed" Version="5.8.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.3" />
+    <PackageReference Include="westwind.utilities" Version="3.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\NHSD.GPITF.BuyingCatalog.snk" Link="NHSD.GPITF.BuyingCatalog.snk" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NHSD.GPITF.BuyingCatalog\NHSD.GPITF.BuyingCatalog.csproj" />
+  </ItemGroup>
+
+</Project>

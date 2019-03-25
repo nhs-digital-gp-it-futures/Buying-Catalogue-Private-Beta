@@ -1,0 +1,18 @@
+<section>
+<div>
+    {{>section-header title="{{standard.name}}" href="./"}}
+    <h2>{{t 'CompliancePages.Confirmation.Evidence.File.Heading'}}</h2>
+    {{#if latestFile}}
+        <a download target="_blank" href="{{latestFile.downloadURL}}">{{latestFile.name}}</a>
+    {{else}}
+        <p>{{t 'CompliancePages.Confirmation.Evidence.File.NotFound'}}</p>
+    {{/if}}
+    <h2>{{t 'CompliancePages.Confirmation.Evidence.Message.Heading'}}</h2>
+
+    {{#if latestSubmission.message}}
+        <p>{{latestSubmission.message}}</p>
+    {{else}}
+        <p>{{t 'CompliancePages.Confirmation.Evidence.Message.NotFound'}}</p>
+    {{/if}}
+</div>
+</section>

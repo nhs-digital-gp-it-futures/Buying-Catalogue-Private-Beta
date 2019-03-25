@@ -1,0 +1,9 @@
+'use strict';
+
+exports.__esModule = true;
+exports.default = {
+    configuration: 'configuration',
+    input: 'input'
+};
+module.exports = exports['default'];
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb25maWd1cmF0aW9uL29wdGlvbi1zb3VyY2UuanMiXSwibmFtZXMiOlsiY29uZmlndXJhdGlvbiIsImlucHV0Il0sIm1hcHBpbmdzIjoiOzs7a0JBQWU7QUFDWEEsbUJBQWUsZUFESjtBQUVYQyxXQUFlO0FBRkosQyIsImZpbGUiOiJjb25maWd1cmF0aW9uL29wdGlvbi1zb3VyY2UuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCB7XG4gICAgY29uZmlndXJhdGlvbjogJ2NvbmZpZ3VyYXRpb24nLFxuICAgIGlucHV0OiAgICAgICAgICdpbnB1dCdcbn07XG4iXX0=

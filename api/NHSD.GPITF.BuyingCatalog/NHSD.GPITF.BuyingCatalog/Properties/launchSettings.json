@@ -1,0 +1,21 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:54281/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "NHSD.GPITF.BuyingCatalog": {
+      "commandName": "Project",
+      "launchUrl": "api/values",
+      "environmentVariables": {
+        "USE_CRM": "true",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:54282/"
+    }
+  }
+}

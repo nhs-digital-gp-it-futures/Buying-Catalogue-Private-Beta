@@ -1,0 +1,82 @@
+<div id="compliance" class="dashboard page">
+
+{{> errors}}
+
+{{#if submittedStandard}}
+<div class="standard-submitted">
+  <h3>{{t 'CompliancePages.Dashboard.Standard.Submitted.Heading'}}</h3>
+  {{#each (tt 'CompliancePages.Dashboard.Standard.Submitted.Narrative' name=submittedStandard)}}
+  <p>{{.}}</p>
+  {{/each}}
+</div>
+{{/if}}
+
+<header class="page-main-heading">
+  <h1>{{t 'CompliancePages.Dashboard.Title' }}</h1>
+  <p>{{t 'CompliancePages.Dashboard.Subtitle'}}</p>
+</header>
+
+<h2>{{t 'CompliancePages.Dashboard.Associated.Heading'}}</h2>
+
+{{#> help-reveal title='CompliancePages.Dashboard.Associated.Help.Title'}}
+  {{t 'CompliancePages.Dashboard.Associated.Help.Text'}}
+{{/help-reveal}}
+
+{{#*inline "standard-row"}}
+<tr class="standard {{statusClass}}">
+  <td class="name">{{#if isInterop}}<i>interop</i>{{/if}} {{#if continueUrl}}<a href="{{continueUrl}}">{{name}}</a>{{else}}{{name}}{{/if}}</td>
+  <td class="status">{{t statusTransKey when=statusChangeDate}}</td>
+  <td class="owner">{{t 'CompliancePages.Dashboard.Standard.With' name=withContact.displayName}}</td>
+</tr>
+{{/inline}}
+
+<table class="standards">
+  <thead>
+    <th>{{t 'CompliancePages.Dashboard.Table.Standard.Title'}}</th>
+    <th>{{t 'CompliancePages.Dashboard.Table.Status.Title'}}</th>
+    <th>{{t 'CompliancePages.Dashboard.Table.Who Its With.Title'}}</th>
+  </thead>
+  <tbody>
+    {{#solution.standards}}
+      {{#unless isOverarching}}
+      {{#unless isInterop}}
+        {{> standard-row}}
+      {{/unless}}
+      {{/unless}}
+    {{/solution.standards}}
+
+    {{#solution.standards}}
+      {{#unless isOverarching}}
+      {{#if isInterop}}
+        {{> standard-row}}
+      {{/if}}
+      {{/unless}}
+    {{/solution.standards}}
+
+  </tbody>
+</table>
+
+<h2>{{t 'CompliancePages.Dashboard.Overarching.Heading'}}</h2>
+
+{{#> help-reveal title='CompliancePages.Dashboard.Overarching.Help.Title'}}
+  {{t 'CompliancePages.Dashboard.Overarching.Help.Text'}}
+{{/help-reveal}}
+
+<table class="standards">
+    <thead>
+      <th>{{t 'CompliancePages.Dashboard.Table.Standard.Title'}}</th>
+      <th>{{t 'CompliancePages.Dashboard.Table.Status.Title'}}</th>
+      <th>{{t 'CompliancePages.Dashboard.Table.Who Its With.Title'}}</th>
+    </thead>
+  <tbody>
+  {{#solution.standards}}
+    {{#if isOverarching}}
+      {{> standard-row}}
+    {{/if}}
+  {{/solution.standards}}
+  </tbody>
+</table>
+
+<a class="back-link" href="{{backlink}}">{{t 'CompliancePages.Dashboard.Backlink.Title'}}</a>
+
+</div>

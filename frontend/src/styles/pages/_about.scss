@@ -1,0 +1,74 @@
+#about-page {
+    
+    div.title-banner {
+        padding: 1em;
+        background: $color-nhs-blue;
+        color: $color-nhs-white;
+        width: 100%;
+        text-align: center;
+        margin-top: 1em;
+    }
+
+    div.about-content {
+        display: inline-flex;
+    }
+    div.about-content > div.nav-container {
+        width: 21em;
+        div.nav-panel {
+            width: 20em;
+            div.nav-title {
+                width: 20em;
+                border-bottom: 5px solid $color-nhs-mid-grey;
+            }
+            div.nav-item {
+                padding: 0.5em 0em;
+            }
+        }
+    }
+    div.about-content > div.page-content {
+        padding: 0em 1em;
+        width: 70%;
+    }
+
+    div.support-process-overview {
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            tr,thead {
+                width: 100%;
+                td, th {
+                    padding: 0.5em;
+                    width: 50%;
+                    border: 1px solid $color-nhs-mid-grey
+                }
+            }
+            th {
+                text-align: left;
+            }
+            td {
+                vertical-align: text-top;
+            }
+        }
+    }
+
+    div.support-supplier-checklist {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            thead, tr {
+                width: 100%;
+                td, th {
+                    padding: 0.5em;
+                    border: 1px solid $color-nhs-mid-grey
+                }
+            }
+            th {
+                text-align: left;
+            }
+            td {
+                vertical-align: text-top;
+            }
+        }
+    }
+}

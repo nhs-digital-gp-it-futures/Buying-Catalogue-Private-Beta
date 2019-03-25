@@ -1,0 +1,277 @@
+#compliance {
+  table.standards {
+    border-collapse: collapse;
+    color: $color-compliance-table-fg;
+    width: 100%;
+    margin: 1em 0em;
+
+    thead {
+      th {
+        text-align: left;
+        color: $color-nhs-black;
+        border-bottom: 2px solid $color-nhs-light-mid-grey;
+      }
+    }
+
+    tr {
+      border-bottom: 2px solid $color-compliance-table-border;
+      height: 3rem;
+
+      td {
+        &.name {
+          width: 50%;
+          i {
+            color: $color-nhs-black;
+          }
+        }
+
+        &.status {
+          font-size: smaller;
+          width: 30%;
+        } 
+
+        &.owner {
+          font-size: smaller;
+        }
+      }
+
+      &.approved,
+      &.submitted {
+        td {
+          &.status,
+          &.owner {
+            color: $color-compliance-table-good-fg;
+          }
+        }
+      }
+
+      &.failed,
+      &.rejected {
+        td {
+          &.status,
+          &.owner {
+            color: $color-compliance-table-bad-fg;
+          }
+        }
+      }
+    }
+  }
+
+  details.quick-links {
+    color: $color-nhs-blue;
+
+    > summary {
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: disc;
+
+      li {
+        margin: .25em 0 .25em 2em;
+      }
+    }
+  }
+
+  section p.callout,
+  fieldset.callout,
+  .standard-submitted {
+    @extend %callout;
+    a[target="_blank"]:after {
+      content: none;
+    }
+    width:inherit;
+    max-width: 55em;
+  }
+
+  .standard-submitted {
+    border: 2px solid $color-nhs-blue;
+    margin-top: 2em;
+
+    h3 {
+      margin-top: 0;
+
+      &::after {
+        color: $color-nhs-green;
+        content: '✔︎';
+        padding-left: 1em;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  section > h3 {
+    margin-bottom: .5em;
+  }
+
+  .notification {
+    background-color: $color-nhs-blue;
+    color: $color-nhs-white;
+    margin-top: 1.5em;
+    max-width: 55em;
+    padding: 1em;
+
+    h1 {
+      margin: 0;
+    }
+  }
+  .current-file {
+    max-width: 55em;
+  }
+
+  
+  .has-feedback {
+    max-width: 55em;
+    background-color: $color-nhs-light-grey;
+    border: 2px solid $color-nhs-blue;
+    color: $color-fg;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 1em;
+    padding: .5em 1em;
+  }
+
+  .history {
+    .message {
+      background-color: $color-nhs-light-grey;
+      color: $color-fg;
+      font-size: smaller;
+      font-weight: normal;
+      margin: .5em 0;
+      max-width: 55em;
+      padding: .75em 1em;
+
+      .text {
+        margin: 0;
+      }
+
+      .meta {
+        margin: .5em 0 0;
+
+        span+span {
+          padding-left: 1.5em;
+        }
+      }
+    }
+
+    .feedback:last-child {
+      background-color: $color-nhs-light-blue;
+      border: 3px solid $color-nhs-blue;
+
+      .text {
+        font-size: larger;
+        font-weight: bold;
+      }
+    }
+
+    .expand-history,
+    .collapse-history {
+      font-size: smaller;
+      font-weight: bold;
+    }
+
+    .expand-history {
+      display: none;
+    }
+
+    &.collapsed {
+      .collapse-history,
+      .message {
+        display: none;
+      }
+
+      .expand-history {
+        display: inline-block;
+      }
+    }
+  }
+
+  .upload-and-reply form {
+    .remove,
+    .evidence-message {
+      display: none;
+    }
+
+    .file-input {
+      display: flex;
+
+      input[type=file] {
+        flex-grow: 1;
+      }
+    }
+    p.sub-info {
+      font-size: smaller;
+    }
+    &.has-file {
+      .remove {
+        display: inline;
+      }
+
+      .evidence-message {
+        display: block;
+
+        .label {
+          margin-bottom: .5em;
+        }
+
+        .help {
+          margin: .5em 0;
+        }
+      }
+    }
+
+    .owner {
+      [name='ownerId'] {
+        display: none;
+      }
+
+      &.changing {
+        [name='ownerId'] {
+          display: inline-block;
+        }
+
+        #change-owner-button,
+        .current-owner {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #submit-for-compliance {
+    margin-top: 1em;
+
+    &::after {
+      content: ' ❯';
+    }
+  }
+}
+
+
+#compliance-confirmation {
+  section {
+    background: $color-nhs-light-grey;
+    border: 2px solid $color-nhs-mid-grey;
+    margin: 1em;
+    padding: 1em;
+
+    div.section-header {
+      h2 {
+        margin: 0.1em;
+      }
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+    }
+    a[target="_blank"]:after {
+      content: none;
+    }
+    p, a {
+      margin-bottom: 2em;
+    }
+  }
+}

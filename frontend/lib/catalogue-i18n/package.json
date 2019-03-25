@@ -1,0 +1,16 @@
+{
+  "name": "catalogue-i18n",
+  "version": "0.1.0-private-beta",
+  "description": "Translation layer for the NHS Digital Buying Catalogue private beta",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Mitchell <paul.mitchell@bjss.com>",
+  "dependencies": {
+    "handlebars-i18next": "^1.0.1",
+    "i18next": "^11.10.1",
+    "i18next-node-fs-backend": "^2.1.0"
+  }
+}

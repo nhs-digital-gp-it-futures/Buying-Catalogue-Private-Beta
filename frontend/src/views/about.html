@@ -1,0 +1,76 @@
+
+<div id="about-page">
+    <div class="title-banner">
+        <h1>{{t 'Support.Title'}}</h1>
+    </div>
+    <div class="about-content">
+        <div class="nav-container">
+            <div class="nav-panel">
+                <div class="nav-title">
+                    <h2>{{t 'Support.Nav Title'}}</h2>
+                </div>
+                {{#each (tt 'Support.Sections')}}
+                    <div class="nav-item">
+                        <a href="#{{'Nav Title'}}">{{'Nav Title'}}</a>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="page-content">
+            {{#each (tt 'Support.Sections')}}
+                <h2 id="{{'Nav Title'}}">{{t Title}}</h2>
+                {{#Text}}
+                    <p>{{{t .}}}</p>
+                {{/Text}}
+                {{#Subsections}}
+                    {{#if Custom}}
+                        {{> (lookup . 'Custom') }}
+                    {{else}}
+                        <h3>{{t Title}}</h3>
+                        {{#Text}}
+                            <p>{{{t .}}}</p>
+                        {{/Text}}
+                    {{/if}}
+                {{/Subsections}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function() {stickyFunction()};
+
+    // Get the navbar
+    const navbar = $('div.about-content div.nav-panel')
+    const header = $('body > header')
+    const footer = $('body > footer')
+
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+
+    var headerHeight = header.clientHeight;
+
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function stickyFunction() {
+        var browserZoomLevel = window.devicePixelRatio;
+
+        const nHeight =  navbar.getBoundingClientRect().height * browserZoomLevel
+        const hHeight =  header.getBoundingClientRect().height * browserZoomLevel
+        const fHeight =  footer.getBoundingClientRect().height * browserZoomLevel
+
+        const wHeight = window.screen.height;
+        const sHeight = nHeight + hHeight + fHeight
+
+        const isSpace = sHeight / wHeight < 0.900000
+
+        if (isSpace && window.pageYOffset + headerHeight >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+})
+</script>

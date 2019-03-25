@@ -1,0 +1,117 @@
+
+#home-page {
+
+    padding:0;
+    margin:0;
+    p {
+        width: 66%;
+    }
+    .welcome-banner {
+        margin: 0;
+        padding: 2em;
+        color: white;
+        background: $color-nhs-blue;
+        width: 100%;
+        .button {
+            background: white;
+            color: $color-nhs-blue;
+        }
+    }
+    .content {
+        padding: 1em;
+        background: $color-nhs-light-grey;
+        margin:0;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+
+        .cards {
+            .card > a  {
+                text-decoration: none;
+            }
+
+            .card {
+                cursor: pointer;
+                width: 30%;
+                min-width: 15em;
+                -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+                -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+                margin: 1em 0em;
+
+                &:hover {
+                    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+                    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+                    box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+                }
+
+                .upper {
+                    padding: 1em;
+                    background: $color-nhs-blue;
+                    color: white;
+                    display: flex;
+                    flex-wrap: wrap-reverse;
+                    justify-content: center;
+                    align-content: center;
+                    width: 100%;
+                    height: 70%;
+                    h3{
+                        height: 25%;
+                        width: 50%;
+                    }
+                    img {
+                        width: 50%;
+                        min-width: 80px;
+                        object-fit: contain;
+                    }
+                }
+                .lower {
+                    width: 100%;
+                    height: 30%;
+                    background: white;
+                    font-size: smaller;
+                    color: $color-nhs-black;
+                    padding: 1em;
+                    div {
+                        height: 50%;
+                    }
+                    .icon {
+                        text-align: right;
+                        font-size: x-large;
+                    }
+                }
+
+            }
+        }
+
+        .steps {
+            .step:first-of-type {
+                border-left: none;
+            }
+            .step {
+                width: 25%;
+                padding:1em;
+                border-left: solid 1px $color-nhs-mid-grey;
+                min-width: 15em;
+                .upper {
+                    .indicator{
+                        border: 2px solid $color-nhs-blue;
+                        background: white;
+                        padding: 0.5em 0.9em;
+                        border-radius: 100%;
+                    }
+                }
+                .lower {
+                    h3 {
+                        color: $color-nhs-blue
+                    }
+                }
+            }
+        }
+    }
+}

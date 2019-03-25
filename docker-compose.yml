@@ -1,0 +1,101 @@
+version: '3.4'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    image: gpitf/catalogue-frontend:private-beta
+    networks:
+      - beta_network
+    environment:
+      - NODE_ENV
+      - BASE_URL
+      - API_BASE_URL
+      - CACHE_HOST
+      - OIDC_ISSUER_URL
+      - OIDC_CLIENT_ID
+      - OIDC_CLIENT_SECRET
+      - SESSION_SECRET
+      - SHAREPOINT_PROVIDER_ENV
+      - DEPLOYED_ENV_LABEL
+    restart: always
+    depends_on:
+      - cache
+
+  api:
+    image: gpitf/catalogue-api:private-beta
+    build: ./api/NHSD.GPITF.BuyingCatalog
+    networks:
+      - beta_network
+    ports:
+      - "5100:5100"
+    environment:
+      - ASPNETCORE_ENVIRONMENT
+      - CACHE_HOST
+      - OIDC_ISSUER_URL
+      - OIDC_USERINFO_URL
+      - OIDC_AUDIENCE
+      - DATASTORE_CONNECTIONTYPE
+      - DATASTORE_CONNECTIONSTRING
+      - LOG_CONNECTIONSTRING
+      - SHAREPOINT_BASEURL
+      - SHAREPOINT_ORGANISATIONSRELATIVEURL
+      - SHAREPOINT_CLIENT_ID
+      - SHAREPOINT_CLIENT_SECRET
+      - SHAREPOINT_LOGIN
+      - SHAREPOINT_PASSWORD
+      - CRM_APIURI
+      - CRM_ACCESSTOKENURI
+      - CRM_CLIENTID
+      - CRM_CLIENTSECRET
+      - USE_CRM
+      - LOG_CRM
+      - LOG_SHAREPOINT
+    depends_on:
+      - cache
+      - crm
+
+  crm:
+    build: 
+     context: ./crm
+    image: gpitf/catalogue-crm:private-beta
+    ports:
+      - "5001:5001"
+    networks:
+      - beta_network
+    environment:
+      - ASPNETCORE_ENVIRONMENT
+      - GIF_AUTHORITY_URI
+      - GIF_CRM_AUTHORITY
+      - GIF_CRM_URL
+      - GIF_AZURE_CLIENT_ID
+      - GIF_ENCRYPTED_CLIENT_SECRET
+      - CRM_CLIENTID
+      - CRM_CLIENTSECRET
+      - LOG_CRM
+      - LOG_CONNECTIONSTRING
+
+  nginx:
+    build: ./nginx
+    image: gpitf/catalogue-frontend-proxy:private-beta
+    networks:
+      - beta_network
+    ports:
+      - "3000:80"
+    restart: always
+    depends_on:
+      - frontend
+
+  cache:
+    image: redis:latest
+    networks:
+      - beta_network
+    ports:
+      - "6379:6379"
+    restart: always
+    volumes:
+      - ./data:/data
+
+networks:
+  beta_network:
+    driver: bridge
